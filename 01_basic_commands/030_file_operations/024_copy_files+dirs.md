@@ -21,3 +21,7 @@ cp -r somefolder someotherfolder
 
 ## Exercise
 Execute the *020_testenv.sh* script. Write a script to copy the file *somedir/writeprotected* to be next to *somedir* (same folder level) with the filename *writeprotected.bak*. And create a copy of *somedir* (*somedir.bak*)
+
+## Useful switches
+- `-i` To avoid overwriting ask for confirmation
+- `-u` Update, does not copy if destination file is same or newer
