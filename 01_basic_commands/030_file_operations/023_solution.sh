@@ -1,2 +1,2 @@
 #!/bin/bash
-rm -rf deleteme
+rm -rf somedir
