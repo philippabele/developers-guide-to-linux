@@ -1,6 +1,6 @@
 # Linking Basics
 
-Linux offers two ways of linking files.
+Linux offers two ways of linking files. *The Linux Command Line* treats this topic in *Chapter 4 - ln - Create Links*
 
 ## Hardlinks
 Hardlinks are the original way of linking files in the Unix world. In fact each file you see in a file explorer is a hardlink to a file, which gives the file its name. A file can have multiple hardlinks. A will get deleted/dereferenced when all hardlinks referencing it get deleted. Hardlinks can only point to files in the same filesystem.
