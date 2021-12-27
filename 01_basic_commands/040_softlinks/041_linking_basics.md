@@ -1,4 +1,4 @@
-# Linking Overview
+# Linking Basics
 
 Linux offers two ways of linking files.
 
