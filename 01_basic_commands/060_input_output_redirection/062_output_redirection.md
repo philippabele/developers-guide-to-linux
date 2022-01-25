@@ -9,6 +9,7 @@ In the example the output of the command `ls -la` will be written into the file 
 ls -la > output
 ```
 
+Now we use the command `cat` to view the content of the file. Cat takes a file as an argument and displays its contents to the command line.
 We won't see an output on the command line, but the file now looks something like this:
 
 ``` 
@@ -61,3 +62,5 @@ ls: cannot open directory '/root': Permission denied
 
 To redirect bot outputs the `&>`/`&>>` operators can be used.
 
+## Exercise
+Experiment with output redirection to see how it works. For example use `echo foo > output` to write foo to the file output and overwrite or append content.
