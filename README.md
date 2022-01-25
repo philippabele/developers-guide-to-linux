@@ -4,7 +4,7 @@
     - [x] Search for files
     - [ ] Evaluate and compare the basic file system features and options
     - [ ] Compare and manipulate file content
-    - [ ] Use input-output redirection (e.g. >, >>, |, 2>)
+    - [x] Use input-output redirection (e.g. >, >>, |, 2>)
     - [ ] Analyze text using basic regular expressions
     - [ ] Archive, backup, compress, unpack, and uncompress files
     - [x] Create, delete, copy, and move files and directories
