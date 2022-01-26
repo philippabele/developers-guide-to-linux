@@ -10,7 +10,7 @@
     - [x] Create, delete, copy, and move files and directories
     - [x] Create and manage hard and soft links
     - [ ] List, set, and change standard file permissions
-    - [ ] Read, and use system documentation
+    - [x] Read, and use system documentation
     - [ ] Manage access to the root account
 
 - [ ] Operation of Running Systems 20%
