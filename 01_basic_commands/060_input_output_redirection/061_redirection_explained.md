@@ -1,6 +1,6 @@
 # Introduction Input/Output Redirection
 In this section input/output (I/O) redirection will be explained.
-THe according chapter in the Linux command line is 1.6
+The according chapter in the Linux command line is 1.6
 
 ## Standard Input, Output, Error
 Standard output (stdout) and standard error (stderr) follow the Unix philosophy of everything is a file. If a program on the command line needs to output its result it writes them to the *stdout* file, status messages like errors are written into the *stderr* file.
