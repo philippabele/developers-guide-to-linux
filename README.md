@@ -9,7 +9,7 @@
     - [ ] Archive, backup, compress, unpack, and uncompress files
     - [x] Create, delete, copy, and move files and directories
     - [x] Create and manage hard and soft links
-    - [ ] List, set, and change standard file permissions
+    - [x] List, set, and change standard file permissions
     - [x] Read, and use system documentation
     - [ ] Manage access to the root account
 
