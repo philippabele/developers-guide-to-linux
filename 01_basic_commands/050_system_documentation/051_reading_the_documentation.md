@@ -10,4 +10,6 @@ The man page can be searched for patterns by typing `/` and the pattern you want
 To exit the man page hit `q`.
 
 # Exercise
-View the manpage for the command `ls` and list the files in the directory in *long format* *recursively* sorted *by time*.
+- View the manpage for the command `ls` and list the files in the directory in *long format* *recursively* sorted *by time*.
+- Lookup the usage of the commands `whereis` and `apropos` which will help you finding commands and exploring the system.
+
