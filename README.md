@@ -3,7 +3,7 @@
     - [x] Log into local & remote graphical and text mode consoles
     - [x] Search for files
     - [x] Evaluate and compare the basic file system features and options
-    - [ ] Compare and manipulate file content
+    - [x] Compare and manipulate file content
     - [x] Use input-output redirection (e.g. >, >>, |, 2>)
     - [ ] Analyze text using basic regular expressions
     - [ ] Archive, backup, compress, unpack, and uncompress files
