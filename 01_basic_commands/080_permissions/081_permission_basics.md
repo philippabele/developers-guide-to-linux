@@ -1,4 +1,5 @@
 # Persmission Basics
+The topic permissions is discussed in chapter 9 of The Linux Command Line.
 If you list the contents of a directory with `ls -l` you can see the owner, group and permissions set for a file.
 
 ```
