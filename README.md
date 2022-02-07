@@ -6,7 +6,7 @@
     - [x] Compare and manipulate file content
     - [x] Use input-output redirection (e.g. >, >>, |, 2>)
     - [x] Analyze text using basic regular expressions
-    - [ ] Archive, backup, compress, unpack, and uncompress files
+    - [x] Archive, backup, compress, unpack, and uncompress files
     - [x] Create, delete, copy, and move files and directories
     - [x] Create and manage hard and soft links
     - [x] List, set, and change standard file permissions
