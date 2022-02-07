@@ -29,6 +29,15 @@ Grep uses a different notation for character classes:
 
 Check the grep man page for more.
 
+Some useful flags when searching with grep:
+
+- -i - ignore case
+- -v - invert match
+- -c - count
+- -l - list files with matches
+- -L - list files without matches
+- -n - print line number together with match
+
 ## Exercise
 Find all occurrences of a date matching the date pattern defined earlier in the file 102_exercise using `grep`.
 
