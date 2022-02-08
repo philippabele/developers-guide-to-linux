@@ -13,6 +13,7 @@ To match text either literal characters or wildcards can be used. Some exemplary
 - . - matches any character
 - ^ - matches beginning of a line
 - $ - matches end of a line
+- \n - newline
 
 ## Quantifiers 
 Besides wildcards quantifiers are also used in regexes:

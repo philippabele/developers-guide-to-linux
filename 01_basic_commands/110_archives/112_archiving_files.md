@@ -40,5 +40,5 @@ tar -xf archive.tar.gz
 ```
 
 ## Exercise
-- Read tars man page to learn more about it
-- Pack the file *111_exercise* into an archive, append the file *112_exercise*.
+- Read tars man page to learn more about it.
+- Pack the file *111_exercise* into an archive, append the file *112_exercise*. Gzip the archive.
