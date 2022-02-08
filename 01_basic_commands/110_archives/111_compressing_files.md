@@ -1,7 +1,7 @@
 # Compressing Files
 While under Windows `zip` is the default compression format on Linux `gzip` and `bzip2` are used.
 
-## Gzip
+## The Tool Gzip
 Usage of `gzip`:
 
 ``` bash
