@@ -1,6 +1,7 @@
 # Regular Expression Basics
 
 Regular Expressions can be used to define patterns matching specific parts of text.
+This part is based on chapter 19 of The Linux Command Line.
 
 ## Wildcards
 To match text either literal characters or wildcards can be used. Some exemplary wildcards:
@@ -13,6 +14,7 @@ To match text either literal characters or wildcards can be used. Some exemplary
 - . - matches any character
 - ^ - matches beginning of a line
 - $ - matches end of a line
+- \n - newline
 
 ## Quantifiers 
 Besides wildcards quantifiers are also used in regexes:
