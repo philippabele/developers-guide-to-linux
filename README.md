@@ -32,8 +32,8 @@
     - [ ] Identify the component of a Linux distribution that a file belongs to
 
 - [ ] User and Group Management 10%
-    - [ ] Create, delete, and modify local user accounts
-    - [ ] Create, delete, and modify local groups and group memberships
+    - [x] Create, delete, and modify local user accounts
+    - [x] Create, delete, and modify local groups and group memberships
     - [ ] Manage system-wide environment profiles
     - [ ] Manage template user environment
     - [ ] Configure user resource limits
