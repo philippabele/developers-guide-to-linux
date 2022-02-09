@@ -1,4 +1,5 @@
 # Compressing Files
+This topic is based on chapter 18 of the Linux Command Line.
 While under Windows `zip` is the default compression format on Linux `gzip` and `bzip2` are used.
 
 ## The Tool Gzip
