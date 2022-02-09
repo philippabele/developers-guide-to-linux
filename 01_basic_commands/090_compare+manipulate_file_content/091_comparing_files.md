@@ -1,4 +1,5 @@
 # Comparing File Content
+This topic is based on chapter 20 - Comparing Text of the Linux Command Line.
 As learned in the previous chapter file content can be viewed using the commands `less` (scrollable) or `cat` (print whole file to terminal). 
 The contents can be compared manually by viewing them with the above commands, or the command `diff` can be used.
 The tool gets called as follows:
