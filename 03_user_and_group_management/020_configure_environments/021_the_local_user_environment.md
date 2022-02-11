@@ -7,7 +7,7 @@ The user environment is configured via files, in a default configuration they ar
 - *.bash_profile* (sometimes *.profile*)
 - *.bashrc*
 
-Templates for these files can be found in */etc/skel*. Everything contained in */etc/skel* will be copied into a newly created users home directory. The binary path is defined in this file.
+Templates for these files can be found in */etc/skel*. Everything contained in */etc/skel* will be copied into a newly created users home directory. The binary path is defined in this file. To alter the template for the user environment, alter the files in */etc/skel*.
 
 ## .bash_profile
 This file gets executed for login shells. In a default configuration it calls *.bashrc*.
