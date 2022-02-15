@@ -11,3 +11,6 @@ sudo vim /etc/sudoers
 
 In the above command the file */etc/sudoers* gets opened with vim. Per default only the root user has access to this file. This file regulates the access to the sudo command.
 Per default users who are in the group *sudo* (Debian)/*wheel* (RedHat) have access to run sudo.
+
+## Exercise
+Create a file in */root*
