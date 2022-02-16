@@ -1,4 +1,5 @@
 # User Privileges
+This chapter is based on chapter 13.4 of the book Linux - Rheinwerk Verlag
 User Types on Linux are differentiated into **root** and **standard** users.
 Principally the root user has unlimited access to the system, while a standard user only can access files which he has permissions to.
 
