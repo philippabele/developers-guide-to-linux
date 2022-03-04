@@ -1,5 +1,5 @@
 # Logfiles
-This chapter is based on Linux - Rheinwerk and the [Ubuntu Documentation](https://wiki.ubuntuusers.de/systemd/journalctl/)
+This chapter is based on chapter 14.4 of Linux - Rheinwerk and the [Ubuntu Documentation](https://wiki.ubuntuusers.de/systemd/journalctl/)
 Per default the system logs are logged to the directory */var/log* on Linux systems. The folder contains logs created by the system and installed services.
 Some of the most important logs are listed below:
 
