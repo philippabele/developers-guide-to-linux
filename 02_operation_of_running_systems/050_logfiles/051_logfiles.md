@@ -1,5 +1,5 @@
 # Logfiles
-TODO Write based on
+This chapter is based on Linux - Rheinwerk and the [Ubuntu Documentation](https://wiki.ubuntuusers.de/systemd/journalctl/)
 Per default the system logs are logged to the directory */var/log* on Linux systems. The folder contains logs created by the system and installed services.
 Some of the most important logs are listed below:
 
@@ -21,5 +21,16 @@ New logs will be appended to an existing log file, so if you are looking for the
 
 ## Journal
 On newer systems *syslog* is replaced by *journal*. The syslogs can be viewed with the command `sudo journalctl` rather than via the actual log file.
+The journal will be displayed with `less`.
 
+```
+Mar 08 16:46:46 server sudo[843154]: pam_unix(sudo:session): session closed for user root
+Mar 08 16:46:46 server sudo[843154]:  user : TTY=pts/8 ; PWD=/var/log ; USER=root ; COMMAND=/usr/bin/journalctl -f
+Mar 08 16:46:46 server sudo[843154]: pam_unix(sudo:session): session opened for user root by (uid=0)
+```
+
+Above the journal log entry for opening the journal with sudo can be seen. Leading is the timestamp, followed by the hostname, then the process name with pid and the processes log message as a tail.
+
+## Exercise
+Execute `echo Find Me | systemd-cat -p warning`, `systemd-cat` can be used to send log messages to the journal. Search the journal for the message you just sent.  
 
