@@ -42,5 +42,19 @@ The crontab files are not to be edited directly, instead the tool `crontab` is u
 - `-r`: Delete the crontab file
 - `-e`: Edit the crontab file
 
+## The `at` command
+
+The `at` command can be used to schedule a task to run once. At can be given a task with the following syntax:
+
+``` bash
+at <time to run the task at> -f <script to run>
+```
+
+By calling `at` without the `-f` flag a task to run can be defined in an interactive mode, which can be exited with `Crtl-D.`
+
+The time can be defined in the following patterns
+- `at hh:MM`
+- `at <time> + <time frame>` e.g. + 2 hours
+- `at hh:mm dd.MM`
 ## Exercise
 Create a crontab entry which will write 'Coming from Crontab' into the journal (see chapter before) every 5 minutes.
