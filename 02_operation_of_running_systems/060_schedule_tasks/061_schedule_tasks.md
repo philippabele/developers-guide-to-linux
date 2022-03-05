@@ -56,5 +56,6 @@ The time can be defined in the following patterns
 - `at hh:MM`
 - `at <time> + <time frame>` e.g. + 2 hours
 - `at hh:mm dd.MM`
+
 ## Exercise
 Create a crontab entry which will write 'Coming from Crontab' into the journal (see chapter before) every 5 minutes.
