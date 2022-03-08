@@ -38,6 +38,7 @@
     - [x] Manage template user environment
     - [x] Configure user resource limits
     - [x] Manage user privileges
+        + [x] Manage access to the root account   
     - [x] Configure PAM
 
 - [ ] Networking 12%
