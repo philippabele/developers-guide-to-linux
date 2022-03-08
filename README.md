@@ -1,5 +1,5 @@
 # students-guide-to-linux
-- [ ] Essential Commands 25%
+- [x] Essential Commands 25%
     - [x] Log into local & remote graphical and text mode consoles
     - [x] Search for files
     - [x] Evaluate and compare the basic file system features and options
@@ -31,7 +31,7 @@
     - [ ] Manage Software
     - [ ] Identify the component of a Linux distribution that a file belongs to
 
-- [ ] User and Group Management 10%
+- [x] User and Group Management 10%
     - [x] Create, delete, and modify local user accounts
     - [x] Create, delete, and modify local groups and group memberships
     - [x] Manage system-wide environment profiles
