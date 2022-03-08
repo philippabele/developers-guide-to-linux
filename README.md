@@ -11,13 +11,13 @@
     - [x] Create and manage hard and soft links
     - [x] List, set, and change standard file permissions
     - [x] Read, and use system documentation
-    - [ ] Manage access to the root account
+    - [x] Manage access to the root account -> **moved to chapter 3 - User and Group Management**
 
 - [ ] Operation of Running Systems 20%
-    - [ ] Boot, reboot, and shut down a system safely
-    - [ ] Boot or change system into different operating modes
-    - [ ] Install, configure and troubleshoot bootloaders
-    - [ ] Diagnose and manage processes
+    - [x] Boot, reboot, and shut down a system safely
+    - [x] Boot or change system into different operating modes
+    - [x] Install, configure and troubleshoot bootloaders
+    - [x] Diagnose and manage processes
     - [ ] Locate and analyze system log files
     - [ ] Schedule tasks to run at a set date and time
     - [ ] Verify completion of scheduled jobs
@@ -36,9 +36,9 @@
     - [x] Create, delete, and modify local groups and group memberships
     - [x] Manage system-wide environment profiles
     - [x] Manage template user environment
-    - [ ] Configure user resource limits
-    - [ ] Manage user privileges
-    - [ ] Configure PAM
+    - [x] Configure user resource limits
+    - [x] Manage user privileges
+    - [x] Configure PAM
 
 - [ ] Networking 12%
     - [ ] Configure networking and hostname resolution statically or dynamically
