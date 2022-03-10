@@ -11,7 +11,6 @@
     - [x] Create and manage hard and soft links
     - [x] List, set, and change standard file permissions
     - [x] Read, and use system documentation
-    - [x] Manage access to the root account -> **moved to chapter 3 - User and Group Management**
 
 - [ ] Operation of Running Systems 20%
     - [x] Boot, reboot, and shut down a system safely
