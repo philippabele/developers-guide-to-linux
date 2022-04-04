@@ -45,8 +45,9 @@ Alternatively the configuration files in */etc/sysctl.d/* can be modified manual
 
 ## Example
 
-The cdrom drive of your computer can be locked with the variable `dev.cdrom.lock` setting it to `1` will lock the drive, `0` will unlock it
+The hostname of your computer can be changed with the variable `kernel.hostname`. 
 
 ## Exercice
 
-Unlock the cdrom drive in the kernel parameters temporally.
+- Find out the current hostname of your host.
+- Change the hostname to 'dhbw-testhost'

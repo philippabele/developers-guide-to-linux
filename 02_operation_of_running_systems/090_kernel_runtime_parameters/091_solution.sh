@@ -1,2 +1,5 @@
 #!/bin/bash
-sudo sysctl dev.cdrom.lock=0
+# Print current hostname
+sudo sysctl kernel.hostname
+# Set new hostname
+sudo sysctl kernel.hostname = dhbw-testhost
