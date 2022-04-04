@@ -1,5 +1,5 @@
 # Schedule Tasks
-This chapter is based of chapter 14.3 of Linux- Rheinwerk.
+This chapter is based on chapter 14.3 of Linux- Rheinwerk.
 
 ## Cron
 To schedule tasks on Linux the utility cron is used.
@@ -36,7 +36,7 @@ An asterisk `*` means, that the task will be run every unit of time (minute, hou
 The time frame is followed by the user which the task belongs to. The entry is ended with the actual command to be run. 
 
 ### The Crontab Tool
-The crontab files are not to be edited directly, instead the tool `crontab` is used. The following flags are useful when working with the tool:
+The crontab file is not to be edited manually, instead the tool `crontab` is used. The following flags are useful when working with the tool:
 - `-u <username>`: Edit the crontab of the specified user
 - `-l`: Print the content of the corresponding crontab
 - `-r`: Delete the crontab file
