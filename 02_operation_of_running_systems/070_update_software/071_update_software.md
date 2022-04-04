@@ -61,4 +61,5 @@ sudo apt install ./Downloads/your_downloaded_package.deb
 ```
 
 ## Exercice 
-Read the man page of apt/apt-get if you want to learn more.
+- Read the man page of apt/apt-get if you want to learn more.
+- Install the web server nginx and remove it completely using `apt`. 
