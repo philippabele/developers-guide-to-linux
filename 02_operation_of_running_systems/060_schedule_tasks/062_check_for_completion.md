@@ -5,6 +5,7 @@ The journal can be viewed with the following command:
 
 ``` bash
 sudo journalctl
+# To get to the end of the file press Shift+G
 ```
 
 An example taken from [here](https://bencane.com/2011/11/02/did-my-cronjob-run/) below:
