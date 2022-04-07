@@ -41,4 +41,4 @@ Systemd maintains an order when starting services, to start services other servi
 In the next section *[Service]* details for executing the service are defined. *WorkingDirectory* sets the directory the service will be executed in. *ExecStart* defines the actual executable executed.
 
 In the field *WantedBy* in the *[Install]* section defines the system state systemd tries to start the service in (see 011_booting_systems).
-The value `multi-user.target` closely matches the system state 3 (Full Multiuser - on console, network operational)
+The value `multi-user.target` closely matches the system state 3 (Full Multiuser - on console, network operational).
