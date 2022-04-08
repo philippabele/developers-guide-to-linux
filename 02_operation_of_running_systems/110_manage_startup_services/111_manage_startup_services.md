@@ -46,4 +46,4 @@ sudo systemctl disable cron
 
 # Exercise
 - Read the `systemctl` manpage to learn more.
-- Restart the cron service with `systemctl`. *Info:* Using this feature can be useful to restart a service after altering its configuration.
+- Restart the cron service with `systemctl` and check its status to ensure it restarted properly. *Info:* Using this feature can be useful to restart a service after altering its configuration.
