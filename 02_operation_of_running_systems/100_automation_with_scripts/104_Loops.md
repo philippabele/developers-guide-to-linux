@@ -47,4 +47,4 @@ done
 Until loops till a value isn't satisfied anymore. It can be compared to a negative while loop `while [ !0 ]` is the same as `until[ 0 ]`.
 
 ## Exercise
-To put the learned together, write a script, which endlessly loops and echoes 'Too much files in here!' in case there are 5 or more files in the directory it is executed in. **Hint:** Combine the `ls` and `wc` commands to get the count of files.
+To put the learned together, write a script, which endlessly loops and echoes 'Too much files in here!' in case there are 5 or more files in the directory it is executed in.
