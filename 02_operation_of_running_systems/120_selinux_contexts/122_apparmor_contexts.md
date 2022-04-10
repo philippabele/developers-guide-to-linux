@@ -73,7 +73,8 @@ The following access controls can be used:
 Rules can be preceded by `allow` (default -> has not to be written) or `deny` to apply the corresponding action.
 
 # Exercise
-Write an AppArmor Profile for the imaginary application *foobar* granting it write access to */tmp*. Include the `base` abstraction.
+- Write an AppArmor Profile for the imaginary application *foobar* granting it write access to */tmp*. Include the `base` abstraction.
+- Read into the */etc/apparmor.d/abstractions* file to understand what is does. 
 
 
 
