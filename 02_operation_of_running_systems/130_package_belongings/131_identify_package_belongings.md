@@ -1,5 +1,5 @@
 # Identify Package Belongings
-This section is based on the [Ubuntu documentation](https://wiki.ubuntuusers.de/apt-file/)
+This section is based on the [Ubuntu documentation](https://wiki.ubuntuusers.de/apt-file/) and a [LinuxAudit Article](https://linux-audit.com/determine-file-and-related-package/).
 On systems using `apt` as a package manager the tool `apt-file` can be used to determine which package a file belongs to.
 
 ## Commands
