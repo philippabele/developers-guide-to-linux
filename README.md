@@ -11,9 +11,8 @@
     - [x] Create and manage hard and soft links
     - [x] List, set, and change standard file permissions
     - [x] Read, and use system documentation
-    - [x] Manage access to the root account
 
-- [x] Operation of Running Systems 20%
+- [ ] Operation of Running Systems 20%
     - [x] Boot, reboot, and shut down a system safely
     - [x] Boot or change system into different operating modes
     - [x] Install, configure and troubleshoot bootloaders
@@ -38,6 +37,7 @@
     - [x] Manage template user environment
     - [x] Configure user resource limits
     - [x] Manage user privileges
+        + [x] Manage access to the root account   
     - [x] Configure PAM
 
 - [ ] Networking 12%
