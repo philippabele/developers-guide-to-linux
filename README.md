@@ -12,7 +12,7 @@
     - [x] List, set, and change standard file permissions
     - [x] Read, and use system documentation
 
-- [ ] Operation of Running Systems 20%
+- [x] Operation of Running Systems 20%
     - [x] Boot, reboot, and shut down a system safely
     - [x] Boot or change system into different operating modes
     - [x] Install, configure and troubleshoot bootloaders
@@ -27,8 +27,8 @@
     - [x] Use scripting to automate system maintenance tasks
     - [x] Manage the startup process and services (In Services Configuration)
     - [x] List and identify SELinux/AppArmor file and process contexts
-    - [ ] Manage Software
-    - [ ] Identify the component of a Linux distribution that a file belongs to
+    - [x] Manage Software
+    - [x] Identify the component of a Linux distribution that a file belongs to
 
 - [x] User and Group Management 10%
     - [x] Create, delete, and modify local user accounts
