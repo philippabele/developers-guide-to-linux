@@ -1,5 +1,5 @@
 # students-guide-to-linux
-- [ ] Essential Commands 25%
+- [x] Essential Commands 25%
     - [x] Log into local & remote graphical and text mode consoles
     - [x] Search for files
     - [x] Evaluate and compare the basic file system features and options
