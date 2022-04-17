@@ -67,6 +67,19 @@ Network destinations can be applied in the following forms:
 - Network Address + Subnet Mask
 - IP-Address
 
+## Persistance
+
+Updates made via iptables will be temporary and reset after a reboot. To make the changes persistent the command `iptables-save` and redirecting the output to */etc/iptables/rules.v4* (for Debian) will make the changes persistent between reboots:
+
+``` bash
+# Debian
+iptables-save > /etc/iptables/rules.v4
+# RedHat
+iptables-save > /etc/sysconfig/iptables
+```
+
+Taken from [here](https://www.thomas-krenn.com/de/wiki/Iptables_Firewall_Regeln_dauerhaft_speichern).
+
 ## Example
 An exemplary rule can look like this:
 
