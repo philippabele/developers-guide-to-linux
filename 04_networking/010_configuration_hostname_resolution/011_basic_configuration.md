@@ -1,5 +1,5 @@
 # Basic Network Configuration
-This section is based on an [LinuxConfig article](https://linuxconfig.org/etcnetworkinterfacesto-connect-ubuntu-to-a-wireless-network) and a [Stackoverflow post](https://askubuntu.com/a/713941)
+This section is based on an [LinuxConfig article](https://linuxconfig.org/etcnetworkinterfacesto-connect-ubuntu-to-a-wireless-network), a [Stackoverflow post](https://askubuntu.com/a/713941) and the [Ubuntu Wiki](https://wiki.ubuntuusers.de/systemd/networkd/)
 On Debian network interfaces are defined in the */etc/network/interfaces* file. This file includes the files in */etc/network/interfaces.d*.
 
 ## WLAN
@@ -26,6 +26,9 @@ WLAN as well as ethernet are configured to retrieve their IP address via dhcp.
 The system has to bw restarted to apply the settings.
 
 The `auto` tag ensures the interfaces are brought up on startup.
+
+## The Networking Service
+The default networking service on Ubuntu is `systemd-networkd`. Systemctl can be used to start, stop, enable and disable it and to check its status as seen in the file **111_manage_startup_services**.
 
 ## Exercise
 - View the network devices on your machine.
