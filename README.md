@@ -40,7 +40,7 @@
         + [x] Manage access to the root account   
     - [x] Configure PAM
 
-- [x] Networking 12%
+- [ ] Networking 12%
     - [x] Configure networking and hostname resolution statically or dynamically
     - [x] Configure network services to start automatically at boot
     - [x] Implement packet filtering
