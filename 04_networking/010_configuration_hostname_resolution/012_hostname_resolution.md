@@ -1,6 +1,6 @@
 # Hostname Resolution
 This chapter is based on the [freedesktop documentation](https://www.freedesktop.org/software/systemd/man/resolvectl.html).
-Hostnames are a human readable identifier to indentify network devices. A hostname points to the IP of a device. To be able to connect to a device its hostname has to be resolved to its IP address. This is done by hostname resolution.
+Hostnames are a human readable identifier to identify network devices. A hostname points to the IP of a device. To be able to connect to a device its hostname has to be resolved to its IP address. This is done by hostname resolution.
 
 ## Static Resolution
 On Linux systems static domain name resolution can be defined in the file */etc/hosts*:
