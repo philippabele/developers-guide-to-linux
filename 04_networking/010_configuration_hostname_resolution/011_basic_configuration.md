@@ -23,8 +23,6 @@ The interface `wlan0` has to be replaced with the actual interface, which can be
 
 The above example shows an output of `ip a`, the wlan interface `wlp3s0` and the ethernet interface `enp2s0f0` can be identified.
 
-
-
 ## Ethernet
 To configure a ethernet interface use the following content:
 
@@ -34,7 +32,7 @@ iface eth0 inet dhcp
 ```
 
 WLAN as well as ethernet are configured to retrieve their IP address via dhcp.
-The system has to bw restarted to apply the settings.
+The system has to be restarted to apply the settings.
 
 The `auto` tag ensures the interfaces are brought up on startup.
 
