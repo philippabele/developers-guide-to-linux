@@ -40,13 +40,13 @@
         + [x] Manage access to the root account   
     - [x] Configure PAM
 
-- [ ] Networking 12%
+- [x] Networking 12%
     - [x] Configure networking and hostname resolution statically or dynamically
     - [x] Configure network services to start automatically at boot
     - [x] Implement packet filtering
-    - [ ] Start, stop, and check the status of network services
-    - [ ] Statically route IP traffic
-    - [ ] Synchronize time using other network peers
+    - [x] Start, stop, and check the status of network services
+    - [x] Statically route IP traffic
+    - [x] Synchronize time using other network peers
 
 - [ ] Service Configuration20%
     - [ ] Configure a caching DNS server
