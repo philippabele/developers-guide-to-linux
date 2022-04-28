@@ -18,11 +18,6 @@ listen-on port 53 { 127.0.0.1; any; };
 allow-query { localhost; any; };
 allow-query-cache { localhost; any; };
 ```
-And enable recursion:
-
-```
-recursion yes;
-```
 
 ## Iterative and Recursive DNS
 When querying iterative the DNS request is forwarded by DNS server to the next responsible DNS server. This results in the client communicating directly to the involved DNS servers. 
