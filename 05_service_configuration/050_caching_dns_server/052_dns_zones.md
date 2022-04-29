@@ -1,5 +1,5 @@
 # DNS Zones
-Based on this this [Ubuntu Wiki](https://wiki.ubuntuusers.de/DNS-Server_Bind/#Das-Anlegen-der-Zonendateien) article, the examples are taken from there.
+Based on this [Ubuntu Wiki](https://wiki.ubuntuusers.de/DNS-Server_Bind/#Das-Anlegen-der-Zonendateien) article, the examples are taken from there.
 
 DNS Zones are 
 
@@ -91,5 +91,5 @@ $TTL 2D
 Here the `PTR` entry type comes to use. The numbers in the first row represent the last byte of the IP address.
 
 ## Exercise:
-Read more about DNS on [Wikipedia](https://en.wikipedia.org/wiki/Domain_Name_System) if you want to learn more.
+Read the [Wikipedia article](https://en.wikipedia.org/wiki/Domain_Name_System) on DNS if you want to learn more.
 
