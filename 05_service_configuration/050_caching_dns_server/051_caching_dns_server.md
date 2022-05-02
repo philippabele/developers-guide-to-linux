@@ -1,5 +1,5 @@
 # Configure a Caching DNS Server
-This section is based on this [cloudflare article](https://www.cloudflare.com/learning/dns/what-is-recursive-dns/) and this [LinuxTeck guide](https://www.linuxteck.com/how-to-setup-caching-dns-server-in-centos-rhel-7-6/).
+This section is based on a [cloudflare article](https://www.cloudflare.com/learning/dns/what-is-recursive-dns/) and a [LinuxTeck guide](https://www.linuxteck.com/how-to-setup-caching-dns-server-in-centos-rhel-7-6/).
 
 ## Bind
 The package *BIND* provides the service *named* which can serve as a caching DNS server. The caching server is able to cache queries for a certain time - TTL (Time to Live). This allows for faster response times. 
