@@ -1,11 +1,3 @@
-- Download and install Docker Desktop
-
-- run bash in an ubuntu base image
-
-- echo hello world
-
-!In Progress!
-
 # Hello World!
 
 To get started with Linux administration, a Ubuntu base Image will be set up in Docker and we will have it print "Hello World!"
