@@ -1,4 +1,4 @@
-# Nginx Web Server
+# NGINX Web Server
 
 This section is based on the [Nginx website](https://www.nginx.com/) and d[ocumentation](https://docs.nginx.com/nginx/admin-guide/web-server/serving-static-content/).
 
