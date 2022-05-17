@@ -13,17 +13,17 @@ To configure a temporal IP route the command `ip route` with the following opeat
 - append: `ip route append <destination>/<netmask> <gateway>`
 - replace: `ip route replace <destination>/<netmask> <gateway>`
 
-``` bash
+~~~~ bash
 # add a route to statically rout the ip address 192.0.2.1 over the address 10.0.0.1 as a hop/gateway
 ip route add 192.0.2.1 via 10.0.0.1
-```
+~~~~
 
 The address to route also can be specified as a combination of IP address and netmask.
 
 ## Permanent IP Routing
 Routes created by the ip command will only be applied temporally. To make the route permanent it has to be added to the file */etc/netplan/50-cloud-init.yaml* with the following syntax:
 
-```
+~~~~
 network:
     ethernets:
         enp0s3:
@@ -36,7 +36,7 @@ network:
             - to: 172.16.0.0/24
               via: 192.168.1.100
     version: 2
-```
+~~~~
 *Taken from [here](https://linuxconfig.org/how-to-add-static-route-with-netplan-on-ubuntu-20-04-focal-fossa-linux)*
 
 In the example the addresses `172.16.0.0/24` will be routed over the gateway `192.168.1.100` this applies to the interface `enp0s3`.

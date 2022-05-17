@@ -13,7 +13,7 @@ It has 3 important operational flags:
 
 The flags are used in the example below:
 
-```bash
+~~~~bash
 # Deletes the file samplefile after asking for confirmation
 rm -i samplefile
 
@@ -22,7 +22,7 @@ rm -r sampledir
 
 # Deletes the writeprotected file writeprotectedsample without asking for confirmation
 rm -f writeprotectedsample
-```
+~~~~
 
 ## Exercice:
 Use the script `020_testenv.sh` to create testfiles in your current folder and write a script to delete the folder *somedir* and its write protected contents without being asked for confirmation.

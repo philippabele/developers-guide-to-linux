@@ -6,7 +6,7 @@ This section is based on the [SUSE Documentation](https://documentation.suse.com
 AppArmor policies are defined in sol called profiles. The profiles are typically found in */etc/apparmor.d*
 An exemplary AppArmor Profile can be seen below:
 
-``` bash
+~~~~ bash
 ## App Armor Profiles offer the possibility to include extra files.
 ## In this case a file containing variable definitions is included.
 #include <tunables/global>
@@ -55,7 +55,7 @@ An exemplary AppArmor Profile can be seen below:
       /etc/foobar        r,
    }
 }
-```
+~~~~
 Taken from [here](https://documentation.suse.com/sles/12-SP4/html/SLES-all/cha-apparmor-profiles.html#sec-apparmor-profiles-parts).
 
 The following access controls can be used:

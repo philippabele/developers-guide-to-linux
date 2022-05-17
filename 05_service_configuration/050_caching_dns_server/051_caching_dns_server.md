@@ -13,11 +13,11 @@ Per default the installed service will cache DNS queries.
 To configure the *named* service the file */etc/named.conf* has to be edited. 
 In the default configuration the DNS server accepts from localhost. To allow traffic from other systems add the statement any to the following lines:
 
-```
+~~~~
 listen-on port 53 { 127.0.0.1; any; };
 allow-query { localhost; any; };
 allow-query-cache { localhost; any; };
-```
+~~~~
 
 ## Iterative and Recursive DNS
 When querying iterative the DNS request is forwarded by DNS server to the next responsible DNS server. This results in the client communicating directly to the involved DNS servers. 

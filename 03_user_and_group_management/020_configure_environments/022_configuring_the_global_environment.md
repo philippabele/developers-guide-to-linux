@@ -17,9 +17,9 @@ This file (on Debian /etc/bash.bashrc) gets executed for each user when opening 
 This file is read on each login. The difference between the other two is, that it is no script but rather contains variable definitions directly.
 Variables like *http_proxy* for Proxy configuration can be placed here:
 
-``` bash
+~~~~ bash
 http_proxy = "https://proxyurl.tld:port"
-```
+~~~~
 
 ## Exercise
 Place a script in */etc/profile.d* that greets each new login with "Hi there from \<your name\>".

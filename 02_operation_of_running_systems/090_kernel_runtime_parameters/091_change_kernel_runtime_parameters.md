@@ -22,26 +22,26 @@ A full list of variables can be viewed with the `sysctl` command and the `-a` fl
 
 To alter the value of a kernel runtime parameter temporally use sysctl like the following:
 
-``` bash
+~~~~ bash
 sysctl <class>.<parameter>=<value>
-``` 
+~~~~ 
 
 ## Configure Parameters Permanently
 
 To alter a runtime parameter permanently redirect the output to of the above command to be appended to the configuration file */etc/sysctl.conf*:
 
-``` bash
+~~~~ bash
 sysctl <class>.<parameter>=<value> >> /etc/sysctl.conf
-```
+~~~~
 
 Alternatively the configuration files in */etc/sysctl.d/* can be modified manually. Either create a new file or modify an existing one in */etc/sysctl.d/*, the files have to contain one value assignment per line:
 
-```
+~~~~
 <class0>.<parameter0>=<value0>
 <class1>.<parameter1>=<value1>
 ...
 <classN>.<parameterN>=<valueN>
-```
+~~~~
 
 ## Example
 

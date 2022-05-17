@@ -9,9 +9,9 @@ Linux systems can be safely shutdown with the command `shutdown` it offers a var
 
 A new shutdown is planned by typing: 
 
-``` bash
+~~~~ bash
 shutdown -h 10
-```
+~~~~
 
 The above example will schedule a shutdown of the system 10 minutes form now.
 To shutdown a system instantly the time `now` can be specified.

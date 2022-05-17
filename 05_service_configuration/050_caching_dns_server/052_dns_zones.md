@@ -9,18 +9,18 @@ In Reverse Lookup the DNS server is responsible for resolving the IP address to 
 ## Defining Zones
 When configuring a new zone two files have to be created, one for the forward lookup and one for the reverse lookup. The naming convention of the files is the following:
 
-``` bash
+~~~~ bash
 # Forward Lookup
 db.domainname
 # Reverse Lookup
 db.z.y.x
 # z.y.x being parts of the IP address x.y.z (192.168.0.* -> db.0.168.192)
 # note the reverse order!
-```
+~~~~
 
 An exemplary forward lookup file looks like this:
 
-```
+~~~~
 ;; db.domainname
 ;; Forwardlookupzone für domainname
 ;;
@@ -41,7 +41,7 @@ localhost                       IN      A       127.0.0.1
 rechner1                        IN      A       192.168.0.200
 mailserver                      IN      A       192.168.0.201
 rechner2                        IN      CNAME   mailserver
-```
+~~~~
 
 ### Forward Lookup
 
@@ -69,7 +69,7 @@ The entry types being the following:
 
 An exemplary reverse lookup file looks like this:
 
-```
+~~~~
 ;; db.0.168.192
 ;; Reverselookupzone für domainname
 ;;
@@ -86,7 +86,7 @@ $TTL 2D
 10      IN      PTR     rechnername.domainname.
 200     IN      PTR     rechner1.domainname.
 201     IN      PTR     rechner2.domainname.
-```
+~~~~
 
 Here the `PTR` entry type comes to use. The numbers in the first row represent the last byte of the IP address.
 
