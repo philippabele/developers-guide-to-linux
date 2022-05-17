@@ -5,15 +5,14 @@ This Topic is dealt with in Chapter **4 - rm** of The Linux Command Line.
 The `rm` command is used to delete files and folder on the Linux Command Line.
 It has 3 important operational flags:
 
-| **Flag**  | **Long**      | **Usage**                                                                                                 |
-|---        |---            |---                                                                                                        |
-| -i        | --interactive | Prompt for confirmation before deleting                                                                   |
-| -r        | --recursive   | Recursively delete -> Delete subfolders and files                                                         |
-| -f        | --force       | do not ask before deleting write protected files, ignore non existent files; **overrides** interactive    |
+
+- **-i** - *--interactive* - Prompt for confirmation before deleting
+- **-r** - *--recursive* - Recursively delete -> Delete subfolders and files
+- **-f** - *--force* - do not ask before deleting write protected files, ignore non existent files; **overrides** interactive
 
 The flags are used in the example below:
 
-~~~~bash
+~~~~ bash
 # Deletes the file samplefile after asking for confirmation
 rm -i samplefile
 
