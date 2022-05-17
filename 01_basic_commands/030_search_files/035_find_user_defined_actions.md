@@ -1,4 +1,4 @@
-## User Defined Actions
+### User Defined Actions
 It is possible to execute user defined actions on results of the find command by adding the pattern below:
 
 ~~~~ bash

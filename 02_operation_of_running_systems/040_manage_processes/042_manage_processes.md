@@ -1,13 +1,13 @@
-## Manage Processes
+### Manage Processes
 Processes can be controlled by signals sent via the terminal.
 
-### List Processes
+#### List Processes
 To get an interactive view over the current processes `top` can be used.
 The tool `ps` gives a static list of the processes of the current session. To see every process on the system the flag `-e` can be used: `ps -e`
 The tool `pstree` shows processes and their parents in a tree-like view.
 The tool `pidof` can be used to find PIDs of a program if it has been started as a process.
 
-### Send signals to processes
+#### Send signals to processes
 The tool `kill` is used to send signals to processes, some useful signals are listed below:
 - **Kernel Signals** - The receiver of this signals is the kernel
   +  9 - SIGKILL/KILL - The process is killed by the kernel
@@ -28,5 +28,5 @@ kill <PID> # Kill alone sent SIGTERM -> kill -SIGTERM <PID>
 
 To let the process 500 be killed by the kernel we would send `kill -9 500`.
 
-### Exercise
+#### Exercise
 Create a process by sending the program `sleep 300` to the background. Kill the PID displayed when sending it to the background via the kernel.

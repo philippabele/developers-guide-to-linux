@@ -1,4 +1,4 @@
-### Logical Operators
+#### Logical Operators
 The `find` command allows combination of tests via logical operators to search for files more granular. The available logical operators are listed below:
 
 - **-and/-a** - True if the tests on both sides are true (Implied as default, when no operator used)

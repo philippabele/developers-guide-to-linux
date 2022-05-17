@@ -1,4 +1,4 @@
-## Boot Loader Basics
+### Boot Loader Basics
 This chapter is based on Chapter 27.4 of Linux - Rheinwerk and the [Ubuntu Documentation](https://wiki.ubuntuusers.de/GRUB_2/Installation/)
 
 The boot loader is placed in the master boot record of a hard drive. Typically a boot loader offers multiple selectable operating systems to start. 

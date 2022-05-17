@@ -1,4 +1,4 @@
-## Different Operating Modes of a Linux System
+### Different Operating Modes of a Linux System
 A Linux System can be run in **Text Console Mode** and **GUI Mode** if a GUI is installed.
 For the pure Terminal Mode the virtual tty (teletype) terminals are used.
 Linux systems have 7 virtual terminals: tty1 to tty7.

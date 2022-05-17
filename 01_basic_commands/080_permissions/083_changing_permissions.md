@@ -1,4 +1,4 @@
-## Changing Permissions of a File
+### Changing Permissions of a File
 To change the permissions of a file the command `chmod` is used.
 
 ~~~~ bash
@@ -6,7 +6,7 @@ chmod u+w output
 ~~~~
 In the above example the *u*ser (owner) of the file output gets granted write permissions on it.
 
-### Additive/Subtractive Model
+#### Additive/Subtractive Model
 As shown above the entity you want to grant/revoke permissions is selected via its initial:
 - u: user/owner
 - g: group
@@ -24,7 +24,7 @@ Some examples:
 - see the man page line 220 for more
 
 
-### Number-Based Model
+#### Number-Based Model
 Imagine each flag of a rights triplet gets assigned a number:
 - r: 4
 - w: 2
@@ -38,6 +38,6 @@ chmod 0644 output
 ~~~~
 The leading zero can be left out, it is used to express an octal value (0644 (octal) -> 0b 110 100 100 (binary)).
 
-### Exercise
+#### Exercise
 - Create the file `examplefile` and revoke all permissions of group and other.
 - Read the man page if `chmod` to learn more about it.

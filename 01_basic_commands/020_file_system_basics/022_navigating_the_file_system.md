@@ -1,7 +1,7 @@
-## Navigating the File System
+### Navigating the File System
 This section will describe how to find your way through the file system.
 
-### Useful commands
+#### Useful commands
 - `cwd`: The command `cwd` will output the path to the directory you are currently in. 
 - `cd`: change your cwd (use .. to get into the directory above the one you are currently in).
   - Useful Shortcuts:
@@ -17,7 +17,7 @@ This section will describe how to find your way through the file system.
     - g: jump to the beginning of the file
     - G: jump to the end of the file
 
-### Exercise 
+#### Exercise 
 Explore the file system and get to know the navigation commands.
 
 
