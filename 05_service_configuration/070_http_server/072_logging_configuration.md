@@ -30,7 +30,7 @@ log_format access '$remote_addr - $remote_user [$time_local] '
 access_log /var/log/nginx/access.log access;
 ```
 
-In example at first the log format is defined to the tags preceded by a `$` are replaced by the corresponding values. After the format definition the access log is configured to log to the file `/var/log/nginx/access.log` with the log format defined (`access`).
+In the example above as a first action the log format is defined. The tags preceded by a `$` are replaced by the corresponding values of the http request. After the format definition the access log is configured to log to the file `/var/log/nginx/access.log` with the log format defined (`access`).
 
 ## Exercise
 If you want to learn more about nginx read the [online documentation](https://nginx.org/en/docs/).
