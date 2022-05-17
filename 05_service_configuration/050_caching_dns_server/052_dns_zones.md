@@ -1,21 +1,21 @@
-# DNS Zones
+## DNS Zones
 Based on this [Ubuntu Wiki](https://wiki.ubuntuusers.de/DNS-Server_Bind/#Das-Anlegen-der-Zonendateien) article, the examples are taken from there.
 
 DNS Zones are 
 
-## Forward vs. Forward Lookup
+### Forward vs. Forward Lookup
 In Reverse Lookup the DNS server is responsible for resolving the IP address to the hostname. In Forward Lookup the DNS server is responsible for resolving the hostname to the IP address.
 
-## Defining Zones
+### Defining Zones
 When configuring a new zone two files have to be created, one for the forward lookup and one for the reverse lookup. The naming convention of the files is the following:
 
 ~~~~ bash
-# Forward Lookup
+## Forward Lookup
 db.domainname
-# Reverse Lookup
+## Reverse Lookup
 db.z.y.x
-# z.y.x being parts of the IP address x.y.z (192.168.0.* -> db.0.168.192)
-# note the reverse order!
+## z.y.x being parts of the IP address x.y.z (192.168.0.* -> db.0.168.192)
+## note the reverse order!
 ~~~~
 
 An exemplary forward lookup file looks like this:
@@ -43,7 +43,7 @@ mailserver                      IN      A       192.168.0.201
 rechner2                        IN      CNAME   mailserver
 ~~~~
 
-### Forward Lookup
+#### Forward Lookup
 
 The time to life (`TTL`) specifies the time frame information is cached.
 After the `TTL` entry the `SOA` (Start of Authority resource records) entry is defined. It specifies the following values:
@@ -65,7 +65,7 @@ The entry types being the following:
 - `MX` - **value:** priority, hostname - *mail-server for the domain + priority -> servers with low priority will be tried first.*
 - `PTR` - **value:** FQDN - *reverse lookup IP -> name (e.g. foo.example.com)*
 
-### Reverse Lookup
+#### Reverse Lookup
 
 An exemplary reverse lookup file looks like this:
 
@@ -90,6 +90,6 @@ $TTL 2D
 
 Here the `PTR` entry type comes to use. The numbers in the first row represent the last byte of the IP address.
 
-## Exercise:
+### Exercise:
 Read the [Wikipedia article](https://en.wikipedia.org/wiki/Domain_Name_System) on DNS if you want to learn more.
 

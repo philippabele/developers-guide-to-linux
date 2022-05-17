@@ -1,8 +1,8 @@
-# Search For Files
+## Search For Files
 
 Multiple approaches for searching for files are offered. If you are searching for a file by its file name `locate` is the choice, `find` is used to search for files by its attributes, `grep` allows searching for files via their content.
 
-## The `locate` command
+### The `locate` command
 
 Locate performs a database search for paths matching the search term.
 

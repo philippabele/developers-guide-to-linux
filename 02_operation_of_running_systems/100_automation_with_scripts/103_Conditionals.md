@@ -1,4 +1,4 @@
-# Conditionals
+## Conditionals
 Conditionals can be used to execute tasks if a condition is met. A conditional block is started with `if` and closed with `fi`. 
 
 ~~~~ bash
@@ -21,5 +21,5 @@ Examples for other binary operators that can be used in comparisons are:
 - `-ge` - greater or equal
 - `-gt` - greater than
 
-## Exercise
+### Exercise
 Write a script, which checks the count of files in the folder it is executed and echoes 'Too much files!' if there are 5 or more files in the folder.

@@ -1,20 +1,20 @@
-### HTTP Proxy Access
+#### HTTP Proxy Access
 This chapter is based on the [Squid documentation](https://wiki.squid-cache.org/ConfigExamples/Authenticate/Ncsa).
 Squid is a common proxy server that can be used for HTTP, HTTPS and FTP. In this section squid will be used to demonstrate the restriction of access to a http proxy.
 
-#### Squid Installation 
+##### Squid Installation 
 To get squid install the package *squid*.
 
-#### Squid Basic Authentication
+##### Squid Basic Authentication
 Basic password authentication can be achieved with the `ncsa` authentication scheme.
 To authenticate with `ncsa` a passwd file has to be created with the `htpasswd` tool:
 
 ~~~~ bash
-### New Password File
+#### New Password File
 htpasswd -c -nbm /etc/squid/passwords username password
-### Adding Users
+#### Adding Users
 htpasswd -nbm /etc/squid/passwords username password
-### Delete Users
+#### Delete Users
 htpasswd -D -nbm /etc/squid/passwords username password
 ~~~~
 The example will create a password file in the directory `/etc/squid/passwords`.
@@ -44,5 +44,5 @@ http_access deny all
 ~~~~
 As the `http_access` tags are evaluated from top to bottom, the first matching rule will be used. So to block all requests without authentication the `http_access deny !auth` and `http_access allow auth` have to be at the beginning of the block.
 
-#### Exercise
+##### Exercise
 Read the [squid wiki](https://wiki.squid-cache.org/) if you want to learn more about squid.

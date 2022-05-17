@@ -1,17 +1,17 @@
-# Apparmor
+## Apparmor
 Apparmor is an other MAC tool, it is commonly used on **Debain** based systems.
 This section is based on the [SUSE Documentation](https://documentation.suse.com/sles/12-SP4/html/SLES-all/cha-apparmor-profiles.html#sec-apparmor-profiles-parts)
 
-## AppArmor Profiles
+### AppArmor Profiles
 AppArmor policies are defined in sol called profiles. The profiles are typically found in */etc/apparmor.d*
 An exemplary AppArmor Profile can be seen below:
 
 ~~~~ bash
-## App Armor Profiles offer the possibility to include extra files.
-## In this case a file containing variable definitions is included.
-#include <tunables/global>
+### App Armor Profiles offer the possibility to include extra files.
+### In this case a file containing variable definitions is included.
+##include <tunables/global>
 
-## naming the application to confine and starting the block defining it 
+### naming the application to confine and starting the block defining it 
 /usr/bin/foo {
    ## Inclusion of an Abstraction
    ## Abstractions offer predefined templates for different use cases.
@@ -72,7 +72,7 @@ The following access controls can be used:
 
 Rules can be preceded by `allow` (default -> has not to be written) or `deny` to apply the corresponding action.
 
-# Exercise
+## Exercise
 - Write an AppArmor Profile for the imaginary application *foobar* granting it write access to */tmp*. Include the `base` abstraction.
 - Read into the */etc/apparmor.d/abstractions* file to understand what is does. 
 

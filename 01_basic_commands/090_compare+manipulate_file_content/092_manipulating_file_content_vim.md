@@ -1,4 +1,4 @@
-# Manipulating File Content Using Vim
+## Manipulating File Content Using Vim
 The command line editor Vim can be used to manipulate the content of a file.
 After opening the editor using `vim file` it is in command mode. The editor has multiple modes and commands:
 
@@ -21,8 +21,8 @@ The most important commands are:
 
 Press ESC form any mode to get back to command mode
 
-## Vimdiff
+### Vimdiff
 Call vim with the flag `-d` and two files as arguments to get the differences between the files highlighted.
 
-## Exercise
+### Exercise
 Remove the difference between the files testfile1 and testfile2 in testfile2 using vim.

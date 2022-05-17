@@ -1,7 +1,7 @@
-# Output Redirection
+## Output Redirection
 In this chapter the functionality of output redirection will be discussed
 
-## Ouput Redirection Overwriting
+### Ouput Redirection Overwriting
 To redirect the output into a file the operator `>` is used. Using `>` will overwrite the contents of the destination file given.
 In the example the output of the command `ls -la` will be written into the file *ls-output*
 
@@ -23,7 +23,7 @@ drwxr-xr-x 5 dummy dummy 4096 Jan 25 10:42 01_basic_commands
 ~~~~
 
 
-## Output Redirection Appending
+### Output Redirection Appending
 
 By using the `>>` operator output will be appended to the specified file if we repeat the above example our file should look like this:
 
@@ -44,7 +44,7 @@ drwxr-xr-x 5 dummy dummy 4096 Jan 25 10:42 01_basic_commands
 -rw-r--r-- 1 dummy dummy 3605 Jan 25 10:38 README.md
 ~~~~
 
-## Error Redirection
+### Error Redirection
 
 The standard error can be redirected with `2>`/`2>>`. In the example it is tried to list the content of a restricted folder resulting in an error.
 
@@ -58,9 +58,9 @@ Again we won't see an output, but our file will look like this:
 ls: cannot open directory '/root': Permission denied
 ~~~~
 
-## Redirect Both Outputs
+### Redirect Both Outputs
 
 To redirect bot outputs the `&>`/`&>>` operators can be used.
 
-## Exercise
+### Exercise
 Experiment with output redirection to see how it works. For example use `echo foo > output` to write foo to the file output and overwrite or append content.
