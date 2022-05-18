@@ -30,9 +30,9 @@ The following resource *items* can be limited (taken from */etc/security/limits.
 The syntax for defining new limits is: `<domain> <type> <item> <value>`
 For example:
 
-```
+~~~~~
 @student        hard    nproc           40
-```
+~~~~~
 
 The above example grants a member of the group student a maximum count of 40 processes.
 

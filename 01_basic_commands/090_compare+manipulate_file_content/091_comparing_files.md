@@ -4,18 +4,18 @@ As learned in the previous chapter file content can be viewed using the commands
 The contents can be compared manually by viewing them with the above commands, or the command `diff` can be used.
 The tool gets called as follows:
 
-``` bash 
+~~~~~ bash 
 diff file1 file2
-```
+~~~~~
 
 The output will highlight the differences between the files:
 
-```
+~~~~~
 3c3
 < an exemplary line
 ---
 > a difference
-```
+~~~~~
 
 The differing line is displayed above.
 

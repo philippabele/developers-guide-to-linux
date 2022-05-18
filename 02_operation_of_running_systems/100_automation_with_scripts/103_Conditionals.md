@@ -1,7 +1,7 @@
 # Conditionals
 Conditionals can be used to execute tasks if a condition is met. A conditional block is started with `if` and closed with `fi`. 
 
-``` bash
+~~~~~ bash
 var=5
 if [ var = 5 ]
 then
@@ -9,7 +9,7 @@ then
 else
     echo var is not 5
 fi
-```
+~~~~~
 
 An overview of bash test and conditional operators, which can be used for conditionals can be found on [this cheatsheet](https://kapeli.com/cheat_sheets/Bash_Test_Operators.docset/Contents/Resources/Documents/index) and on the bash man page.
 

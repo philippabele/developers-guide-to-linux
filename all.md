@@ -9,10 +9,10 @@ Open a console (PowerShell or CMD) an enter the following command `docker pull u
 
 Docker will start pulling the Ubuntu image. After pulling the image you can view it with the command `docker image ls`. The Ubuntu image should show up in the resulting list.
 
-```
+~~~~~
 REPOSITORY   TAG       IMAGE ID       CREATED       SIZE
 ubuntu       latest    597ce1600cf4   13 days ago   72.8MB
-```
+~~~~~
 
 ## Start the Docker Image and Open a Shell in It
 
@@ -21,9 +21,9 @@ The command `docker ps -a` will list the running containers.
 
 The container we just sterted should appear here.
 
-```
+~~~~~
 Insert Container List here
-```
+~~~~~
 
 Now we have a virtualized Ubuntu image running in Docker. The next step is to start a shell in this image to work with it. To start a shell in this image we use the command `docker exec -it <container name> /bin/bash`.
 
@@ -33,9 +33,9 @@ Now we are working with the shell we just started on our command line.
 
 To let the shell greet the world the command `echo` will be used. The string to be put out on the shell ('Hello World!'), is supplied as an argument to `echo`. 
 
-```
+~~~~~
 echo 'Hello World!'
-```
+~~~~~
 # The file system Outline
 
 Like in Windows files in Linux/Unix are organized in a file tree. The first folder in this tree is called the root folder. While Windows has a separate tree for every device, devices get assigned a folder in the directory tree in Linux.
@@ -100,17 +100,17 @@ Multiple approaches for searching for files are offered. If you are searching fo
 
 Locate performs a database search for paths matching the search term.
 
-``` bash
+~~~~~ bash
 locate Pictures/Screenshot
-```
+~~~~~
 The above command will search for all files and folders starting with `Screenshot-` laying under a location containing `Pictures`. It simply searches for the specified search term in the full path of a file. An exemplary result of the command can be seen below:
 
-```
+~~~~~
 /home/user/Desktop/backup/Pictures/Screenshots
 /home/user/Desktop/backup/Pictures/Screenshots/35574917.png
 /home/user/Desktop/backup/Pictures/Screenshots/Screenshot_20210208_093220.png
 /home/user/Pictures/Screenshot_20210921_224523.png
-```
+~~~~~
 
 Exercise:
 *Use locate to list all .bak files on the system.*
@@ -119,21 +119,21 @@ Exercise:
 
 To search for files by file attributes the `find` command is used.
 Find requires only the path to search in as an argument. If you give your home-path `~` to it. It lists all files and folders located in your home directory, as we didn't specify what to search for.
-``` bash
+~~~~~ bash
 find ~
-```
+~~~~~
 
 To specify what to search for flags are used: 
 
-``` bash
+~~~~~ bash
 find ~ -name "Screenshot*"
-```
+~~~~~
 The above command searches for all files and directories beginning with the word `Screenshot` the asterisk is used as a wildcard for a unknown number of unknown chars.
 Find offers a number of such search flags which help to narrow the search down further.
 
-``` bash
+~~~~~ bash
 find ~ -name "Screenshot*" -type f 
-```
+~~~~~
 This command limits the search to results of the type **f**ile.
 
 | File Type | Description                   |
@@ -166,9 +166,9 @@ The `find` command allows combination of tests via logical operators to search f
 
 The example below searches for *png* and *pdf* (`-name "*.png" -or -name "*.pdf"`; `-type f`) files, in the home dir of the current user (`~`), owned by the user *dummy* (`-user dummy`)
 
-``` bash
+~~~~~ bash
 find ~ \( -name "*.png" -or -name "*.pdf" \) -type f -user dummy
-```
+~~~~~
 
 Exercise:
 *List all files owned by root or the current logged in user (find out username with `whoami`) in /home.*# Actions
@@ -179,22 +179,22 @@ Find can be used to execute actions on the files found.
 
 Find offers predefined actions, which can be seen in by calling `find --help`
 
-```
+~~~~~
 actions: -delete -print0 -printf FORMAT ...
-```
+~~~~~
 
 The core actions are explained in **The Linux Command Line** in the subchapter *17 - find - Predefined Actions*
 
 The example below will delete all screenshot files of the current user.
 
-``` bash
+~~~~~ bash
 find ~ -name "Screenshot*" -type f -delete
-```
+~~~~~
 The order of the tests and actions is important as by leaving the logical operator between the tests an `-and` is implied. 
 
-``` bash
+~~~~~ bash
 find ~ -name "Screenshot*" -and -type f -and -delete
-```
+~~~~~
 Order of execution:
 - 1. `-name "Screenshot*"` is executed first, without any dependencies
 - 2. `-type f` is executed second, in case `-name "Screenshot*"` matched
@@ -202,9 +202,9 @@ Order of execution:
 
 As the print statement is connected with an `-or` in the example below, it will be executed independent from the statements before, printing all files.
 
-``` bash
+~~~~~ bash
 find ~ -name "Screenshot*" -and -type f -or print
-```
+~~~~~
 
 Exercise:
 *Delete all .bak files in the example directory tree.*
@@ -212,17 +212,17 @@ Exercise:
 # User Defined Actions
 It is possible to execute user defined actions on results of the find command by adding the pattern below:
 
-``` bash
+~~~~~ bash
 -exec command {} ;
-```
+~~~~~
 
 The `{}` is the symbolic representation of the results pathname. The `;` serves as a delimiter for the command. Instead of `;`, `+` can be used. With the semicolon the action will get executed for every result in once. By using the plus as a delimiter, find will combine pathnames and execute them at once, making the command more efficient.
 
 The above example of deleting screenshots would look like this with a user defined action:
 
-``` bash
+~~~~~ bash
 find ~ -name "Screenshot*" -type f -exec rm '{}' '+'
-```
+~~~~~
 
 Exercise:
 *Create a Bash script, which adds read privileges to all .log files in the exemplary folder structure for the current user. Tip: To add read privileges for the current user use `chmod u+r <filename>`*# Search for file content
@@ -233,9 +233,9 @@ Grep is a tool to search files via regular expressions it. To see its full usage
 
 Grep can be used to search multiple files for a pattern by using the `-R` flag.
 
-```
+~~~~~
 grep -R "some_pattern" *
-```
+~~~~~
 
 The asterisk at the end is used to search through all files and folders in the current directory.
 
@@ -251,24 +251,24 @@ This Topic is dealt with in Chapter **4 - mkdir** of The Linux Command Line.
 
 To create a new directory use the command `mkdir`.
 
-```bash
+~~~~~bash
 mkdir sampledir
-``` 
+~~~~~ 
 ## Create Directory in Directory
 
 The above example will create the directory sample dir in the current directory. To create a new folder in *sampledir* you can type:
 
-```bash
+~~~~~bash
 mkdir sampledir/otherdir
-```
+~~~~~
 
 ## Create Whole Tree
 
 This command assumes sampledir is already existing. To create a whole directory tree if not existing use the Switch `-p`
 
-```bash
+~~~~~bash
 mkdir -p notexisting/sampledir
-```
+~~~~~
 
 The above example will create the folder *notexisting* and the directory *sampledir* within it.
 
@@ -276,9 +276,9 @@ The above example will create the folder *notexisting* and the directory *sample
 
 To create multiple directories simply write them after each other like that:
 
-```bash
+~~~~~bash
 mkdir sampledir othersampledir
-```
+~~~~~
 
 ## Exercice
 
@@ -292,17 +292,17 @@ This Topic is dealt with in Chapter **4 - rm** of The Linux Command Line.
 
 To delete a directory the command `rmdir` can be used.
 
-```bash
+~~~~~bash
 rmdir sampledir
-```
+~~~~~
 
 ## Delete Directories with `rm`
 The `rm` command also can be used to delete directories with its `-r` switch. This will also delete all files and folders in the directory.
 More on the topic `rm` in the following chapter.
 
-```bash
+~~~~~bash
 rm -r sampledir
-```
+~~~~~
 
 ## Exercise
 Write a script to create the Directory *sampledir* and delete it.
@@ -323,7 +323,7 @@ It has 3 important operational flags:
 
 The flags are used in the example below:
 
-```bash
+~~~~~bash
 # Deletes the file samplefile after asking for confirmation
 rm -i samplefile
 
@@ -332,7 +332,7 @@ rm -r sampledir
 
 # Deletes the writeprotected file writeprotectedsample without asking for confirmation
 rm -f writeprotectedsample
-```
+~~~~~
 
 ## Exercice:
 Use the script `020_testenv.sh` to create testfiles in your current folder and write a script to delete the folder *somedir* and its write protected contents without being asked for confirmation.
@@ -345,17 +345,17 @@ The `cp` command is used to copy files and directories (`-r` switch has to be se
 Its usage is `cp <src> <dest>`, multiple source files can be given like `cp <src1> <src2> ... <dest>`
 To copy file *a* to location *b* use:
 
-```bash
+~~~~~bash
 cp a b
-```
+~~~~~
 
 As a result the file *a* will be copied to file *b*
 
 To copy a whole folder use the `-r` switch just like in the `rm` command.
 
-```bash
+~~~~~bash
 cp -r somefolder someotherfolder
-```
+~~~~~
 
 ## Exercise
 Execute the *020_testenv.sh* script. Write a script to copy the file *somedir/writeprotected* to be next to *somedir* (same folder level) with the filename *writeprotected.bak*. And create a copy of *somedir* (*somedir.bak*)
@@ -372,17 +372,17 @@ The `mv` command is used to move or rename files and directories.
 Its Usage is very similar to the `cp` commands. It shares the useful switches mentioned in **Copying Files and Directories**. Its also possible to define multiple files and dirs to be copied `mv <src1> <src2> ... <dest>` 
 To rename a file simply move it on the same 'level':
 
-```bash
+~~~~~bash
 mv a b
-```
+~~~~~
 
 This changes the filename from *a* to *b*
 
 To move a file or directory to an other place give the new place as last parameter
 
-```bash
+~~~~~bash
 mv a somedir/
-```
+~~~~~
 
 This moves a to the subfolder *somedir*
 
@@ -405,11 +405,11 @@ Soflinks are the modern way of linking files in Unix Systems, they overcome the 
 The following code shows a directory with the file `test.txt`, a hardlink and a softlink to it.
 It can be seen, that the original file and the hardlink share the same inode number - they are quintessentially the same. The softlink has a different inode number - it is an independent file. The softlink additionally is pointing to the original test.txt file. 
 
-```bash
+~~~~~bash
 9181703 -rw-rw-r--. 2 dummy dummy 0 Dec 27 14:58 test.txt
 9181703 -rw-rw-r--. 2 dummy dummy 0 Dec 27 14:58 hardlink
 9181859 lrwxrwxrwx. 1 dummy dummy 8 Dec 27 14:59 softlink -> test.txt
-```
+~~~~~
 
 ### Excursion: Inode Number
 The inode number is an index in the so called inode table. In this table information about the file is stored, like its owner, size, permissions, or location. A files inode basically is its identity.# Creating Hardlinks
@@ -418,20 +418,20 @@ The command `ln` is used for creating links.
 
 To create hardlinks use it like this:
 
-```bash
+~~~~~bash
 ln <original-file> <link-location>
 # For example
 ln test.txt hardlink
-```
+~~~~~
 
 # Creating Softlinks
 To create softlinks use the `ln` command with the `-s` flag:
 
-```bash
+~~~~~bash
 ln -s <original-file> <link>
 # For example
 ln -s test.txt softlink
-```
+~~~~~
 
 ## Exercise
 Use the command `touch test` to create the empty file test in your current location. 
@@ -440,9 +440,9 @@ Write a script to create a hardlink called `test_hardlink` to the file test and 
 
 Most commands/programs used on Linux offer manpages. Manpages are extensive manuals/documentations of the programs. To access a Programs man page type:
 
-``` bash
+~~~~~ bash
 man ls
-```
+~~~~~
 
 The man page can be searched for patterns by typing `/` and the pattern you want to search for, hitting `ENTER` takes you to the first result. You can jump between the results by hitting `n` (next) and `p` (previous).
 To exit the man page hit `q`.
@@ -465,14 +465,14 @@ In this chapter the functionality of output redirection will be discussed
 To redirect the output into a file the operator `>` is used. Using `>` will overwrite the contents of the destination file given.
 In the example the output of the command `ls -la` will be written into the file *ls-output*
 
-``` bash
+~~~~~ bash
 ls -la > output
-```
+~~~~~
 
 Now we use the command `cat` to view the content of the file. Cat takes a file as an argument and displays its contents to the command line.
 We won't see an output on the command line, but the file now looks something like this:
 
-``` 
+~~~~~ 
 drwxr-xr-x 4 dummy dummy 4096 Jan 25 10:38 .
 drwxr-xr-x 5 dummy dummy 4096 Jan 25 10:37 ..
 drwxr-xr-x 8 dummy dummy 4096 Jan 25 10:54 .git
@@ -480,14 +480,14 @@ drwxr-xr-x 8 dummy dummy 4096 Jan 25 10:54 .git
 drwxr-xr-x 5 dummy dummy 4096 Jan 25 10:42 01_basic_commands
 -rw-r--r-- 1 dummy dummy 1070 Jan 25 10:37 LICENSE
 -rw-r--r-- 1 dummy dummy 3605 Jan 25 10:38 README.md
-```
+~~~~~
 
 
 ## Output Redirection Appending
 
 By using the `>>` operator output will be appended to the specified file if we repeat the above example our file should look like this:
 
-```
+~~~~~
 drwxr-xr-x 4 dummy dummy 4096 Jan 25 10:38 .
 drwxr-xr-x 5 dummy dummy 4096 Jan 25 10:37 ..
 drwxr-xr-x 8 dummy dummy 4096 Jan 25 10:54 .git
@@ -502,21 +502,21 @@ drwxr-xr-x 8 dummy dummy 4096 Jan 25 10:54 .git
 drwxr-xr-x 5 dummy dummy 4096 Jan 25 10:42 01_basic_commands
 -rw-r--r-- 1 dummy dummy 1070 Jan 25 10:37 LICENSE
 -rw-r--r-- 1 dummy dummy 3605 Jan 25 10:38 README.md
-```
+~~~~~
 
 ## Error Redirection
 
 The standard error can be redirected with `2>`/`2>>`. In the example it is tried to list the content of a restricted folder resulting in an error.
 
-``` bash
+~~~~~ bash
 ls /root > output
-```
+~~~~~
 
 Again we won't see an output, but our file will look like this:
 
-```
+~~~~~
 ls: cannot open directory '/root': Permission denied
-```
+~~~~~
 
 ## Redirect Both Outputs
 
@@ -529,9 +529,9 @@ Piping is a special variant of I/O redirection. It is used to use the output of 
 
 To pipe the `|` operator is used.
 
-```
+~~~~~
 ls | wc -w
-```
+~~~~~
 
 The above example will give the output of `ls` to the command `wc -w`. `wc -w` counts the words in a given file. So by piping the output of `ls` into it sums up the count of words used as filenames in the current folder.
 
@@ -548,9 +548,9 @@ The above commands/filters offer more functionality than the basic one described
 ## The `tee` Utility
 `tee` reads the standard input and copies it to standard output and one or more specified files.
 
-``` bash
+~~~~~ bash
 ls | tee output | grep output
-```
+~~~~~
 
 The above example will write the outputs of `ls` to the file *output* and then search the output of `ls` (forwarded by `tee`) for the word output.
 If there is no file named *output* in the folder in which the command is executed it will have no output on the first run as the file *output* doesn't exist at first.
@@ -563,9 +563,9 @@ If you are unsure about the usage of the commands look up their man pages.
 The topic permissions is discussed in chapter 9 of The Linux Command Line.
 If you list the contents of a directory with `ls -l` you can see the owner, group and permissions set for a file.
 
-```
+~~~~~
 -rwxr--r-- 1 dummy dummy   43 Jan 26 09:34 output
-```
+~~~~~
 
 ## Ownerships
 The first name that can be seen (dummy) is the *user* owning the file, the second one ist the *group* owning the file
@@ -592,20 +592,20 @@ In this chapter it will be explained how to change the owner and the group ownin
 ## Changing the Owner of a file
 To change the owner of a file the command `chown` is used:
 
-``` bash 
+~~~~~ bash 
 chown dummy output
-```
+~~~~~
 The above example will change the owner of the file *output* to the user *dummy*.
 
 ## Changing the Owning Group of a File
 To change the group owing a file, the commands `chgrp` 
 
-``` bash
+~~~~~ bash
 chgrp dummygrp output
-```
-``` bash
+~~~~~
+~~~~~ bash
 chown dummy:dummygrp output
-```
+~~~~~
 The above examples both will change the owning group of *output* to dummy group. By using `chgrp` you don't have to know the owner of the file to change the group.
 
 ## Exercise
@@ -614,9 +614,9 @@ The above examples both will change the owning group of *output* to dummy group.
 # Changing Permissions of a File
 To change the permissions of a file the command `chmod` is used.
 
-``` bash
+~~~~~ bash
 chmod u+w output
-```
+~~~~~
 In the above example the *u*ser (owner) of the file output gets granted write permissions on it.
 
 ## Additive/Subtractive Model
@@ -646,9 +646,9 @@ Imagine each flag of a rights triplet gets assigned a number:
 Now select the permissions you want to assign and add up their numbers. This way `rw-` would result in a *6*. Now do this for each entity and you get a number like 644 for `rw-r--r--`.
 This way permissions can be assigned with `chmod`:
 
-``` bash
+~~~~~ bash
 chmod 0644 output
-```
+~~~~~
 The leading zero can be left out, it is used to express an octal value (0644 (octal) -> 0b 110 100 100 (binary)).
 
 ## Exercise
@@ -660,18 +660,18 @@ As learned in the previous chapter file content can be viewed using the commands
 The contents can be compared manually by viewing them with the above commands, or the command `diff` can be used.
 The tool gets called as follows:
 
-``` bash 
+~~~~~ bash 
 diff file1 file2
-```
+~~~~~
 
 The output will highlight the differences between the files:
 
-```
+~~~~~
 3c3
 < an exemplary line
 ---
 > a difference
-```
+~~~~~
 
 The differing line is displayed above.
 
@@ -738,9 +738,9 @@ Use | between two sequences or characters to search for the one OR the other.
 ## Example
 The following regex matches the pattern of an IP Address. The dot has to be escaped to serve as literal dot, not as wildcard.
 
-```
+~~~~~
 \d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}
-```
+~~~~~
 The website [regex101.com](https://regex101.com/) can be used to learn more about regexes and to experiment with them
 
 ## Exercise
@@ -752,12 +752,12 @@ In Vim, Less or Man interfaces type /, enter a regex pattern and hit enter to se
 ### Find and Replace in Vim
 To use find and replace in vim enter the following pattern in command mode:
 
-``` bash
+~~~~~ bash
 # Search and replace in current line 
 :s/pattern/newtext/g
 # Search and replace in whole file
 :%s/pattern/newtext/g
-```
+~~~~~
 
 The `g` behind the last slash is a switch, the following other switches can be used:
 - g - global, go on after first match
@@ -795,14 +795,14 @@ While under Windows `zip` is the default compression format on Linux `gzip` and 
 ## The Tool Gzip
 Usage of `gzip`:
 
-``` bash
+~~~~~ bash
 # Compressing files
 gzip foo
 # Decompressing files
 gzip -d foo.gz
 ## or
 gunzip foo.gz
-```
+~~~~~
 
 Bzip is used in the same way but uses an other compression algorithm internally.
 
@@ -829,9 +829,9 @@ The modes can be combined with other options like:
 - z - use gzip with tar
 - a - auto compression, choose compression program
 
-``` bash
+~~~~~ bash
 tar -cf file.tar file 
-```
+~~~~~
 
 The Tar mode always has to lead before the other options.
 
@@ -839,15 +839,15 @@ The Tar mode always has to lead before the other options.
 
 Creating an compressed archive:
 
-``` bash
+~~~~~ bash
 tar -czf archive.tar.gz file0 file1 file2 file3 
-```
+~~~~~
 
 Unpack compressed archive:
 
-``` bash
+~~~~~ bash
 tar -xf archive.tar.gz
-```
+~~~~~
 
 ## Exercise
 - Read tars man page to learn more about it.
@@ -893,9 +893,9 @@ Linux systems can be safely shutdown with the command `shutdown` it offers a var
 
 A new shutdown is planned by typing: 
 
-``` bash
+~~~~~ bash
 shutdown -h 10
-```
+~~~~~
 
 The above example will schedule a shutdown of the system 10 minutes form now.
 To shutdown a system instantly the time `now` can be specified.
@@ -944,9 +944,9 @@ For more information see the [Ubuntu Documentation](https://wiki.ubuntuusers.de/
 ## Simple Reinstallation
 To reinstall grub for example in case of a damaged MBR do the following:
 
-``` bash
+~~~~~ bash
 sudo grub-install /dev/sda # where to place the boot loader
-```
+~~~~~
 
 By doing this the configuration files */etc/default/grub* and */etc/grub.d/\** are untouched.
 
@@ -962,22 +962,22 @@ are needed. They can be installed with the `apt` utility.
 
 To ensure a clean new installation the existing configurations can be purged with:
 
-``` bash
+~~~~~ bash
 sudo apt-get purge grub-* os-prober grub-gfxpayload-lists
-```
+~~~~~
 
 To install teh new boot loader, first install the packages listed above:
 
 *For Bios PCs:*
-``` bios
+~~~~~ bios
 sudo apt-get install grub-pc os-prober grub-gfxpayload-lists
-```
+~~~~~
 
 *For EFI PCs:*
-``` bash
+~~~~~ bash
 sudo apt update
 sudo apt-get install grub-efi-amd64-signed os-prober #  grub-efi-amd64 or grub-efi-ia32 (for 32Bit systems) also possible
-``` 
+~~~~~ 
 
 In the masks following the installation destination of grub has to be determined.
 # Configuring GRUB2
@@ -1006,10 +1006,10 @@ There are different types of processes:
 
 Using the tool `top` a taskmanager-like interface will appear in your bash.
 
-```
+~~~~~
   PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
   297 friedri+  20   0   10044   5068   3360 S   0.0   0.0   0:00.18 bash
-```
+~~~~~
 
 In the above example an exemplary entry taken from the top command can be seen.
 Top shows the main properties of an process:
@@ -1046,11 +1046,11 @@ The tool `kill` is used to send signals to processes, some useful signals are li
 
 Signals can be sent like the following:
 
-``` bash
+~~~~~ bash
 kill -<Signal ID> <PID>
 kill -<Signal Name> <PID>
 kill <PID> # Kill alone sent SIGTERM -> kill -SIGTERM <PID>
-```
+~~~~~
 
 To let the process 500 be killed by the kernel we would send `kill -9 500`.
 
@@ -1080,11 +1080,11 @@ New logs will be appended to an existing log file, so if you are looking for the
 On newer systems *syslog* is replaced by *journal*. The syslogs can be viewed with the command `sudo journalctl` rather than via the actual log file.
 The journal will be displayed with `less`.
 
-```
+~~~~~
 Mar 08 16:46:46 server sudo[843154]: pam_unix(sudo:session): session closed for user root
 Mar 08 16:46:46 server sudo[843154]:  user : TTY=pts/8 ; PWD=/var/log ; USER=root ; COMMAND=/usr/bin/journalctl -f
 Mar 08 16:46:46 server sudo[843154]: pam_unix(sudo:session): session opened for user root by (uid=0)
-```
+~~~~~
 
 Above the journal log entry for opening the journal with sudo can be seen. Leading is the timestamp, followed by the hostname, then the process name with pid and the processes log message as a tail.
 
@@ -1105,7 +1105,7 @@ The jobs can be defined in various locations:
 
 ### The Crontab Format
 
-```
+~~~~~
 # Example of job definition:
 # .---------------- minute (0 - 59)
 # |  .------------- hour (0 - 23)
@@ -1115,7 +1115,7 @@ The jobs can be defined in various locations:
 # |  |  |  |  |
 # *  *  *  *  * user-name command to be executed
   17 *  *  *  * root    cd / && run-parts --report /etc/cron.hourly
-```
+~~~~~
 
 In the above example it can be seen how cronjobs are timed. There are 5 fields for defining when to run the task
 
@@ -1139,9 +1139,9 @@ The crontab file is not to be edited manually, instead the tool `crontab` is use
 
 The `at` command can be used to schedule a task to run once. At can be given a task with the following syntax:
 
-``` bash
+~~~~~ bash
 at <time to run the task at> -f <script to run>
-```
+~~~~~
 
 By calling `at` without the `-f` flag a task to run can be defined in an interactive mode, which can be exited with `Crtl-D.`
 
@@ -1152,25 +1152,25 @@ The time can be defined in the following patterns
 
 ## Exercise
 Create a crontab entry which will write 'Coming from Crontab' into the journal (see chapter before) every 5 minutes.Run `crontab -e` enter
-```
+~~~~~
 15  *  *  *  * echo 'Coming from Crontab' | systemd-cat
-```
+~~~~~
 save and close the editor.
 For user crontabs no username is needed.# Check if a Task was Executed
 The cron daemon logs the execution of tasks to syslog. As a consequence the execution of the tasks can be seen in the system journal (systemd logs).
 
 The journal can be viewed with the following command:
 
-``` bash
+~~~~~ bash
 sudo journalctl
 # To get to the end of the file press Shift+G
-```
+~~~~~
 
 An example taken from [here](https://bencane.com/2011/11/02/did-my-cronjob-run/) below:
 
-```
+~~~~~
  Nov 02 17:10:01 testbox CRON[2210]: (testuser) WRONG INODE INFO (crontabs/testuser)
-```# Updating Software
+~~~~~# Updating Software
 
 This chapter is based on the chapter 14.2 of Linux - Rheinwerk Publishing.
 
@@ -1206,31 +1206,31 @@ The apt default operations are:
 As `apt update` updates the index od packages and their versions located in the remote repositories, it has to be run before each operation.
 To install the `vim` editor run: 
 
-``` bash
+~~~~~ bash
 sudo apt update
 sudo apt install vim
-```
+~~~~~
 
 To upgrade a specific package if installed:
 
-``` bash
+~~~~~ bash
 sudo apt update
 sudo apt install --only-upgrade vim
-```
+~~~~~
 
 To update all packages on the system:
 
-``` bash
+~~~~~ bash
 sudo apt update
 sudo apt upgrade
-```
+~~~~~
 
 If a software vendors offer their software directly from their website. On Debian based systems, *deb* packages need to be downloaded these can be installed by the following commands:
 
-``` bash
+~~~~~ bash
 sudo apt update
 sudo apt install ./Downloads/your_downloaded_package.deb
-```
+~~~~~
 
 ## Exercice 
 - Read the man page of apt/apt-get if you want to learn more.
@@ -1239,13 +1239,13 @@ sudo apt install ./Downloads/your_downloaded_package.deb
 To check on available system resources the tool `top` can be used.
 Below is an exemplary output of `top`:
 
-```
+~~~~~
 top - 15:34:28 up  1:26,  3 users,  load average: 0.50, 0.54, 0.61
 Tasks: 398 total,   1 running, 397 sleeping,   0 stopped,   0 zombie
 %Cpu(s):  1.0 us,  0.6 sy,  0.0 ni, 98.4 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
 MiB Mem :  15413.3 total,   9340.8 free,   3648.2 used,   2424.3 buff/cache
 MiB Swap:  26913.0 total,  26913.0 free,      0.0 used.  11246.0 avail Mem
-```
+~~~~~
 
 At the end of the top line the average load of the CPU is displayed in the last minute, the last five minutes and the last fifteen minutes.
 In the next line the CPU loads on each core are shown in percent, followed by the usage of the physical memory, followed by the usage of the usage of the swap memory.
@@ -1283,26 +1283,26 @@ A full list of variables can be viewed with the `sysctl` command and the `-a` fl
 
 To alter the value of a kernel runtime parameter temporally use sysctl like the following:
 
-``` bash
+~~~~~ bash
 sysctl <class>.<parameter>=<value>
-``` 
+~~~~~ 
 
 ## Configure Parameters Permanently
 
 To alter a runtime parameter permanently redirect the output to of the above command to be appended to the configuration file */etc/sysctl.conf*:
 
-``` bash
+~~~~~ bash
 sysctl <class>.<parameter>=<value> >> /etc/sysctl.conf
-```
+~~~~~
 
 Alternatively the configuration files in */etc/sysctl.d/* can be modified manually. Either create a new file or modify an existing one in */etc/sysctl.d/*, the files have to contain one value assignment per line:
 
-```
+~~~~~
 <class0>.<parameter0>=<value0>
 <class1>.<parameter1>=<value1>
 ...
 <classN>.<parameterN>=<valueN>
-```
+~~~~~
 
 ## Example
 
@@ -1320,26 +1320,26 @@ Shell scripts make it possible to write down complex tasks into scripts. These s
 ## Hello World!
 Shell scripts typically start with a shebang or hashbang:
 
-``` bash
+~~~~~ bash
 #!/bin/bash
 ...
-```
+~~~~~
 The shebang tells the calling shell which binary to execute the script with.
 A script can contain all commands that can be executed by the shell by default. An exemplary script could look like this:
 
-``` bash
+~~~~~ bash
 #!/bin/bash
 
 echo HelloWorld!
-```
+~~~~~
 
 ## Comments
 Comments can be started with a `#`:
 
-``` bash
+~~~~~ bash
 # this is a comment
 echo foo # this is a comment too
-```
+~~~~~
 
 ## Exercise
 Write a script which echoes your name and put in a comment describing what it does.
@@ -1349,9 +1349,9 @@ Write a script which echoes your name and put in a comment describing what it do
 Variables are created and set by defining its name and assigning it a value:
 Note that no spaces are allowed before and after the equal sign.
 
-``` bash
+~~~~~ bash
 variablename="variablevalue"
-```
+~~~~~
 Variables types can be:
 
 - Strings - as shown above
@@ -1360,41 +1360,41 @@ Variables types can be:
 
 To access the value of a set variable put the `$` sign in front of it:
 
-``` bash
+~~~~~ bash
 echo $variablename
-```
+~~~~~
 
 The result of a function call can be assigned to a variable by putting the call in braces preceded by a `$` sign:
 
-``` bash
+~~~~~ bash
 var=$(echo foo)
 echo $var
-```
+~~~~~
 
 ## Arrays
 Arrays can be created by putting values in braces:
 
-``` bash
+~~~~~ bash
 int_array = (1 2 3 4)
-```
+~~~~~
 
 Specific values can be set by referencing them by their index:
 
-``` bash
+~~~~~ bash
 int_array[1] = 10
-```
+~~~~~
 
 The values can be accessed by putting the variable and the whished index into curly braces:
 
-``` bash
+~~~~~ bash
 echo ${int_array[1]} # will output 10
-```
+~~~~~
 
 ## Exercise
 Write a script, which saves the count of files in the current directory into the variable `fileCount` and print the variable to the terminal.# Conditionals
 Conditionals can be used to execute tasks if a condition is met. A conditional block is started with `if` and closed with `fi`. 
 
-``` bash
+~~~~~ bash
 var=5
 if [ var = 5 ]
 then
@@ -1402,7 +1402,7 @@ then
 else
     echo var is not 5
 fi
-```
+~~~~~
 
 An overview of bash test and conditional operators, which can be used for conditionals can be found on [this cheatsheet](https://kapeli.com/cheat_sheets/Bash_Test_Operators.docset/Contents/Resources/Documents/index) and on the bash man page.
 
@@ -1420,26 +1420,26 @@ Write a script, which checks the count of files in the folder it is executed and
 ## for
 The for loop in bash can be used to iterate over arrays:
 
-``` bash
+~~~~~ bash
 for var in (1 2 3 4 5)
 do 
     echo var
 done
-```
+~~~~~
 
 With for it is also possible to iterate over the files in directory:
 
-``` bash
+~~~~~ bash
 # This will print the filenames of all files in the current folder
 for file in *.txt
     echo $datei
 done
-```
+~~~~~
 
 ## while
 
 The while loop can be used to execute code while a condition is satisfied:
-``` bash
+~~~~~ bash
 var=5
 while [ var != 0 ]
 do
@@ -1447,11 +1447,11 @@ do
     var=var-1
 done
 # will print 5 to 1 to the terminal
-```
+~~~~~
 
 An endless while loop can be created by taking `1` (true) as a condition or by replacing the condition with `:`, see below:
 
-``` bash
+~~~~~ bash
 while [ 1 ]
     echo foo
 done
@@ -1459,7 +1459,7 @@ done
 while :
     echo foo
 done
-```
+~~~~~
 ## until
 Until loops till a value isn't satisfied anymore. It can be compared to a negative while loop `while [ !0 ]` is the same as `until[ 0 ]`.
 
@@ -1470,9 +1470,9 @@ The automatic start of services on system startup can be managed with the tool `
 Systemctl allows to start, stop, check, enable and disable services. An enabled service will start on startup, a disabled one will not.
 Systemctl is used like this:
 
-``` bash
+~~~~~ bash
 systemctl <operation> <service>
-```
+~~~~~
 
 With some of the most common operations being the following:
 - start
@@ -1486,7 +1486,7 @@ All operations except the `status` will require root privileges.
 ## Checking a Service
 Checking the status of a service will bring up the following view:
 
-``` 
+~~~~~ 
 crond.service - Command Scheduler
      Loaded: loaded (/usr/lib/systemd/system/crond.service; enabled; vendor preset: enabled)
      Active: active (running) since Thu 2022-04-07 12:31:44 CEST; 1h 20min ago
@@ -1498,7 +1498,7 @@ crond.service - Command Scheduler
              └─1399 /usr/sbin/crond -n
 
 Apr 07 12:31:44 fedora crond[1399]: (CRON) INFO (running with inotify support)
-```
+~~~~~
 
 The second value (`enabled`) in the loaded field indicates whether the service is enabled to start on startup.
 Below the services statistics its log entries are displayed.
@@ -1506,9 +1506,9 @@ Below the services statistics its log entries are displayed.
 ## Example
 To disable the cron daemon, which is responsible for executing the following command:
 
-``` bash
+~~~~~ bash
 sudo systemctl disable cron
-```
+~~~~~
 
 # Exercise
 - Read the `systemctl` manpage to learn more.
@@ -1525,19 +1525,19 @@ To demonstrate the configuration of systemd services in this section a python se
 ### Python Server
 Python offers a online way of starting a webserver, by loading the module *http.server*:
 
-``` bash
+~~~~~ bash
 python -m http.server
-```
+~~~~~
 To display something create a folder */home/your-user/www* and create a file *index.html* with the following content in it.
 
-``` html
+~~~~~ html
 <h1>I am a Simple Python Server!</h1>
-```
+~~~~~
 
 ## The Service File
 Lets create a simple web server service file:
 
-``` 
+~~~~~ 
 [Unit]
 Description=Simple Python Service
 After=network.target
@@ -1547,7 +1547,7 @@ ExecStart=/usr/bin/env python3 -m http.server
 
 [Install]
 WantedBy=multi-user.target
-```
+~~~~~
 
 In the first section *[Default]* the service is described (its name is based on the service filename).
 Systemd maintains an order when starting services, to start services other services depend on before those depending on them. This dependencies are defined via the *After* field, which will let the server service start after the *network.target* service. 
@@ -1590,25 +1590,25 @@ For more examples see the [Fedora documentation](https://docs.fedoraproject.org/
 ## View File Contexts
 To view contexts assigned to files the command `ls` can be used with the flag `-Z` producing the following exemplary output:
 
-```
+~~~~~
 unconfined_u:object_r:user_home_t:s0 01_basic_commands
-```
+~~~~~
 
 
 ## Change File Contexts
 File contexts can be altered with the command `chcon` is used:
 
-``` bash
+~~~~~ bash
 chcon -t <new_context_type> <file>
-```
+~~~~~
 When used with the `-t` switch, like above, the context type of a file is changed. The `-R` flag can be used to alter the contexts of a directory and its contents recursively.
 
 ## View Process Contexts
 To view the context of a process `ps` can be used with the flags `-eZ`:
 
-```
+~~~~~
 system_u:system_r:crond_t:s0-s0:c0.c1023 1302 ?  00:00:00 crond
-```
+~~~~~
 
 This reveals that the process crond has the context type crond_t giving it access to cron relevant files.
 
@@ -1622,7 +1622,7 @@ This section is based on the [SUSE Documentation](https://documentation.suse.com
 AppArmor policies are defined in sol called profiles. The profiles are typically found in */etc/apparmor.d*
 An exemplary AppArmor Profile can be seen below:
 
-``` bash
+~~~~~ bash
 ## App Armor Profiles offer the possibility to include extra files.
 ## In this case a file containing variable definitions is included.
 #include <tunables/global>
@@ -1671,7 +1671,7 @@ An exemplary AppArmor Profile can be seen below:
       /etc/foobar        r,
    }
 }
-```
+~~~~~
 Taken from [here](https://documentation.suse.com/sles/12-SP4/html/SLES-all/cha-apparmor-profiles.html#sec-apparmor-profiles-parts).
 
 The following access controls can be used:
@@ -1711,9 +1711,9 @@ The tool knows the following commands:
 ### Example
 The below example lists all files belonging to vim: 
 
-``` bash
+~~~~~ bash
 apt-file list vim
-```
+~~~~~
 
 ## On RedHat
 On RedHat the package manager `rpm` has the capabilities to do the same operations with the following flags:
@@ -1724,9 +1724,9 @@ On RedHat the package manager `rpm` has the capabilities to do the same operatio
 ### Example
 The below example does the same as the one above:
 
-``` bash
+~~~~~ bash
 rpm -ql vim
-```
+~~~~~
 
 ## Exercise
 - Install the tool `apt-file`
@@ -1741,18 +1741,18 @@ Adduser is a frontend for useradd, which feeds useradd the information entered.
 
 Exemplary `useradd` call:
 
-``` bash
+~~~~~ bash
 useradd dummy 
-```
+~~~~~
 
 This will add the user dummy to the system. As no parameters were specified it will have no home directory and password.
 
 ## Change or Create a Password
 The command `passwd` can be used to change the password of an user or create one if not existing.
 
-``` bash
+~~~~~ bash
 passwd dummy
-```
+~~~~~
 You will be asked for a new password for the user dummy
 
 ## Exercise
@@ -1769,19 +1769,19 @@ Users can be modified with the command `usermod`. Usermod supplies the following
 - -L: lock user
 - -U: unlock user
 
-``` bash 
+~~~~~ bash 
 usermod -d /home/dummy dummy 
-```
+~~~~~
 
 This will assign the user dummy the homedir */home/dummy*
 
 ## Delete Users
 To delete users the commands `userdel` or `deluser` are used:
 
-``` bash
+~~~~~ bash
 userdel dummy
 deluser dummy
-```
+~~~~~
 
 Deluser offers the possibility to remove the home directory of the user (`--remove-home`), all files of the user (`--remove-all-files`), and backup the users files as an archive (`--backup`)
 Userdel offers the possibility to remove the users home directory (`-r`).s
@@ -1795,23 +1795,23 @@ Userdel offers the possibility to remove the users home directory (`-r`).s
 Use `groupadd` or `addgroup` to create a new group.
 Analogous to the user creation, `addgroup` is a interactive frontend for `addgroup`.
 
-``` bash
+~~~~~ bash
 addgroup new_group
-```
+~~~~~
 
 ## Modify Groups
 To modify groups use the `groupmod` command:
 
-``` bash
+~~~~~ bash
 groupmod -n exemplary_group new_group
-```
+~~~~~
 The example above changes the groupname from *exemplary_group* to *new_group*
 ## Delete Groups
 To delete groups use the `groupdel` command:
 
-``` bash
+~~~~~ bash
 groupdel exemplary_group
-```
+~~~~~
 
 ## Exercise
 - Read the manpages for `groupadd`/`addgroup`, `groupmod` and `groupdel` if you want to learn more
@@ -1833,18 +1833,18 @@ Adduser is a frontend for useradd, which feeds useradd the information entered.
 
 Exemplary `useradd` call:
 
-``` bash
+~~~~~ bash
 useradd dummy 
-```
+~~~~~
 
 This will add the user dummy to the system. As no parameters were specified it will have no home directory and password.
 
 ## Change or Create a Password
 The command `passwd` can be used to change the password of an user or create one if not existing.
 
-``` bash
+~~~~~ bash
 passwd dummy
-```
+~~~~~
 You will be asked for a new password for the user dummy
 
 ## Exercise
@@ -1861,19 +1861,19 @@ Users can be modified with the command `usermod`. Usermod supplies the following
 - -L: lock user
 - -U: unlock user
 
-``` bash 
+~~~~~ bash 
 usermod -d /home/dummy dummy 
-```
+~~~~~
 
 This will assign the user dummy the homedir */home/dummy*
 
 ## Delete Users
 To delete users the commands `userdel` or `deluser` are used:
 
-``` bash
+~~~~~ bash
 userdel dummy
 deluser dummy
-```
+~~~~~
 
 Deluser offers the possibility to remove the home directory of the user (`--remove-home`), all files of the user (`--remove-all-files`), and backup the users files as an archive (`--backup`)
 Userdel offers the possibility to remove the users home directory (`-r`).s
@@ -1887,23 +1887,23 @@ Userdel offers the possibility to remove the users home directory (`-r`).s
 Use `groupadd` or `addgroup` to create a new group.
 Analogous to the user creation, `addgroup` is a interactive frontend for `addgroup`.
 
-``` bash
+~~~~~ bash
 addgroup new_group
-```
+~~~~~
 
 ## Modify Groups
 To modify groups use the `groupmod` command:
 
-``` bash
+~~~~~ bash
 groupmod -n exemplary_group new_group
-```
+~~~~~
 The example above changes the groupname from *exemplary_group* to *new_group*
 ## Delete Groups
 To delete groups use the `groupdel` command:
 
-``` bash
+~~~~~ bash
 groupdel exemplary_group
-```
+~~~~~
 
 ## Exercise
 - Read the manpages for `groupadd`/`addgroup`, `groupmod` and `groupdel` if you want to learn more
@@ -1917,9 +1917,9 @@ To add an user to a group use `usermod`. Usermod offers three options of modifyi
 ## Exercise
 - Create a user *dummy* and add him to the group *dummy_group*insert the following into ~/.bash_profile
 
-``` bash
+~~~~~ bash
 echo Hello Liam
-```
+~~~~~
 
 Replace Liam with your name.# Configuring the Local User Environment
 This Section is based of an [article by RedHat](https://www.redhat.com/sysadmin/customize-user-environments) and Chapter 07 of Linux - Rheinwerk Verlag.
@@ -1970,17 +1970,17 @@ This file (on Debian /etc/bash.bashrc) gets executed for each user when opening 
 This file is read on each login. The difference between the other two is, that it is no script but rather contains variable definitions directly.
 Variables like *http_proxy* for Proxy configuration can be placed here:
 
-``` bash
+~~~~~ bash
 http_proxy = "https://proxyurl.tld:port"
-```
+~~~~~
 
 ## Exercise
 Place a script in */etc/profile.d* that greets each new login with "Hi there from \<your name\>".Place a file *greeting.sh* with the following content in */etc/profile.d*.
 
-``` bash
+~~~~~ bash
 #!/bin/bash
 echo "Hi there from Liam"
-```
+~~~~~
 
 Replacing "Liam" with your name.# Defining User Resource Limits
 This section is based of the [Ubuntu Server Cookbook](https://subscription.packtpub.com/book/networking_and_servers/9781785883064/1/ch01lvl1sec17/setting-resource-limits-with-limits-conf).
@@ -2014,9 +2014,9 @@ The following resource *items* can be limited (taken from */etc/security/limits.
 The syntax for defining new limits is: `<domain> <type> <item> <value>`
 For example:
 
-```
+~~~~~
 @student        hard    nproc           40
-```
+~~~~~
 
 The above example grants a member of the group student a maximum count of 40 processes.
 
@@ -2024,9 +2024,9 @@ The above example grants a member of the group student a maximum count of 40 pro
 Write a hard limit for members of the group student, to limit their logins to 2
 
 
-```
+~~~~~
 @student        hard    maxlogins       2
-```# User Privileges
+~~~~~# User Privileges
 This chapter is based on chapter 13.4 of the book Linux - Rheinwerk Verlag
 User Types on Linux are differentiated into **root** and **standard** users.
 Principally the root user has unlimited access to the system, while a standard user only can access files which he has permissions to.
@@ -2034,9 +2034,9 @@ Principally the root user has unlimited access to the system, while a standard u
 ## Super User Do
 The command `sudo` allows standard users to execute commands as root:
 
-``` bash
+~~~~~ bash
 sudo vim /etc/sudoers
-```
+~~~~~
 
 In the above command the file */etc/sudoers* gets opened with vim. Per default only the root user has access to this file. This file regulates the access to the sudo command.
 Per default users who are in the group *sudo* (Debian)/*wheel* (RedHat) have access to run sudo.
@@ -2062,17 +2062,17 @@ On RedHat Systems the tools `authconfig` or `authselect` are recommended to conf
 The configurations files are `/etc/pam.conf` or any file in `/etc/pam.d` (if `/etc/pam.d` exists `/etc/pam.conf` will be ignored).
 Each of these files should consist of multiple rule lines. Each rule-line has a syntax as follows:
 
-```
+~~~~~
 service type control module-path module-arguments
-```
+~~~~~
 (For files in the `/etc/pam.d` the service field is omitted, instead the name of the file references the service)
 
-```
+~~~~~
 auth       substack     system-auth
 auth       include      postlogin
 account    required     pam_nologin.so
 ...
-```
+~~~~~
 
 Above is an excerpt of the content of the */etc/pam.d/login* file. In the first line the **auth** content of the file */etc/pam.d/system-auth* is evalueted as an substack, meaning the statements will be checked, but if one fails only the substack fails. 
 In the second line the **auth** content of the file */etc/pam.d/postlogin* gets included, meaning the auth lines in the file are evaluated, if one fails, the original stack fails too. In the third line the pam module *pam_nologin.so* gets included as required, meaning it succeeding is necessary to continue the stack, **pam_nologin.so** fails if the file */etc/nologin* exists.
@@ -2087,31 +2087,31 @@ On Debian network interfaces are defined in the */etc/network/interfaces* file. 
 ## WLAN
 To configure a wlan interface a file in */etc/network/interfaces.d* has to be created with the following contents:
 
-```
+~~~~~
 auto wlan0
 iface wlan0 inet dhcp
 wpa-essid <wlan-ssid>
 wpa-psk <wpa-key>
-```
+~~~~~
 
 The interface `wlan0` has to be replaced with the actual interface, which can be determined with the command `ip a`:
 
-```
+~~~~~
 2: enp2s0f0: <NO-CARRIER,BROADCAST,MULTICAST,UP> mtu 1500 ...
 ...
 3: wlp3s0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 ...
 ...
-```
+~~~~~
 
 The above example shows an output of `ip a`, the wlan interface `wlp3s0` and the ethernet interface `enp2s0f0` can be identified.
 
 ## Ethernet
 To configure a ethernet interface use the following content:
 
-```
+~~~~~
 auto eth0
 iface eth0 inet dhcp
-```
+~~~~~
 
 WLAN as well as ethernet are configured to retrieve their IP address via dhcp.
 The system has to be restarted to apply the settings.
@@ -2133,35 +2133,35 @@ Hostnames offer the advantage that they stay the same, while the IP address can 
 ## Static Resolution
 On Linux systems static domain name resolution can be defined in the file */etc/hosts*:
 
-```
+~~~~~
 127.0.0.1   localhost localhost.localdomain localhost4 localhost4.localdomain4
 ::1         localhost localhost.localdomain localhost6 localhost6.localdomain6
-```
+~~~~~
 
 The file points the localhost domains to the localhost ip addresses.
 An entry for *example.com* would look like this:
 
-```
+~~~~~
 93.184.216.34 example.com
-```
+~~~~~
 
 ## Dynamic Resolution
 As the IP of a network target might change, dynamic hostname resolution offers a way to connect to the device anyway, without knowing its exact IP. To do this a query is sent to a DNS server, the Server resolves the hostname to an IP and sends it back to the host.
 To check the currently used nameservers `resolvectl status` can be used:
 
-``` 
+~~~~~ 
 ...
 DNS Servers: 192.168.178.1
 ...
-```
+~~~~~
 
 To alter the resolve configuration written in */etc/resolve.conf* the tool `resolvconf` has to be used, as the file is managed.
 After installing the tool the file */etc/resolvconf/resolv.conf.d/head* can be altered. An additional name server can be added to this file.
 The format of the entry would be:
 
-```
+~~~~~
 nameserver <IP>
-```
+~~~~~
 
 After editing the file the `resolvconf` has to be run with the flag `-u` to update the */etc/resolv.conf* file.
 
@@ -2242,21 +2242,21 @@ Network destinations can be applied in the following forms:
 
 Updates made via iptables will be temporary and reset after a reboot. To make the changes persistent the command `iptables-save` and redirecting the output to */etc/iptables/rules.v4* (for Debian) will make the changes persistent between reboots:
 
-``` bash
+~~~~~ bash
 # Debian
 iptables-save > /etc/iptables/rules.v4
 # RedHat
 iptables-save > /etc/sysconfig/iptables
-```
+~~~~~
 
 Taken from [here](https://www.thomas-krenn.com/de/wiki/Iptables_Firewall_Regeln_dauerhaft_speichern).
 
 ## Example
 An exemplary rule can look like this:
 
-``` 
+~~~~~ 
 iptables -A INPUT -p tcp -j TCP
-```
+~~~~~
 This will add a call to the custom chain `TCP` for all incoming TCP packages.
 
 ## Exercise
@@ -2276,17 +2276,17 @@ To configure a temporal IP route the command `ip route` with the following opeat
 - append: `ip route append <destination>/<netmask> <gateway>`
 - replace: `ip route replace <destination>/<netmask> <gateway>`
 
-``` bash
+~~~~~ bash
 # add a route to statically rout the ip address 192.0.2.1 over the address 10.0.0.1 as a hop/gateway
 ip route add 192.0.2.1 via 10.0.0.1
-```
+~~~~~
 
 The address to route also can be specified as a combination of IP address and netmask.
 
 ## Permanent IP Routing
 Routes created by the ip command will only be applied temporally. To make the route permanent it has to be added to the file */etc/netplan/50-cloud-init.yaml* with the following syntax:
 
-```
+~~~~~
 network:
     ethernets:
         enp0s3:
@@ -2299,7 +2299,7 @@ network:
             - to: 172.16.0.0/24
               via: 192.168.1.100
     version: 2
-```
+~~~~~
 *Taken from [here](https://linuxconfig.org/how-to-add-static-route-with-netplan-on-ubuntu-20-04-focal-fossa-linux)*
 
 In the example the addresses `172.16.0.0/24` will be routed over the gateway `192.168.1.100` this applies to the interface `enp0s3`.
@@ -2317,12 +2317,12 @@ To install the NTP package the command `sudo apt install ntp` has to be used.
 ## Configure NTP
 To configure the NTP the file `/etc/ntp.conf` has to be edited. In this file the time servers to use can be specified:
 
-```
+~~~~~
 server 0.de.pool.ntp.org
 server 1.de.pool.ntp.org
 server 2.de.pool.ntp.org
 server 3.de.pool.ntp.org
-```
+~~~~~
 
 Above the German time pool servers are configured. NTP servers can be searched [here](https://www.ntppool.org/en/). After a restart the service will use the newly configured servers.
 It is recommended to use multiple time servers. The timeserver with the lowest offset to **Stratum 0** (original time sources) will be used. The command `ntpq -p` can be used to check the currently configured time servers.
@@ -2345,11 +2345,11 @@ Per default the installed service will cache DNS queries.
 To configure the *named* service the file */etc/named.conf* has to be edited. 
 In the default configuration the DNS server accepts from localhost. To allow traffic from other systems add the statement any to the following lines:
 
-```
+~~~~~
 listen-on port 53 { 127.0.0.1; any; };
 allow-query { localhost; any; };
 allow-query-cache { localhost; any; };
-```
+~~~~~
 
 ## Iterative and Recursive DNS
 When querying iterative the DNS request is forwarded by DNS server to the next responsible DNS server. This results in the client communicating directly to the involved DNS servers. 
@@ -2368,18 +2368,18 @@ In Reverse Lookup the DNS server is responsible for resolving the IP address to 
 ## Defining Zones
 When configuring a new zone two files have to be created, one for the forward lookup and one for the reverse lookup. The naming convention of the files is the following:
 
-``` bash
+~~~~~ bash
 # Forward Lookup
 db.domainname
 # Reverse Lookup
 db.z.y.x
 # z.y.x being parts of the IP address x.y.z (192.168.0.* -> db.0.168.192)
 # note the reverse order!
-```
+~~~~~
 
 An exemplary forward lookup file looks like this:
 
-```
+~~~~~
 ;; db.domainname
 ;; Forwardlookupzone für domainname
 ;;
@@ -2400,7 +2400,7 @@ localhost                       IN      A       127.0.0.1
 rechner1                        IN      A       192.168.0.200
 mailserver                      IN      A       192.168.0.201
 rechner2                        IN      CNAME   mailserver
-```
+~~~~~
 
 ### Forward Lookup
 
@@ -2428,7 +2428,7 @@ The entry types being the following:
 
 An exemplary reverse lookup file looks like this:
 
-```
+~~~~~
 ;; db.0.168.192
 ;; Reverselookupzone für domainname
 ;;
@@ -2445,7 +2445,7 @@ $TTL 2D
 10      IN      PTR     rechnername.domainname.
 200     IN      PTR     rechner1.domainname.
 201     IN      PTR     rechner2.domainname.
-```
+~~~~~
 
 Here the `PTR` entry type comes to use. The numbers in the first row represent the last byte of the IP address.
 
@@ -2539,10 +2539,10 @@ Open a console (PowerShell or CMD) an enter the following command `docker pull u
 
 Docker will start pulling the Ubuntu image. After pulling the image you can view it with the command `docker image ls`. The Ubuntu image should show up in the resulting list.
 
-```
+~~~~~
 REPOSITORY   TAG       IMAGE ID       CREATED       SIZE
 ubuntu       latest    597ce1600cf4   13 days ago   72.8MB
-```
+~~~~~
 
 ## Start the Docker Image and Open a Shell in It
 
@@ -2551,9 +2551,9 @@ The command `docker ps -a` will list the running containers.
 
 The container we just sterted should appear here.
 
-```
+~~~~~
 Insert Container List here
-```
+~~~~~
 
 Now we have a virtualized Ubuntu image running in Docker. The next step is to start a shell in this image to work with it. To start a shell in this image we use the command `docker exec -it <container name> /bin/bash`.
 
@@ -2563,9 +2563,9 @@ Now we are working with the shell we just started on our command line.
 
 To let the shell greet the world the command `echo` will be used. The string to be put out on the shell ('Hello World!'), is supplied as an argument to `echo`. 
 
-```
+~~~~~
 echo 'Hello World!'
-```# The file system Outline
+~~~~~# The file system Outline
 
 Like in Windows files in Linux/Unix are organized in a file tree. The first folder in this tree is called the root folder. While Windows has a separate tree for every device, devices get assigned a folder in the directory tree in Linux.
 This topic is discussed in chapter 2 of the Linux command line.
@@ -2629,17 +2629,17 @@ Multiple approaches for searching for files are offered. If you are searching fo
 
 Locate performs a database search for paths matching the search term.
 
-``` bash
+~~~~~ bash
 locate Pictures/Screenshot
-```
+~~~~~
 The above command will search for all files and folders starting with `Screenshot-` laying under a location containing `Pictures`. It simply searches for the specified search term in the full path of a file. An exemplary result of the command can be seen below:
 
-```
+~~~~~
 /home/user/Desktop/backup/Pictures/Screenshots
 /home/user/Desktop/backup/Pictures/Screenshots/35574917.png
 /home/user/Desktop/backup/Pictures/Screenshots/Screenshot_20210208_093220.png
 /home/user/Pictures/Screenshot_20210921_224523.png
-```
+~~~~~
 
 Exercise:
 *Use locate to list all .bak files on the system.*
@@ -2648,21 +2648,21 @@ Exercise:
 
 To search for files by file attributes the `find` command is used.
 Find requires only the path to search in as an argument. If you give your home-path `~` to it. It lists all files and folders located in your home directory, as we didn't specify what to search for.
-``` bash
+~~~~~ bash
 find ~
-```
+~~~~~
 
 To specify what to search for flags are used: 
 
-``` bash
+~~~~~ bash
 find ~ -name "Screenshot*"
-```
+~~~~~
 The above command searches for all files and directories beginning with the word `Screenshot` the asterisk is used as a wildcard for a unknown number of unknown chars.
 Find offers a number of such search flags which help to narrow the search down further.
 
-``` bash
+~~~~~ bash
 find ~ -name "Screenshot*" -type f 
-```
+~~~~~
 This command limits the search to results of the type **f**ile.
 
 | File Type | Description                   |
@@ -2695,9 +2695,9 @@ The `find` command allows combination of tests via logical operators to search f
 
 The example below searches for *png* and *pdf* (`-name "*.png" -or -name "*.pdf"`; `-type f`) files, in the home dir of the current user (`~`), owned by the user *dummy* (`-user dummy`)
 
-``` bash
+~~~~~ bash
 find ~ \( -name "*.png" -or -name "*.pdf" \) -type f -user dummy
-```
+~~~~~
 
 Exercise:
 *List all files owned by root or the current logged in user (find out username with `whoami`) in /home.*# Actions
@@ -2708,22 +2708,22 @@ Find can be used to execute actions on the files found.
 
 Find offers predefined actions, which can be seen in by calling `find --help`
 
-```
+~~~~~
 actions: -delete -print0 -printf FORMAT ...
-```
+~~~~~
 
 The core actions are explained in **The Linux Command Line** in the subchapter *17 - find - Predefined Actions*
 
 The example below will delete all screenshot files of the current user.
 
-``` bash
+~~~~~ bash
 find ~ -name "Screenshot*" -type f -delete
-```
+~~~~~
 The order of the tests and actions is important as by leaving the logical operator between the tests an `-and` is implied. 
 
-``` bash
+~~~~~ bash
 find ~ -name "Screenshot*" -and -type f -and -delete
-```
+~~~~~
 Order of execution:
 - 1. `-name "Screenshot*"` is executed first, without any dependencies
 - 2. `-type f` is executed second, in case `-name "Screenshot*"` matched
@@ -2731,9 +2731,9 @@ Order of execution:
 
 As the print statement is connected with an `-or` in the example below, it will be executed independent from the statements before, printing all files.
 
-``` bash
+~~~~~ bash
 find ~ -name "Screenshot*" -and -type f -or print
-```
+~~~~~
 
 Exercise:
 *Delete all .bak files in the example directory tree.*
@@ -2741,17 +2741,17 @@ Exercise:
 # User Defined Actions
 It is possible to execute user defined actions on results of the find command by adding the pattern below:
 
-``` bash
+~~~~~ bash
 -exec command {} ;
-```
+~~~~~
 
 The `{}` is the symbolic representation of the results pathname. The `;` serves as a delimiter for the command. Instead of `;`, `+` can be used. With the semicolon the action will get executed for every result in once. By using the plus as a delimiter, find will combine pathnames and execute them at once, making the command more efficient.
 
 The above example of deleting screenshots would look like this with a user defined action:
 
-``` bash
+~~~~~ bash
 find ~ -name "Screenshot*" -type f -exec rm '{}' '+'
-```
+~~~~~
 
 Exercise:
 *Create a Bash script, which adds read privileges to all .log files in the exemplary folder structure for the current user. Tip: To add read privileges for the current user use `chmod u+r <filename>`*# Search for file content
@@ -2762,9 +2762,9 @@ Grep is a tool to search files via regular expressions it. To see its full usage
 
 Grep can be used to search multiple files for a pattern by using the `-R` flag.
 
-```
+~~~~~
 grep -R "some_pattern" *
-```
+~~~~~
 
 The asterisk at the end is used to search through all files and folders in the current directory.
 
@@ -2780,24 +2780,24 @@ This Topic is dealt with in Chapter **4 - mkdir** of The Linux Command Line.
 
 To create a new directory use the command `mkdir`.
 
-```bash
+~~~~~bash
 mkdir sampledir
-``` 
+~~~~~ 
 ## Create Directory in Directory
 
 The above example will create the directory sample dir in the current directory. To create a new folder in *sampledir* you can type:
 
-```bash
+~~~~~bash
 mkdir sampledir/otherdir
-```
+~~~~~
 
 ## Create Whole Tree
 
 This command assumes sampledir is already existing. To create a whole directory tree if not existing use the Switch `-p`
 
-```bash
+~~~~~bash
 mkdir -p notexisting/sampledir
-```
+~~~~~
 
 The above example will create the folder *notexisting* and the directory *sampledir* within it.
 
@@ -2805,9 +2805,9 @@ The above example will create the folder *notexisting* and the directory *sample
 
 To create multiple directories simply write them after each other like that:
 
-```bash
+~~~~~bash
 mkdir sampledir othersampledir
-```
+~~~~~
 
 ## Exercice
 
@@ -2821,17 +2821,17 @@ This Topic is dealt with in Chapter **4 - rm** of The Linux Command Line.
 
 To delete a directory the command `rmdir` can be used.
 
-```bash
+~~~~~bash
 rmdir sampledir
-```
+~~~~~
 
 ## Delete Directories with `rm`
 The `rm` command also can be used to delete directories with its `-r` switch. This will also delete all files and folders in the directory.
 More on the topic `rm` in the following chapter.
 
-```bash
+~~~~~bash
 rm -r sampledir
-```
+~~~~~
 
 ## Exercise
 Write a script to create the Directory *sampledir* and delete it.
@@ -2852,7 +2852,7 @@ It has 3 important operational flags:
 
 The flags are used in the example below:
 
-```bash
+~~~~~bash
 # Deletes the file samplefile after asking for confirmation
 rm -i samplefile
 
@@ -2861,7 +2861,7 @@ rm -r sampledir
 
 # Deletes the writeprotected file writeprotectedsample without asking for confirmation
 rm -f writeprotectedsample
-```
+~~~~~
 
 ## Exercice:
 Use the script `020_testenv.sh` to create testfiles in your current folder and write a script to delete the folder *somedir* and its write protected contents without being asked for confirmation.
@@ -2874,17 +2874,17 @@ The `cp` command is used to copy files and directories (`-r` switch has to be se
 Its usage is `cp <src> <dest>`, multiple source files can be given like `cp <src1> <src2> ... <dest>`
 To copy file *a* to location *b* use:
 
-```bash
+~~~~~bash
 cp a b
-```
+~~~~~
 
 As a result the file *a* will be copied to file *b*
 
 To copy a whole folder use the `-r` switch just like in the `rm` command.
 
-```bash
+~~~~~bash
 cp -r somefolder someotherfolder
-```
+~~~~~
 
 ## Exercise
 Execute the *020_testenv.sh* script. Write a script to copy the file *somedir/writeprotected* to be next to *somedir* (same folder level) with the filename *writeprotected.bak*. And create a copy of *somedir* (*somedir.bak*)
@@ -2901,17 +2901,17 @@ The `mv` command is used to move or rename files and directories.
 Its Usage is very similar to the `cp` commands. It shares the useful switches mentioned in **Copying Files and Directories**. Its also possible to define multiple files and dirs to be copied `mv <src1> <src2> ... <dest>` 
 To rename a file simply move it on the same 'level':
 
-```bash
+~~~~~bash
 mv a b
-```
+~~~~~
 
 This changes the filename from *a* to *b*
 
 To move a file or directory to an other place give the new place as last parameter
 
-```bash
+~~~~~bash
 mv a somedir/
-```
+~~~~~
 
 This moves a to the subfolder *somedir*
 
@@ -2934,11 +2934,11 @@ Soflinks are the modern way of linking files in Unix Systems, they overcome the 
 The following code shows a directory with the file `test.txt`, a hardlink and a softlink to it.
 It can be seen, that the original file and the hardlink share the same inode number - they are quintessentially the same. The softlink has a different inode number - it is an independent file. The softlink additionally is pointing to the original test.txt file. 
 
-```bash
+~~~~~bash
 9181703 -rw-rw-r--. 2 dummy dummy 0 Dec 27 14:58 test.txt
 9181703 -rw-rw-r--. 2 dummy dummy 0 Dec 27 14:58 hardlink
 9181859 lrwxrwxrwx. 1 dummy dummy 8 Dec 27 14:59 softlink -> test.txt
-```
+~~~~~
 
 ### Excursion: Inode Number
 The inode number is an index in the so called inode table. In this table information about the file is stored, like its owner, size, permissions, or location. A files inode basically is its identity.# Creating Hardlinks
@@ -2947,20 +2947,20 @@ The command `ln` is used for creating links.
 
 To create hardlinks use it like this:
 
-```bash
+~~~~~bash
 ln <original-file> <link-location>
 # For example
 ln test.txt hardlink
-```
+~~~~~
 
 # Creating Softlinks
 To create softlinks use the `ln` command with the `-s` flag:
 
-```bash
+~~~~~bash
 ln -s <original-file> <link>
 # For example
 ln -s test.txt softlink
-```
+~~~~~
 
 ## Exercise
 Use the command `touch test` to create the empty file test in your current location. 
@@ -2969,9 +2969,9 @@ Write a script to create a hardlink called `test_hardlink` to the file test and 
 
 Most commands/programs used on Linux offer manpages. Manpages are extensive manuals/documentations of the programs. To access a Programs man page type:
 
-``` bash
+~~~~~ bash
 man ls
-```
+~~~~~
 
 The man page can be searched for patterns by typing `/` and the pattern you want to search for, hitting `ENTER` takes you to the first result. You can jump between the results by hitting `n` (next) and `p` (previous).
 To exit the man page hit `q`.
@@ -2994,14 +2994,14 @@ In this chapter the functionality of output redirection will be discussed
 To redirect the output into a file the operator `>` is used. Using `>` will overwrite the contents of the destination file given.
 In the example the output of the command `ls -la` will be written into the file *ls-output*
 
-``` bash
+~~~~~ bash
 ls -la > output
-```
+~~~~~
 
 Now we use the command `cat` to view the content of the file. Cat takes a file as an argument and displays its contents to the command line.
 We won't see an output on the command line, but the file now looks something like this:
 
-``` 
+~~~~~ 
 drwxr-xr-x 4 dummy dummy 4096 Jan 25 10:38 .
 drwxr-xr-x 5 dummy dummy 4096 Jan 25 10:37 ..
 drwxr-xr-x 8 dummy dummy 4096 Jan 25 10:54 .git
@@ -3009,14 +3009,14 @@ drwxr-xr-x 8 dummy dummy 4096 Jan 25 10:54 .git
 drwxr-xr-x 5 dummy dummy 4096 Jan 25 10:42 01_basic_commands
 -rw-r--r-- 1 dummy dummy 1070 Jan 25 10:37 LICENSE
 -rw-r--r-- 1 dummy dummy 3605 Jan 25 10:38 README.md
-```
+~~~~~
 
 
 ## Output Redirection Appending
 
 By using the `>>` operator output will be appended to the specified file if we repeat the above example our file should look like this:
 
-```
+~~~~~
 drwxr-xr-x 4 dummy dummy 4096 Jan 25 10:38 .
 drwxr-xr-x 5 dummy dummy 4096 Jan 25 10:37 ..
 drwxr-xr-x 8 dummy dummy 4096 Jan 25 10:54 .git
@@ -3031,21 +3031,21 @@ drwxr-xr-x 8 dummy dummy 4096 Jan 25 10:54 .git
 drwxr-xr-x 5 dummy dummy 4096 Jan 25 10:42 01_basic_commands
 -rw-r--r-- 1 dummy dummy 1070 Jan 25 10:37 LICENSE
 -rw-r--r-- 1 dummy dummy 3605 Jan 25 10:38 README.md
-```
+~~~~~
 
 ## Error Redirection
 
 The standard error can be redirected with `2>`/`2>>`. In the example it is tried to list the content of a restricted folder resulting in an error.
 
-``` bash
+~~~~~ bash
 ls /root > output
-```
+~~~~~
 
 Again we won't see an output, but our file will look like this:
 
-```
+~~~~~
 ls: cannot open directory '/root': Permission denied
-```
+~~~~~
 
 ## Redirect Both Outputs
 
@@ -3058,9 +3058,9 @@ Piping is a special variant of I/O redirection. It is used to use the output of 
 
 To pipe the `|` operator is used.
 
-```
+~~~~~
 ls | wc -w
-```
+~~~~~
 
 The above example will give the output of `ls` to the command `wc -w`. `wc -w` counts the words in a given file. So by piping the output of `ls` into it sums up the count of words used as filenames in the current folder.
 
@@ -3077,9 +3077,9 @@ The above commands/filters offer more functionality than the basic one described
 ## The `tee` Utility
 `tee` reads the standard input and copies it to standard output and one or more specified files.
 
-``` bash
+~~~~~ bash
 ls | tee output | grep output
-```
+~~~~~
 
 The above example will write the outputs of `ls` to the file *output* and then search the output of `ls` (forwarded by `tee`) for the word output.
 If there is no file named *output* in the folder in which the command is executed it will have no output on the first run as the file *output* doesn't exist at first.
@@ -3092,9 +3092,9 @@ If you are unsure about the usage of the commands look up their man pages.
 The topic permissions is discussed in chapter 9 of The Linux Command Line.
 If you list the contents of a directory with `ls -l` you can see the owner, group and permissions set for a file.
 
-```
+~~~~~
 -rwxr--r-- 1 dummy dummy   43 Jan 26 09:34 output
-```
+~~~~~
 
 ## Ownerships
 The first name that can be seen (dummy) is the *user* owning the file, the second one ist the *group* owning the file
@@ -3121,20 +3121,20 @@ In this chapter it will be explained how to change the owner and the group ownin
 ## Changing the Owner of a file
 To change the owner of a file the command `chown` is used:
 
-``` bash 
+~~~~~ bash 
 chown dummy output
-```
+~~~~~
 The above example will change the owner of the file *output* to the user *dummy*.
 
 ## Changing the Owning Group of a File
 To change the group owing a file, the commands `chgrp` 
 
-``` bash
+~~~~~ bash
 chgrp dummygrp output
-```
-``` bash
+~~~~~
+~~~~~ bash
 chown dummy:dummygrp output
-```
+~~~~~
 The above examples both will change the owning group of *output* to dummy group. By using `chgrp` you don't have to know the owner of the file to change the group.
 
 ## Exercise
@@ -3143,9 +3143,9 @@ The above examples both will change the owning group of *output* to dummy group.
 # Changing Permissions of a File
 To change the permissions of a file the command `chmod` is used.
 
-``` bash
+~~~~~ bash
 chmod u+w output
-```
+~~~~~
 In the above example the *u*ser (owner) of the file output gets granted write permissions on it.
 
 ## Additive/Subtractive Model
@@ -3175,9 +3175,9 @@ Imagine each flag of a rights triplet gets assigned a number:
 Now select the permissions you want to assign and add up their numbers. This way `rw-` would result in a *6*. Now do this for each entity and you get a number like 644 for `rw-r--r--`.
 This way permissions can be assigned with `chmod`:
 
-``` bash
+~~~~~ bash
 chmod 0644 output
-```
+~~~~~
 The leading zero can be left out, it is used to express an octal value (0644 (octal) -> 0b 110 100 100 (binary)).
 
 ## Exercise
@@ -3189,18 +3189,18 @@ As learned in the previous chapter file content can be viewed using the commands
 The contents can be compared manually by viewing them with the above commands, or the command `diff` can be used.
 The tool gets called as follows:
 
-``` bash 
+~~~~~ bash 
 diff file1 file2
-```
+~~~~~
 
 The output will highlight the differences between the files:
 
-```
+~~~~~
 3c3
 < an exemplary line
 ---
 > a difference
-```
+~~~~~
 
 The differing line is displayed above.
 
@@ -3267,9 +3267,9 @@ Use | between two sequences or characters to search for the one OR the other.
 ## Example
 The following regex matches the pattern of an IP Address. The dot has to be escaped to serve as literal dot, not as wildcard.
 
-```
+~~~~~
 \d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}
-```
+~~~~~
 The website [regex101.com](https://regex101.com/) can be used to learn more about regexes and to experiment with them
 
 ## Exercise
@@ -3281,12 +3281,12 @@ In Vim, Less or Man interfaces type /, enter a regex pattern and hit enter to se
 ### Find and Replace in Vim
 To use find and replace in vim enter the following pattern in command mode:
 
-``` bash
+~~~~~ bash
 # Search and replace in current line 
 :s/pattern/newtext/g
 # Search and replace in whole file
 :%s/pattern/newtext/g
-```
+~~~~~
 
 The `g` behind the last slash is a switch, the following other switches can be used:
 - g - global, go on after first match
@@ -3324,14 +3324,14 @@ While under Windows `zip` is the default compression format on Linux `gzip` and 
 ## The Tool Gzip
 Usage of `gzip`:
 
-``` bash
+~~~~~ bash
 # Compressing files
 gzip foo
 # Decompressing files
 gzip -d foo.gz
 ## or
 gunzip foo.gz
-```
+~~~~~
 
 Bzip is used in the same way but uses an other compression algorithm internally.
 
@@ -3358,9 +3358,9 @@ The modes can be combined with other options like:
 - z - use gzip with tar
 - a - auto compression, choose compression program
 
-``` bash
+~~~~~ bash
 tar -cf file.tar file 
-```
+~~~~~
 
 The Tar mode always has to lead before the other options.
 
@@ -3368,15 +3368,15 @@ The Tar mode always has to lead before the other options.
 
 Creating an compressed archive:
 
-``` bash
+~~~~~ bash
 tar -czf archive.tar.gz file0 file1 file2 file3 
-```
+~~~~~
 
 Unpack compressed archive:
 
-``` bash
+~~~~~ bash
 tar -xf archive.tar.gz
-```
+~~~~~
 
 ## Exercise
 - Read tars man page to learn more about it.
@@ -3422,9 +3422,9 @@ Linux systems can be safely shutdown with the command `shutdown` it offers a var
 
 A new shutdown is planned by typing: 
 
-``` bash
+~~~~~ bash
 shutdown -h 10
-```
+~~~~~
 
 The above example will schedule a shutdown of the system 10 minutes form now.
 To shutdown a system instantly the time `now` can be specified.
@@ -3473,9 +3473,9 @@ For more information see the [Ubuntu Documentation](https://wiki.ubuntuusers.de/
 ## Simple Reinstallation
 To reinstall grub for example in case of a damaged MBR do the following:
 
-``` bash
+~~~~~ bash
 sudo grub-install /dev/sda # where to place the boot loader
-```
+~~~~~
 
 By doing this the configuration files */etc/default/grub* and */etc/grub.d/\** are untouched.
 
@@ -3491,22 +3491,22 @@ are needed. They can be installed with the `apt` utility.
 
 To ensure a clean new installation the existing configurations can be purged with:
 
-``` bash
+~~~~~ bash
 sudo apt-get purge grub-* os-prober grub-gfxpayload-lists
-```
+~~~~~
 
 To install teh new boot loader, first install the packages listed above:
 
 *For Bios PCs:*
-``` bios
+~~~~~ bios
 sudo apt-get install grub-pc os-prober grub-gfxpayload-lists
-```
+~~~~~
 
 *For EFI PCs:*
-``` bash
+~~~~~ bash
 sudo apt update
 sudo apt-get install grub-efi-amd64-signed os-prober #  grub-efi-amd64 or grub-efi-ia32 (for 32Bit systems) also possible
-``` 
+~~~~~ 
 
 In the masks following the installation destination of grub has to be determined.
 # Configuring GRUB2
@@ -3535,10 +3535,10 @@ There are different types of processes:
 
 Using the tool `top` a taskmanager-like interface will appear in your bash.
 
-```
+~~~~~
   PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
   297 friedri+  20   0   10044   5068   3360 S   0.0   0.0   0:00.18 bash
-```
+~~~~~
 
 In the above example an exemplary entry taken from the top command can be seen.
 Top shows the main properties of an process:
@@ -3575,11 +3575,11 @@ The tool `kill` is used to send signals to processes, some useful signals are li
 
 Signals can be sent like the following:
 
-``` bash
+~~~~~ bash
 kill -<Signal ID> <PID>
 kill -<Signal Name> <PID>
 kill <PID> # Kill alone sent SIGTERM -> kill -SIGTERM <PID>
-```
+~~~~~
 
 To let the process 500 be killed by the kernel we would send `kill -9 500`.
 
@@ -3609,11 +3609,11 @@ New logs will be appended to an existing log file, so if you are looking for the
 On newer systems *syslog* is replaced by *journal*. The syslogs can be viewed with the command `sudo journalctl` rather than via the actual log file.
 The journal will be displayed with `less`.
 
-```
+~~~~~
 Mar 08 16:46:46 server sudo[843154]: pam_unix(sudo:session): session closed for user root
 Mar 08 16:46:46 server sudo[843154]:  user : TTY=pts/8 ; PWD=/var/log ; USER=root ; COMMAND=/usr/bin/journalctl -f
 Mar 08 16:46:46 server sudo[843154]: pam_unix(sudo:session): session opened for user root by (uid=0)
-```
+~~~~~
 
 Above the journal log entry for opening the journal with sudo can be seen. Leading is the timestamp, followed by the hostname, then the process name with pid and the processes log message as a tail.
 
@@ -3634,7 +3634,7 @@ The jobs can be defined in various locations:
 
 ### The Crontab Format
 
-```
+~~~~~
 # Example of job definition:
 # .---------------- minute (0 - 59)
 # |  .------------- hour (0 - 23)
@@ -3644,7 +3644,7 @@ The jobs can be defined in various locations:
 # |  |  |  |  |
 # *  *  *  *  * user-name command to be executed
   17 *  *  *  * root    cd / && run-parts --report /etc/cron.hourly
-```
+~~~~~
 
 In the above example it can be seen how cronjobs are timed. There are 5 fields for defining when to run the task
 
@@ -3668,9 +3668,9 @@ The crontab file is not to be edited manually, instead the tool `crontab` is use
 
 The `at` command can be used to schedule a task to run once. At can be given a task with the following syntax:
 
-``` bash
+~~~~~ bash
 at <time to run the task at> -f <script to run>
-```
+~~~~~
 
 By calling `at` without the `-f` flag a task to run can be defined in an interactive mode, which can be exited with `Crtl-D.`
 
@@ -3681,25 +3681,25 @@ The time can be defined in the following patterns
 
 ## Exercise
 Create a crontab entry which will write 'Coming from Crontab' into the journal (see chapter before) every 5 minutes.Run `crontab -e` enter
-```
+~~~~~
 15  *  *  *  * echo 'Coming from Crontab' | systemd-cat
-```
+~~~~~
 save and close the editor.
 For user crontabs no username is needed.# Check if a Task was Executed
 The cron daemon logs the execution of tasks to syslog. As a consequence the execution of the tasks can be seen in the system journal (systemd logs).
 
 The journal can be viewed with the following command:
 
-``` bash
+~~~~~ bash
 sudo journalctl
 # To get to the end of the file press Shift+G
-```
+~~~~~
 
 An example taken from [here](https://bencane.com/2011/11/02/did-my-cronjob-run/) below:
 
-```
+~~~~~
  Nov 02 17:10:01 testbox CRON[2210]: (testuser) WRONG INODE INFO (crontabs/testuser)
-```# Updating Software
+~~~~~# Updating Software
 
 This chapter is based on the chapter 14.2 of Linux - Rheinwerk Publishing.
 
@@ -3735,31 +3735,31 @@ The apt default operations are:
 As `apt update` updates the index od packages and their versions located in the remote repositories, it has to be run before each operation.
 To install the `vim` editor run: 
 
-``` bash
+~~~~~ bash
 sudo apt update
 sudo apt install vim
-```
+~~~~~
 
 To upgrade a specific package if installed:
 
-``` bash
+~~~~~ bash
 sudo apt update
 sudo apt install --only-upgrade vim
-```
+~~~~~
 
 To update all packages on the system:
 
-``` bash
+~~~~~ bash
 sudo apt update
 sudo apt upgrade
-```
+~~~~~
 
 If a software vendors offer their software directly from their website. On Debian based systems, *deb* packages need to be downloaded these can be installed by the following commands:
 
-``` bash
+~~~~~ bash
 sudo apt update
 sudo apt install ./Downloads/your_downloaded_package.deb
-```
+~~~~~
 
 ## Exercice 
 - Read the man page of apt/apt-get if you want to learn more.
@@ -3768,13 +3768,13 @@ sudo apt install ./Downloads/your_downloaded_package.deb
 To check on available system resources the tool `top` can be used.
 Below is an exemplary output of `top`:
 
-```
+~~~~~
 top - 15:34:28 up  1:26,  3 users,  load average: 0.50, 0.54, 0.61
 Tasks: 398 total,   1 running, 397 sleeping,   0 stopped,   0 zombie
 %Cpu(s):  1.0 us,  0.6 sy,  0.0 ni, 98.4 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
 MiB Mem :  15413.3 total,   9340.8 free,   3648.2 used,   2424.3 buff/cache
 MiB Swap:  26913.0 total,  26913.0 free,      0.0 used.  11246.0 avail Mem
-```
+~~~~~
 
 At the end of the top line the average load of the CPU is displayed in the last minute, the last five minutes and the last fifteen minutes.
 In the next line the CPU loads on each core are shown in percent, followed by the usage of the physical memory, followed by the usage of the usage of the swap memory.
@@ -3812,26 +3812,26 @@ A full list of variables can be viewed with the `sysctl` command and the `-a` fl
 
 To alter the value of a kernel runtime parameter temporally use sysctl like the following:
 
-``` bash
+~~~~~ bash
 sysctl <class>.<parameter>=<value>
-``` 
+~~~~~ 
 
 ## Configure Parameters Permanently
 
 To alter a runtime parameter permanently redirect the output to of the above command to be appended to the configuration file */etc/sysctl.conf*:
 
-``` bash
+~~~~~ bash
 sysctl <class>.<parameter>=<value> >> /etc/sysctl.conf
-```
+~~~~~
 
 Alternatively the configuration files in */etc/sysctl.d/* can be modified manually. Either create a new file or modify an existing one in */etc/sysctl.d/*, the files have to contain one value assignment per line:
 
-```
+~~~~~
 <class0>.<parameter0>=<value0>
 <class1>.<parameter1>=<value1>
 ...
 <classN>.<parameterN>=<valueN>
-```
+~~~~~
 
 ## Example
 
@@ -3849,26 +3849,26 @@ Shell scripts make it possible to write down complex tasks into scripts. These s
 ## Hello World!
 Shell scripts typically start with a shebang or hashbang:
 
-``` bash
+~~~~~ bash
 #!/bin/bash
 ...
-```
+~~~~~
 The shebang tells the calling shell which binary to execute the script with.
 A script can contain all commands that can be executed by the shell by default. An exemplary script could look like this:
 
-``` bash
+~~~~~ bash
 #!/bin/bash
 
 echo HelloWorld!
-```
+~~~~~
 
 ## Comments
 Comments can be started with a `#`:
 
-``` bash
+~~~~~ bash
 # this is a comment
 echo foo # this is a comment too
-```
+~~~~~
 
 ## Exercise
 Write a script which echoes your name and put in a comment describing what it does.
@@ -3878,9 +3878,9 @@ Write a script which echoes your name and put in a comment describing what it do
 Variables are created and set by defining its name and assigning it a value:
 Note that no spaces are allowed before and after the equal sign.
 
-``` bash
+~~~~~ bash
 variablename="variablevalue"
-```
+~~~~~
 Variables types can be:
 
 - Strings - as shown above
@@ -3889,41 +3889,41 @@ Variables types can be:
 
 To access the value of a set variable put the `$` sign in front of it:
 
-``` bash
+~~~~~ bash
 echo $variablename
-```
+~~~~~
 
 The result of a function call can be assigned to a variable by putting the call in braces preceded by a `$` sign:
 
-``` bash
+~~~~~ bash
 var=$(echo foo)
 echo $var
-```
+~~~~~
 
 ## Arrays
 Arrays can be created by putting values in braces:
 
-``` bash
+~~~~~ bash
 int_array = (1 2 3 4)
-```
+~~~~~
 
 Specific values can be set by referencing them by their index:
 
-``` bash
+~~~~~ bash
 int_array[1] = 10
-```
+~~~~~
 
 The values can be accessed by putting the variable and the whished index into curly braces:
 
-``` bash
+~~~~~ bash
 echo ${int_array[1]} # will output 10
-```
+~~~~~
 
 ## Exercise
 Write a script, which saves the count of files in the current directory into the variable `fileCount` and print the variable to the terminal.# Conditionals
 Conditionals can be used to execute tasks if a condition is met. A conditional block is started with `if` and closed with `fi`. 
 
-``` bash
+~~~~~ bash
 var=5
 if [ var = 5 ]
 then
@@ -3931,7 +3931,7 @@ then
 else
     echo var is not 5
 fi
-```
+~~~~~
 
 An overview of bash test and conditional operators, which can be used for conditionals can be found on [this cheatsheet](https://kapeli.com/cheat_sheets/Bash_Test_Operators.docset/Contents/Resources/Documents/index) and on the bash man page.
 
@@ -3949,26 +3949,26 @@ Write a script, which checks the count of files in the folder it is executed and
 ## for
 The for loop in bash can be used to iterate over arrays:
 
-``` bash
+~~~~~ bash
 for var in (1 2 3 4 5)
 do 
     echo var
 done
-```
+~~~~~
 
 With for it is also possible to iterate over the files in directory:
 
-``` bash
+~~~~~ bash
 # This will print the filenames of all files in the current folder
 for file in *.txt
     echo $datei
 done
-```
+~~~~~
 
 ## while
 
 The while loop can be used to execute code while a condition is satisfied:
-``` bash
+~~~~~ bash
 var=5
 while [ var != 0 ]
 do
@@ -3976,11 +3976,11 @@ do
     var=var-1
 done
 # will print 5 to 1 to the terminal
-```
+~~~~~
 
 An endless while loop can be created by taking `1` (true) as a condition or by replacing the condition with `:`, see below:
 
-``` bash
+~~~~~ bash
 while [ 1 ]
     echo foo
 done
@@ -3988,7 +3988,7 @@ done
 while :
     echo foo
 done
-```
+~~~~~
 ## until
 Until loops till a value isn't satisfied anymore. It can be compared to a negative while loop `while [ !0 ]` is the same as `until[ 0 ]`.
 
@@ -3999,9 +3999,9 @@ The automatic start of services on system startup can be managed with the tool `
 Systemctl allows to start, stop, check, enable and disable services. An enabled service will start on startup, a disabled one will not.
 Systemctl is used like this:
 
-``` bash
+~~~~~ bash
 systemctl <operation> <service>
-```
+~~~~~
 
 With some of the most common operations being the following:
 - start
@@ -4015,7 +4015,7 @@ All operations except the `status` will require root privileges.
 ## Checking a Service
 Checking the status of a service will bring up the following view:
 
-``` 
+~~~~~ 
 crond.service - Command Scheduler
      Loaded: loaded (/usr/lib/systemd/system/crond.service; enabled; vendor preset: enabled)
      Active: active (running) since Thu 2022-04-07 12:31:44 CEST; 1h 20min ago
@@ -4027,7 +4027,7 @@ crond.service - Command Scheduler
              └─1399 /usr/sbin/crond -n
 
 Apr 07 12:31:44 fedora crond[1399]: (CRON) INFO (running with inotify support)
-```
+~~~~~
 
 The second value (`enabled`) in the loaded field indicates whether the service is enabled to start on startup.
 Below the services statistics its log entries are displayed.
@@ -4035,9 +4035,9 @@ Below the services statistics its log entries are displayed.
 ## Example
 To disable the cron daemon, which is responsible for executing the following command:
 
-``` bash
+~~~~~ bash
 sudo systemctl disable cron
-```
+~~~~~
 
 # Exercise
 - Read the `systemctl` manpage to learn more.
@@ -4054,19 +4054,19 @@ To demonstrate the configuration of systemd services in this section a python se
 ### Python Server
 Python offers a online way of starting a webserver, by loading the module *http.server*:
 
-``` bash
+~~~~~ bash
 python -m http.server
-```
+~~~~~
 To display something create a folder */home/your-user/www* and create a file *index.html* with the following content in it.
 
-``` html
+~~~~~ html
 <h1>I am a Simple Python Server!</h1>
-```
+~~~~~
 
 ## The Service File
 Lets create a simple web server service file:
 
-``` 
+~~~~~ 
 [Unit]
 Description=Simple Python Service
 After=network.target
@@ -4076,7 +4076,7 @@ ExecStart=/usr/bin/env python3 -m http.server
 
 [Install]
 WantedBy=multi-user.target
-```
+~~~~~
 
 In the first section *[Default]* the service is described (its name is based on the service filename).
 Systemd maintains an order when starting services, to start services other services depend on before those depending on them. This dependencies are defined via the *After* field, which will let the server service start after the *network.target* service. 
@@ -4119,25 +4119,25 @@ For more examples see the [Fedora documentation](https://docs.fedoraproject.org/
 ## View File Contexts
 To view contexts assigned to files the command `ls` can be used with the flag `-Z` producing the following exemplary output:
 
-```
+~~~~~
 unconfined_u:object_r:user_home_t:s0 01_basic_commands
-```
+~~~~~
 
 
 ## Change File Contexts
 File contexts can be altered with the command `chcon` is used:
 
-``` bash
+~~~~~ bash
 chcon -t <new_context_type> <file>
-```
+~~~~~
 When used with the `-t` switch, like above, the context type of a file is changed. The `-R` flag can be used to alter the contexts of a directory and its contents recursively.
 
 ## View Process Contexts
 To view the context of a process `ps` can be used with the flags `-eZ`:
 
-```
+~~~~~
 system_u:system_r:crond_t:s0-s0:c0.c1023 1302 ?  00:00:00 crond
-```
+~~~~~
 
 This reveals that the process crond has the context type crond_t giving it access to cron relevant files.
 
@@ -4151,7 +4151,7 @@ This section is based on the [SUSE Documentation](https://documentation.suse.com
 AppArmor policies are defined in sol called profiles. The profiles are typically found in */etc/apparmor.d*
 An exemplary AppArmor Profile can be seen below:
 
-``` bash
+~~~~~ bash
 ## App Armor Profiles offer the possibility to include extra files.
 ## In this case a file containing variable definitions is included.
 #include <tunables/global>
@@ -4200,7 +4200,7 @@ An exemplary AppArmor Profile can be seen below:
       /etc/foobar        r,
    }
 }
-```
+~~~~~
 Taken from [here](https://documentation.suse.com/sles/12-SP4/html/SLES-all/cha-apparmor-profiles.html#sec-apparmor-profiles-parts).
 
 The following access controls can be used:
@@ -4240,9 +4240,9 @@ The tool knows the following commands:
 ### Example
 The below example lists all files belonging to vim: 
 
-``` bash
+~~~~~ bash
 apt-file list vim
-```
+~~~~~
 
 ## On RedHat
 On RedHat the package manager `rpm` has the capabilities to do the same operations with the following flags:
@@ -4253,9 +4253,9 @@ On RedHat the package manager `rpm` has the capabilities to do the same operatio
 ### Example
 The below example does the same as the one above:
 
-``` bash
+~~~~~ bash
 rpm -ql vim
-```
+~~~~~
 
 ## Exercise
 - Install the tool `apt-file`
@@ -4270,18 +4270,18 @@ Adduser is a frontend for useradd, which feeds useradd the information entered.
 
 Exemplary `useradd` call:
 
-``` bash
+~~~~~ bash
 useradd dummy 
-```
+~~~~~
 
 This will add the user dummy to the system. As no parameters were specified it will have no home directory and password.
 
 ## Change or Create a Password
 The command `passwd` can be used to change the password of an user or create one if not existing.
 
-``` bash
+~~~~~ bash
 passwd dummy
-```
+~~~~~
 You will be asked for a new password for the user dummy
 
 ## Exercise
@@ -4298,19 +4298,19 @@ Users can be modified with the command `usermod`. Usermod supplies the following
 - -L: lock user
 - -U: unlock user
 
-``` bash 
+~~~~~ bash 
 usermod -d /home/dummy dummy 
-```
+~~~~~
 
 This will assign the user dummy the homedir */home/dummy*
 
 ## Delete Users
 To delete users the commands `userdel` or `deluser` are used:
 
-``` bash
+~~~~~ bash
 userdel dummy
 deluser dummy
-```
+~~~~~
 
 Deluser offers the possibility to remove the home directory of the user (`--remove-home`), all files of the user (`--remove-all-files`), and backup the users files as an archive (`--backup`)
 Userdel offers the possibility to remove the users home directory (`-r`).s
@@ -4324,23 +4324,23 @@ Userdel offers the possibility to remove the users home directory (`-r`).s
 Use `groupadd` or `addgroup` to create a new group.
 Analogous to the user creation, `addgroup` is a interactive frontend for `addgroup`.
 
-``` bash
+~~~~~ bash
 addgroup new_group
-```
+~~~~~
 
 ## Modify Groups
 To modify groups use the `groupmod` command:
 
-``` bash
+~~~~~ bash
 groupmod -n exemplary_group new_group
-```
+~~~~~
 The example above changes the groupname from *exemplary_group* to *new_group*
 ## Delete Groups
 To delete groups use the `groupdel` command:
 
-``` bash
+~~~~~ bash
 groupdel exemplary_group
-```
+~~~~~
 
 ## Exercise
 - Read the manpages for `groupadd`/`addgroup`, `groupmod` and `groupdel` if you want to learn more
@@ -4362,18 +4362,18 @@ Adduser is a frontend for useradd, which feeds useradd the information entered.
 
 Exemplary `useradd` call:
 
-``` bash
+~~~~~ bash
 useradd dummy 
-```
+~~~~~
 
 This will add the user dummy to the system. As no parameters were specified it will have no home directory and password.
 
 ## Change or Create a Password
 The command `passwd` can be used to change the password of an user or create one if not existing.
 
-``` bash
+~~~~~ bash
 passwd dummy
-```
+~~~~~
 You will be asked for a new password for the user dummy
 
 ## Exercise
@@ -4390,19 +4390,19 @@ Users can be modified with the command `usermod`. Usermod supplies the following
 - -L: lock user
 - -U: unlock user
 
-``` bash 
+~~~~~ bash 
 usermod -d /home/dummy dummy 
-```
+~~~~~
 
 This will assign the user dummy the homedir */home/dummy*
 
 ## Delete Users
 To delete users the commands `userdel` or `deluser` are used:
 
-``` bash
+~~~~~ bash
 userdel dummy
 deluser dummy
-```
+~~~~~
 
 Deluser offers the possibility to remove the home directory of the user (`--remove-home`), all files of the user (`--remove-all-files`), and backup the users files as an archive (`--backup`)
 Userdel offers the possibility to remove the users home directory (`-r`).s
@@ -4416,23 +4416,23 @@ Userdel offers the possibility to remove the users home directory (`-r`).s
 Use `groupadd` or `addgroup` to create a new group.
 Analogous to the user creation, `addgroup` is a interactive frontend for `addgroup`.
 
-``` bash
+~~~~~ bash
 addgroup new_group
-```
+~~~~~
 
 ## Modify Groups
 To modify groups use the `groupmod` command:
 
-``` bash
+~~~~~ bash
 groupmod -n exemplary_group new_group
-```
+~~~~~
 The example above changes the groupname from *exemplary_group* to *new_group*
 ## Delete Groups
 To delete groups use the `groupdel` command:
 
-``` bash
+~~~~~ bash
 groupdel exemplary_group
-```
+~~~~~
 
 ## Exercise
 - Read the manpages for `groupadd`/`addgroup`, `groupmod` and `groupdel` if you want to learn more
@@ -4446,9 +4446,9 @@ To add an user to a group use `usermod`. Usermod offers three options of modifyi
 ## Exercise
 - Create a user *dummy* and add him to the group *dummy_group*insert the following into ~/.bash_profile
 
-``` bash
+~~~~~ bash
 echo Hello Liam
-```
+~~~~~
 
 Replace Liam with your name.# Configuring the Local User Environment
 This Section is based of an [article by RedHat](https://www.redhat.com/sysadmin/customize-user-environments) and Chapter 07 of Linux - Rheinwerk Verlag.
@@ -4499,17 +4499,17 @@ This file (on Debian /etc/bash.bashrc) gets executed for each user when opening 
 This file is read on each login. The difference between the other two is, that it is no script but rather contains variable definitions directly.
 Variables like *http_proxy* for Proxy configuration can be placed here:
 
-``` bash
+~~~~~ bash
 http_proxy = "https://proxyurl.tld:port"
-```
+~~~~~
 
 ## Exercise
 Place a script in */etc/profile.d* that greets each new login with "Hi there from \<your name\>".Place a file *greeting.sh* with the following content in */etc/profile.d*.
 
-``` bash
+~~~~~ bash
 #!/bin/bash
 echo "Hi there from Liam"
-```
+~~~~~
 
 Replacing "Liam" with your name.# Defining User Resource Limits
 This section is based of the [Ubuntu Server Cookbook](https://subscription.packtpub.com/book/networking_and_servers/9781785883064/1/ch01lvl1sec17/setting-resource-limits-with-limits-conf).
@@ -4543,9 +4543,9 @@ The following resource *items* can be limited (taken from */etc/security/limits.
 The syntax for defining new limits is: `<domain> <type> <item> <value>`
 For example:
 
-```
+~~~~~
 @student        hard    nproc           40
-```
+~~~~~
 
 The above example grants a member of the group student a maximum count of 40 processes.
 
@@ -4553,9 +4553,9 @@ The above example grants a member of the group student a maximum count of 40 pro
 Write a hard limit for members of the group student, to limit their logins to 2
 
 
-```
+~~~~~
 @student        hard    maxlogins       2
-```# User Privileges
+~~~~~# User Privileges
 This chapter is based on chapter 13.4 of the book Linux - Rheinwerk Verlag
 User Types on Linux are differentiated into **root** and **standard** users.
 Principally the root user has unlimited access to the system, while a standard user only can access files which he has permissions to.
@@ -4563,9 +4563,9 @@ Principally the root user has unlimited access to the system, while a standard u
 ## Super User Do
 The command `sudo` allows standard users to execute commands as root:
 
-``` bash
+~~~~~ bash
 sudo vim /etc/sudoers
-```
+~~~~~
 
 In the above command the file */etc/sudoers* gets opened with vim. Per default only the root user has access to this file. This file regulates the access to the sudo command.
 Per default users who are in the group *sudo* (Debian)/*wheel* (RedHat) have access to run sudo.
@@ -4591,17 +4591,17 @@ On RedHat Systems the tools `authconfig` or `authselect` are recommended to conf
 The configurations files are `/etc/pam.conf` or any file in `/etc/pam.d` (if `/etc/pam.d` exists `/etc/pam.conf` will be ignored).
 Each of these files should consist of multiple rule lines. Each rule-line has a syntax as follows:
 
-```
+~~~~~
 service type control module-path module-arguments
-```
+~~~~~
 (For files in the `/etc/pam.d` the service field is omitted, instead the name of the file references the service)
 
-```
+~~~~~
 auth       substack     system-auth
 auth       include      postlogin
 account    required     pam_nologin.so
 ...
-```
+~~~~~
 
 Above is an excerpt of the content of the */etc/pam.d/login* file. In the first line the **auth** content of the file */etc/pam.d/system-auth* is evalueted as an substack, meaning the statements will be checked, but if one fails only the substack fails. 
 In the second line the **auth** content of the file */etc/pam.d/postlogin* gets included, meaning the auth lines in the file are evaluated, if one fails, the original stack fails too. In the third line the pam module *pam_nologin.so* gets included as required, meaning it succeeding is necessary to continue the stack, **pam_nologin.so** fails if the file */etc/nologin* exists.
@@ -4616,31 +4616,31 @@ On Debian network interfaces are defined in the */etc/network/interfaces* file. 
 ## WLAN
 To configure a wlan interface a file in */etc/network/interfaces.d* has to be created with the following contents:
 
-```
+~~~~~
 auto wlan0
 iface wlan0 inet dhcp
 wpa-essid <wlan-ssid>
 wpa-psk <wpa-key>
-```
+~~~~~
 
 The interface `wlan0` has to be replaced with the actual interface, which can be determined with the command `ip a`:
 
-```
+~~~~~
 2: enp2s0f0: <NO-CARRIER,BROADCAST,MULTICAST,UP> mtu 1500 ...
 ...
 3: wlp3s0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 ...
 ...
-```
+~~~~~
 
 The above example shows an output of `ip a`, the wlan interface `wlp3s0` and the ethernet interface `enp2s0f0` can be identified.
 
 ## Ethernet
 To configure a ethernet interface use the following content:
 
-```
+~~~~~
 auto eth0
 iface eth0 inet dhcp
-```
+~~~~~
 
 WLAN as well as ethernet are configured to retrieve their IP address via dhcp.
 The system has to be restarted to apply the settings.
@@ -4662,35 +4662,35 @@ Hostnames offer the advantage that they stay the same, while the IP address can 
 ## Static Resolution
 On Linux systems static domain name resolution can be defined in the file */etc/hosts*:
 
-```
+~~~~~
 127.0.0.1   localhost localhost.localdomain localhost4 localhost4.localdomain4
 ::1         localhost localhost.localdomain localhost6 localhost6.localdomain6
-```
+~~~~~
 
 The file points the localhost domains to the localhost ip addresses.
 An entry for *example.com* would look like this:
 
-```
+~~~~~
 93.184.216.34 example.com
-```
+~~~~~
 
 ## Dynamic Resolution
 As the IP of a network target might change, dynamic hostname resolution offers a way to connect to the device anyway, without knowing its exact IP. To do this a query is sent to a DNS server, the Server resolves the hostname to an IP and sends it back to the host.
 To check the currently used nameservers `resolvectl status` can be used:
 
-``` 
+~~~~~ 
 ...
 DNS Servers: 192.168.178.1
 ...
-```
+~~~~~
 
 To alter the resolve configuration written in */etc/resolve.conf* the tool `resolvconf` has to be used, as the file is managed.
 After installing the tool the file */etc/resolvconf/resolv.conf.d/head* can be altered. An additional name server can be added to this file.
 The format of the entry would be:
 
-```
+~~~~~
 nameserver <IP>
-```
+~~~~~
 
 After editing the file the `resolvconf` has to be run with the flag `-u` to update the */etc/resolv.conf* file.
 
@@ -4771,21 +4771,21 @@ Network destinations can be applied in the following forms:
 
 Updates made via iptables will be temporary and reset after a reboot. To make the changes persistent the command `iptables-save` and redirecting the output to */etc/iptables/rules.v4* (for Debian) will make the changes persistent between reboots:
 
-``` bash
+~~~~~ bash
 # Debian
 iptables-save > /etc/iptables/rules.v4
 # RedHat
 iptables-save > /etc/sysconfig/iptables
-```
+~~~~~
 
 Taken from [here](https://www.thomas-krenn.com/de/wiki/Iptables_Firewall_Regeln_dauerhaft_speichern).
 
 ## Example
 An exemplary rule can look like this:
 
-``` 
+~~~~~ 
 iptables -A INPUT -p tcp -j TCP
-```
+~~~~~
 This will add a call to the custom chain `TCP` for all incoming TCP packages.
 
 ## Exercise
@@ -4805,17 +4805,17 @@ To configure a temporal IP route the command `ip route` with the following opeat
 - append: `ip route append <destination>/<netmask> <gateway>`
 - replace: `ip route replace <destination>/<netmask> <gateway>`
 
-``` bash
+~~~~~ bash
 # add a route to statically rout the ip address 192.0.2.1 over the address 10.0.0.1 as a hop/gateway
 ip route add 192.0.2.1 via 10.0.0.1
-```
+~~~~~
 
 The address to route also can be specified as a combination of IP address and netmask.
 
 ## Permanent IP Routing
 Routes created by the ip command will only be applied temporally. To make the route permanent it has to be added to the file */etc/netplan/50-cloud-init.yaml* with the following syntax:
 
-```
+~~~~~
 network:
     ethernets:
         enp0s3:
@@ -4828,7 +4828,7 @@ network:
             - to: 172.16.0.0/24
               via: 192.168.1.100
     version: 2
-```
+~~~~~
 *Taken from [here](https://linuxconfig.org/how-to-add-static-route-with-netplan-on-ubuntu-20-04-focal-fossa-linux)*
 
 In the example the addresses `172.16.0.0/24` will be routed over the gateway `192.168.1.100` this applies to the interface `enp0s3`.
@@ -4846,12 +4846,12 @@ To install the NTP package the command `sudo apt install ntp` has to be used.
 ## Configure NTP
 To configure the NTP the file `/etc/ntp.conf` has to be edited. In this file the time servers to use can be specified:
 
-```
+~~~~~
 server 0.de.pool.ntp.org
 server 1.de.pool.ntp.org
 server 2.de.pool.ntp.org
 server 3.de.pool.ntp.org
-```
+~~~~~
 
 Above the German time pool servers are configured. NTP servers can be searched [here](https://www.ntppool.org/en/). After a restart the service will use the newly configured servers.
 It is recommended to use multiple time servers. The timeserver with the lowest offset to **Stratum 0** (original time sources) will be used. The command `ntpq -p` can be used to check the currently configured time servers.
@@ -4874,11 +4874,11 @@ Per default the installed service will cache DNS queries.
 To configure the *named* service the file */etc/named.conf* has to be edited. 
 In the default configuration the DNS server accepts from localhost. To allow traffic from other systems add the statement any to the following lines:
 
-```
+~~~~~
 listen-on port 53 { 127.0.0.1; any; };
 allow-query { localhost; any; };
 allow-query-cache { localhost; any; };
-```
+~~~~~
 
 ## Iterative and Recursive DNS
 When querying iterative the DNS request is forwarded by DNS server to the next responsible DNS server. This results in the client communicating directly to the involved DNS servers. 
@@ -4897,18 +4897,18 @@ In Reverse Lookup the DNS server is responsible for resolving the IP address to 
 ## Defining Zones
 When configuring a new zone two files have to be created, one for the forward lookup and one for the reverse lookup. The naming convention of the files is the following:
 
-``` bash
+~~~~~ bash
 # Forward Lookup
 db.domainname
 # Reverse Lookup
 db.z.y.x
 # z.y.x being parts of the IP address x.y.z (192.168.0.* -> db.0.168.192)
 # note the reverse order!
-```
+~~~~~
 
 An exemplary forward lookup file looks like this:
 
-```
+~~~~~
 ;; db.domainname
 ;; Forwardlookupzone für domainname
 ;;
@@ -4929,7 +4929,7 @@ localhost                       IN      A       127.0.0.1
 rechner1                        IN      A       192.168.0.200
 mailserver                      IN      A       192.168.0.201
 rechner2                        IN      CNAME   mailserver
-```
+~~~~~
 
 ### Forward Lookup
 
@@ -4957,7 +4957,7 @@ The entry types being the following:
 
 An exemplary reverse lookup file looks like this:
 
-```
+~~~~~
 ;; db.0.168.192
 ;; Reverselookupzone für domainname
 ;;
@@ -4974,7 +4974,7 @@ $TTL 2D
 10      IN      PTR     rechnername.domainname.
 200     IN      PTR     rechner1.domainname.
 201     IN      PTR     rechner2.domainname.
-```
+~~~~~
 
 Here the `PTR` entry type comes to use. The numbers in the first row represent the last byte of the IP address.
 

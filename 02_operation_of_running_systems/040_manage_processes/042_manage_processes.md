@@ -20,11 +20,11 @@ The tool `kill` is used to send signals to processes, some useful signals are li
 
 Signals can be sent like the following:
 
-``` bash
+~~~~~ bash
 kill -<Signal ID> <PID>
 kill -<Signal Name> <PID>
 kill <PID> # Kill alone sent SIGTERM -> kill -SIGTERM <PID>
-```
+~~~~~
 
 To let the process 500 be killed by the kernel we would send `kill -9 500`.
 

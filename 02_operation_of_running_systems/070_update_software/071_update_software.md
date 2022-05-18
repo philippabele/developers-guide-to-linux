@@ -34,31 +34,31 @@ The apt default operations are:
 As `apt update` updates the index od packages and their versions located in the remote repositories, it has to be run before each operation.
 To install the `vim` editor run: 
 
-``` bash
+~~~~~ bash
 sudo apt update
 sudo apt install vim
-```
+~~~~~
 
 To upgrade a specific package if installed:
 
-``` bash
+~~~~~ bash
 sudo apt update
 sudo apt install --only-upgrade vim
-```
+~~~~~
 
 To update all packages on the system:
 
-``` bash
+~~~~~ bash
 sudo apt update
 sudo apt upgrade
-```
+~~~~~
 
 If a software vendors offer their software directly from their website. On Debian based systems, *deb* packages need to be downloaded these can be installed by the following commands:
 
-``` bash
+~~~~~ bash
 sudo apt update
 sudo apt install ./Downloads/your_downloaded_package.deb
-```
+~~~~~
 
 ## Exercice 
 - Read the man page of apt/apt-get if you want to learn more.

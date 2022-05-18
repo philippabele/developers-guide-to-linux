@@ -7,17 +7,17 @@ The `cp` command is used to copy files and directories (`-r` switch has to be se
 Its usage is `cp <src> <dest>`, multiple source files can be given like `cp <src1> <src2> ... <dest>`
 To copy file *a* to location *b* use:
 
-```bash
+~~~~~bash
 cp a b
-```
+~~~~~
 
 As a result the file *a* will be copied to file *b*
 
 To copy a whole folder use the `-r` switch just like in the `rm` command.
 
-```bash
+~~~~~bash
 cp -r somefolder someotherfolder
-```
+~~~~~
 
 ## Exercise
 Execute the *020_testenv.sh* script. Write a script to copy the file *somedir/writeprotected* to be next to *somedir* (same folder level) with the filename *writeprotected.bak*. And create a copy of *somedir* (*somedir.bak*)

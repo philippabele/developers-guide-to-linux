@@ -2,21 +2,21 @@
 
 To search for files by file attributes the `find` command is used.
 Find requires only the path to search in as an argument. If you give your home-path `~` to it. It lists all files and folders located in your home directory, as we didn't specify what to search for.
-``` bash
+~~~~~ bash
 find ~
-```
+~~~~~
 
 To specify what to search for flags are used: 
 
-``` bash
+~~~~~ bash
 find ~ -name "Screenshot*"
-```
+~~~~~
 The above command searches for all files and directories beginning with the word `Screenshot` the asterisk is used as a wildcard for a unknown number of unknown chars.
 Find offers a number of such search flags which help to narrow the search down further.
 
-``` bash
+~~~~~ bash
 find ~ -name "Screenshot*" -type f 
-```
+~~~~~
 This command limits the search to results of the type **f**ile.
 
 | File Type | Description                   |

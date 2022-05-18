@@ -14,11 +14,11 @@ Soflinks are the modern way of linking files in Unix Systems, they overcome the 
 The following code shows a directory with the file `test.txt`, a hardlink and a softlink to it.
 It can be seen, that the original file and the hardlink share the same inode number - they are quintessentially the same. The softlink has a different inode number - it is an independent file. The softlink additionally is pointing to the original test.txt file. 
 
-```bash
+~~~~~bash
 9181703 -rw-rw-r--. 2 dummy dummy 0 Dec 27 14:58 test.txt
 9181703 -rw-rw-r--. 2 dummy dummy 0 Dec 27 14:58 hardlink
 9181859 lrwxrwxrwx. 1 dummy dummy 8 Dec 27 14:59 softlink -> test.txt
-```
+~~~~~
 
 ### Excursion: Inode Number
 The inode number is an index in the so called inode table. In this table information about the file is stored, like its owner, size, permissions, or location. A files inode basically is its identity.

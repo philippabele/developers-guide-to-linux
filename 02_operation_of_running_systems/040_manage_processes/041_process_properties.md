@@ -15,10 +15,10 @@ There are different types of processes:
 
 Using the tool `top` a taskmanager-like interface will appear in your bash.
 
-```
+~~~~~
   PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
   297 friedri+  20   0   10044   5068   3360 S   0.0   0.0   0:00.18 bash
-```
+~~~~~
 
 In the above example an exemplary entry taken from the top command can be seen.
 Top shows the main properties of an process:

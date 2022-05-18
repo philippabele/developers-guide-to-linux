@@ -3,9 +3,9 @@ Piping is a special variant of I/O redirection. It is used to use the output of 
 
 To pipe the `|` operator is used.
 
-```
+~~~~~
 ls | wc -w
-```
+~~~~~
 
 The above example will give the output of `ls` to the command `wc -w`. `wc -w` counts the words in a given file. So by piping the output of `ls` into it sums up the count of words used as filenames in the current folder.
 
@@ -22,9 +22,9 @@ The above commands/filters offer more functionality than the basic one described
 ## The `tee` Utility
 `tee` reads the standard input and copies it to standard output and one or more specified files.
 
-``` bash
+~~~~~ bash
 ls | tee output | grep output
-```
+~~~~~
 
 The above example will write the outputs of `ls` to the file *output* and then search the output of `ls` (forwarded by `tee`) for the word output.
 If there is no file named *output* in the folder in which the command is executed it will have no output on the first run as the file *output* doesn't exist at first.

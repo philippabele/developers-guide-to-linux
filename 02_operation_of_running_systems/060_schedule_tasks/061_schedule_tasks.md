@@ -12,7 +12,7 @@ The jobs can be defined in various locations:
 
 ### The Crontab Format
 
-```
+~~~~~
 # Example of job definition:
 # .---------------- minute (0 - 59)
 # |  .------------- hour (0 - 23)
@@ -22,7 +22,7 @@ The jobs can be defined in various locations:
 # |  |  |  |  |
 # *  *  *  *  * user-name command to be executed
   17 *  *  *  * root    cd / && run-parts --report /etc/cron.hourly
-```
+~~~~~
 
 In the above example it can be seen how cronjobs are timed. There are 5 fields for defining when to run the task
 
@@ -46,9 +46,9 @@ The crontab file is not to be edited manually, instead the tool `crontab` is use
 
 The `at` command can be used to schedule a task to run once. At can be given a task with the following syntax:
 
-``` bash
+~~~~~ bash
 at <time to run the task at> -f <script to run>
-```
+~~~~~
 
 By calling `at` without the `-f` flag a task to run can be defined in an interactive mode, which can be exited with `Crtl-D.`
 

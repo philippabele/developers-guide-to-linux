@@ -1,9 +1,9 @@
 # Changing Permissions of a File
 To change the permissions of a file the command `chmod` is used.
 
-``` bash
+~~~~~ bash
 chmod u+w output
-```
+~~~~~
 In the above example the *u*ser (owner) of the file output gets granted write permissions on it.
 
 ## Additive/Subtractive Model
@@ -33,9 +33,9 @@ Imagine each flag of a rights triplet gets assigned a number:
 Now select the permissions you want to assign and add up their numbers. This way `rw-` would result in a *6*. Now do this for each entity and you get a number like 644 for `rw-r--r--`.
 This way permissions can be assigned with `chmod`:
 
-``` bash
+~~~~~ bash
 chmod 0644 output
-```
+~~~~~
 The leading zero can be left out, it is used to express an octal value (0644 (octal) -> 0b 110 100 100 (binary)).
 
 ## Exercise
