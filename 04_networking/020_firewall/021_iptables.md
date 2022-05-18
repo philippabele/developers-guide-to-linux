@@ -1,13 +1,13 @@
-# Packet Filtering
+### Packet Filtering
 
 This section is based on chapter 32.6 of Linux - Rheinwerk.
 On Linux packet filtering mechanisms are built into the Kernel. They can be configured with the `iptables` tool.
 
-## Iptable Tables
+#### Iptable Tables
 
 Iptables has various functionalities, besides package filtering it also offers NAT possibilities. These functionalities are configured in different tables. The table to edit is specified by the `-t` flag. The default table is the `filter` table responsible for the package filtering configuration.
 
-## Iptable Chains
+#### Iptable Chains
 
 Iptables sends packages down different chains based on rules. These chains determine what happens with the package. 
 
@@ -27,7 +27,7 @@ Iptables offers the following operations on chains:
 - `-L <chain>` - List rules of specified chain
 - `-F <chain>` - Flushes chain - Deletes all rules in chain
 
-## Iptable rules
+#### Iptable rules
 
 The iptable chains are made up of a collection of rules. Rules are evaluated from top to bottom, of one rule matches it will be applied to the package and the processing will be halted.
 These are the most common rule operations:
@@ -67,20 +67,20 @@ Network destinations can be applied in the following forms:
 - Network Address + Subnet Mask
 - IP-Address
 
-## Persistance
+#### Persistance
 
 Updates made via iptables will be temporary and reset after a reboot. To make the changes persistent the command `iptables-save` and redirecting the output to */etc/iptables/rules.v4* (for Debian) will make the changes persistent between reboots:
 
 ~~~~~ bash
-# Debian
+### Debian
 iptables-save > /etc/iptables/rules.v4
-# RedHat
+### RedHat
 iptables-save > /etc/sysconfig/iptables
 ~~~~~
 
 Taken from [here](https://www.thomas-krenn.com/de/wiki/Iptables_Firewall_Regeln_dauerhaft_speichern).
 
-## Example
+#### Example
 An exemplary rule can look like this:
 
 ~~~~~ 
@@ -88,5 +88,5 @@ iptables -A INPUT -p tcp -j TCP
 ~~~~~
 This will add a call to the custom chain `TCP` for all incoming TCP packages.
 
-## Exercise
+#### Exercise
 Create a rule for all Incoming packages that drops the packages coming from the IP-Address `192.168.178.150`

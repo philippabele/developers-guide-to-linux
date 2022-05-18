@@ -1,9 +1,9 @@
-# Hello World!
+### Hello World!
 
 To get started with Linux administration, a Ubuntu base Image will be set up in Docker and we will have it print "Hello World!"
 If you are already working on a Linux System you can skip the Docker part.
 
-## Installing Ubuntu Base Docker Image
+#### Installing Ubuntu Base Docker Image
 
 Open a console (PowerShell or CMD) an enter the following command `docker pull ubuntu`.
 
@@ -14,7 +14,7 @@ REPOSITORY   TAG       IMAGE ID       CREATED       SIZE
 ubuntu       latest    597ce1600cf4   13 days ago   72.8MB
 ~~~~~
 
-## Start the Docker Image and Open a Shell in It
+#### Start the Docker Image and Open a Shell in It
 
 Use the command `docker run ubuntu` to start up the container.
 The command `docker ps -a` will list the running containers.
@@ -29,7 +29,7 @@ Now we have a virtualized Ubuntu image running in Docker. The next step is to st
 
 Now we are working with the shell we just started on our command line.
 
-## Execute the 'Hello World!'
+#### Execute the 'Hello World!'
 
 To let the shell greet the world the command `echo` will be used. The string to be put out on the shell ('Hello World!'), is supplied as an argument to `echo`. 
 

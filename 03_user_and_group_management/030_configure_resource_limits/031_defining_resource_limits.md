@@ -1,4 +1,4 @@
-# Defining User Resource Limits
+### Defining User Resource Limits
 This section is based of the [Ubuntu Server Cookbook](https://subscription.packtpub.com/book/networking_and_servers/9781785883064/1/ch01lvl1sec17/setting-resource-limits-with-limits-conf).
 
 The command `ulimit` controls the system resources a user is allowed to use. A process started by a user has to obey the resource limits set for this user.
@@ -36,7 +36,7 @@ For example:
 
 The above example grants a member of the group student a maximum count of 40 processes.
 
-## Exercise
+#### Exercise
 Write a hard limit for members of the group student, to limit their logins to 2
 
 

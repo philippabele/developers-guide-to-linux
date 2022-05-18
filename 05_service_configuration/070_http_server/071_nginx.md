@@ -1,13 +1,13 @@
-# NGINX Web Server
+### NGINX Web Server
 
 This section is based on the [Nginx website](https://www.nginx.com/) and d[ocumentation](https://docs.nginx.com/nginx/admin-guide/web-server/serving-static-content/).
 
 Nginx is a web server and reverse proxy that is used to serve static files and dynamic content.
 
-## Installation
+#### Installation
 To get nginx under Ubuntu the package *nginx* has to be installed.
 
-## Configuration
+#### Configuration
 The default nginx site configuration (*/etc/nginx/sites-available/default*) can be seen below
 
 ~~~~~
@@ -44,5 +44,5 @@ location /test/ {
 ~~~~~
 This tells nginx to use */var/www* as the root directory when calling the location /test/ resulting in nginx serving files in *root_directory* + */test/*.
 
-## Exercise
+#### Exercise
 Write a *index.html* page with the content *not /* and serve it from *localhost/not/*.

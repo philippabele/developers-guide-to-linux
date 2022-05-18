@@ -1,12 +1,12 @@
-# Hostname Resolution
+### Hostname Resolution
 This chapter is based on the [freedesktop documentation](https://www.freedesktop.org/software/systemd/man/resolvectl.html) and the [Ionos Guide](https://www.ionos.de/digitalguide/hosting/hosting-technik/hostname/).
 
-## Hostnames
+#### Hostnames
 Hostnames or domain names are a human readable identifier to identify network devices. A hostname points to the IP of a device. To be able to connect to a device its hostname has to be resolved to its IP address. This is done by hostname resolution. Host machines which are in a network can be addressed by the resolved IP address. 
 
 Hostnames offer the advantage that they stay the same, while the IP address can change. Which means they can serve as a reliable identifier for a device or service.
 
-## Static Resolution
+#### Static Resolution
 On Linux systems static domain name resolution can be defined in the file */etc/hosts*:
 
 ~~~~~
@@ -21,7 +21,7 @@ An entry for *example.com* would look like this:
 93.184.216.34 example.com
 ~~~~~
 
-## Dynamic Resolution
+#### Dynamic Resolution
 As the IP of a network target might change, dynamic hostname resolution offers a way to connect to the device anyway, without knowing its exact IP. To do this a query is sent to a DNS server, the Server resolves the hostname to an IP and sends it back to the host.
 To check the currently used nameservers `resolvectl status` can be used:
 
@@ -41,7 +41,7 @@ nameserver <IP>
 
 After editing the file the `resolvconf` has to be run with the flag `-u` to update the */etc/resolv.conf* file.
 
-## Exercise 
+#### Exercise 
 - Install `resolvconf`
 - Add the Google DNS Server *8.8.8.8* to the systems configuration
 

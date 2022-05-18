@@ -1,4 +1,4 @@
-# The `find` command
+### The `find` command
 
 To search for files by file attributes the `find` command is used.
 Find requires only the path to search in as an argument. If you give your home-path `~` to it. It lists all files and folders located in your home directory, as we didn't specify what to search for.

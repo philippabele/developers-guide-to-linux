@@ -1,7 +1,7 @@
 Place a file *greeting.sh* with the following content in */etc/profile.d*.
 
 ~~~~~ bash
-#!/bin/bash
+###!/bin/bash
 echo "Hi there from Liam"
 ~~~~~
 

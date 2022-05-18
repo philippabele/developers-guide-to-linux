@@ -1,4 +1,4 @@
-# Check Resources
+### Check Resources
 
 To check on available system resources the tool `top` can be used.
 Below is an exemplary output of `top`:
@@ -16,5 +16,5 @@ In the next line the CPU loads on each core are shown in percent, followed by th
 
 The tool `htop` offers a human readable way of displaying the same statistics, it can be installed from the package repositories.
 
-## Exercise
+#### Exercise
 Install the tool `htop` with `apt install` and display the available resources.

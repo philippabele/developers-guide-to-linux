@@ -1,14 +1,14 @@
-# Configuring Services
+### Configuring Services
 Resources for this section are the [Suse Documentation](https://www.suse.com/support/kb/doc/?id=000019672), a [Medium Article](https://medium.com/@benmorel/creating-a-linux-service-with-systemd-611b5c8b91d6), a [StackOverflow Contribution](https://stackoverflow.com/questions/45384429/how-to-execute-a-python-script-in-a-different-directory) and a [Python Documentation](https://pythonbasics.org/webserver/).
 
 Following the everything is a file directive of Linux/Unix services are defined in files.
 These files are located in */etc/systemd/system*.
 
-## Example Service
+#### Example Service
 To demonstrate the configuration of systemd services in this section a python server service will be created.
 
 
-### Python Server
+##### Python Server
 Python offers a online way of starting a webserver, by loading the module *http.server*:
 
 ~~~~~ bash
@@ -20,7 +20,7 @@ To display something create a folder */home/your-user/www* and create a file *in
 <h1>I am a Simple Python Server!</h1>
 ~~~~~
 
-## The Service File
+#### The Service File
 Lets create a simple web server service file:
 
 ~~~~~ 
