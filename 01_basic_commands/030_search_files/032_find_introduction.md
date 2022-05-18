@@ -17,15 +17,13 @@ Find offers a number of such search flags which help to narrow the search down f
 ~~~~~ bash
 find ~ -name "Screenshot*" -type f 
 ~~~~~
-This command limits the search to results of the type **f**ile.
-
-| File Type | Description                   |
-|---        | ---                           |
-|b          |Block special device file      |
-|c          |Character special device file  |
-|d          |Directory                      |
-|f          |Regular File                   |
-|l          |Symbolic Link                  |
+This command limits the search to results of the type **f**ile. The usable file types are listed below:
+                          
+- **b** - Block special device file       
+- **c** - Character special device file   
+- **d** - Directory                       
+- **f** - Regular File                    
+- **l** - Symbolic Link                   
 
 A full list of the flags available can be seen in **The Linux Command Line** in the subchapter *17 - find - Tests*  (Table 17-3)
 

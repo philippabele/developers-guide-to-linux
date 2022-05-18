@@ -1,12 +1,10 @@
 ### Logical Operators
-The `find` command allows combination of tests via logical operators to search for files more granular.
+The `find` command allows combination of tests via logical operators to search for files more granular. The usable operators are listed below:
 
-| **Operator**  | **Description**                                                                       |
-|---            |---                                                                                    |
-| -and/-a       | True if the tests on both sides are true (Implied as default, when no operator used)  |
-| -or/-o        | True if one test on the side is true                                                  |
-| -not/!        | True if the test following is false                                                   |
-| ( )           | Groups operations, modifying the evaluation order                                     |
+- **-and/-a** - True if the tests on both sides are true (Implied as default, when no operator used)
+- **-or/-o** - True if one test on the side is true
+- **-not/!** - True if the test following is false
+- **( )** - Groups operations, modifying the evaluation order
 
 The example below searches for *png* and *pdf* (`-name "*.png" -or -name "*.pdf"`; `-type f`) files, in the home dir of the current user (`~`), owned by the user *dummy* (`-user dummy`)
 
