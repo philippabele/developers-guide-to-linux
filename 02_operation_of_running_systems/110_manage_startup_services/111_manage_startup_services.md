@@ -29,7 +29,7 @@ crond.service - Command Scheduler
      Memory: 1.4M
         CPU: 94ms
      CGroup: /system.slice/crond.service
-             └─1399 /usr/sbin/crond -n
+             ─1399 /usr/sbin/crond -n
 
 Apr 07 12:31:44 fedora crond[1399]: (CRON) INFO (running with inotify support)
 ~~~~
