@@ -1,4 +1,4 @@
-## students-guide-to-linux
+# students-guide-to-linux
 - [x] Essential Commands 25%
     - [x] Log into local & remote graphical and text mode consoles
     - [x] Search for files

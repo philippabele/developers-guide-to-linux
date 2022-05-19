@@ -1,9 +1,9 @@
-### Installing GRUB2
+## Installing GRUB2
 A boot loader will be installed per default when installing a new Linux system.
 
 It can be necessary to reinstall a boot loader for troubleshooting reasons. 
 
-#### Chroot environment
+### Chroot environment
 To be able to access a system with a broken boot loader chrooting can be used. Chrooting enables to change the root directory a Linux system is running from to the root directory of an other system. The chrooting can be done from a Live system:
 
 1. Boot the live system
@@ -18,7 +18,7 @@ To be able to access a system with a broken boot loader chrooting can be used. C
 
 For more information see the [Ubuntu Documentation](https://wiki.ubuntuusers.de/chroot/Live-CD/)
 
-#### Simple Reinstallation
+### Simple Reinstallation
 To reinstall grub for example in case of a damaged MBR do the following:
 
 ~~~~
@@ -27,7 +27,7 @@ sudo grub-install /dev/sda # where to place the boot loader
 
 By doing this the configuration files */etc/default/grub* and */etc/grub.d/\** are untouched.
 
-#### Complete Reinstallation
+### Complete Reinstallation
 To do a complete reinstall with new configuration, etc. do the following.
 Before the actual installation it has to be ensured that the grub packages are installed, on Ubuntu the packages
 

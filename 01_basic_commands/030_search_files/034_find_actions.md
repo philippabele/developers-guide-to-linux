@@ -1,8 +1,8 @@
-### Actions
+## Actions
 
 Find can be used to execute actions on the files found. 
 
-#### Predefined Actions
+### Predefined Actions
 
 Find offers predefined actions, which can be seen in by calling `find --help`
 

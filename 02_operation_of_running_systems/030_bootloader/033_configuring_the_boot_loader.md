@@ -1,4 +1,4 @@
-### Configuring GRUB2
+## Configuring GRUB2
 There are two places GRUB2 can be configured form:
 - */etc/default/grub* - Actual configuration file
 - */etc/grub.d/* - Folder containing GRUB configuration files.
