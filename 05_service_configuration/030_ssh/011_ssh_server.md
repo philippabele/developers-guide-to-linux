@@ -1,11 +1,18 @@
-## SSH Server
+## SSH Server and Client
 This chapter is based on the [Ubuntu Documentation](https://ubuntu.com/server/docs/service-openssh).
 
-### Installing the OpenSSH Server
+### Installing the OpenSSH
 OpenSSH server is a commonly used SSH server under Linux. To install it on Debian based Systems run the following command:
+This has to be installed on the machine to connect to.
 
 ~~~~
 sudo apt install openssh-server
+~~~~
+
+To be able to connect the OpenSSH client has to be installed like this:
+
+~~~~
+sudo apt install openssh-client
 ~~~~
 
 ### Authentication
