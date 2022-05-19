@@ -3,8 +3,9 @@ on:
   pull_request:
     branches:
       - main
-    paths:
-      - '0*'
+  push:
+    branches:
+      - '**'
 
 jobs:
   compile:
