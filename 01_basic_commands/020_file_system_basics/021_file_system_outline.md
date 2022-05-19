@@ -1,9 +1,9 @@
-# The file system Outline
+## The file system Outline
 
 Like in Windows files in Linux/Unix are organized in a file tree. The first folder in this tree is called the root folder. While Windows has a separate tree for every device, devices get assigned a folder in the directory tree in Linux.
 This topic is discussed in chapter 2 of the Linux command line.
 
-## The root tree
+### The root tree
 The branches following the root are the following
 
 - */bin*: contains binaries required to run the system
