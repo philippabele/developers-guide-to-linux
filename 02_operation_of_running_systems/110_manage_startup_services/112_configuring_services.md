@@ -11,19 +11,19 @@ To demonstrate the configuration of systemd services in this section a python se
 ##### Python Server
 Python offers a online way of starting a webserver, by loading the module *http.server*:
 
-~~~~~ bash
+~~~~
 python -m http.server
-~~~~~
+~~~~
 To display something create a folder */home/your-user/www* and create a file *index.html* with the following content in it.
 
-~~~~~ html
+~~~~
 <h1>I am a Simple Python Server!</h1>
-~~~~~
+~~~~
 
 #### The Service File
 Lets create a simple web server service file:
 
-~~~~~ 
+~~~~
 [Unit]
 Description=Simple Python Service
 After=network.target
@@ -33,7 +33,7 @@ ExecStart=/usr/bin/env python3 -m http.server
 
 [Install]
 WantedBy=multi-user.target
-~~~~~
+~~~~
 
 In the first section *[Default]* the service is described (its name is based on the service filename).
 Systemd maintains an order when starting services, to start services other services depend on before those depending on them. This dependencies are defined via the *After* field, which will let the server service start after the *network.target* service. 

@@ -33,9 +33,9 @@ Use | between two sequences or characters to search for the one OR the other.
 #### Example
 The following regex matches the pattern of an IP Address. The dot has to be escaped to serve as literal dot, not as wildcard.
 
-~~~~~
+~~~~
 \d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}
-~~~~~
+~~~~
 The website [regex101.com](https://regex101.com/) can be used to learn more about regexes and to experiment with them
 
 #### Exercise

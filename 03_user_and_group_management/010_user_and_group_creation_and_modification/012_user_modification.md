@@ -10,19 +10,19 @@ Users can be modified with the command `usermod`. Usermod supplies the following
 - -L: lock user
 - -U: unlock user
 
-~~~~~ bash 
+~~~~ 
 usermod -d /home/dummy dummy 
-~~~~~
+~~~~
 
 This will assign the user dummy the homedir */home/dummy*
 
 #### Delete Users
 To delete users the commands `userdel` or `deluser` are used:
 
-~~~~~ bash
+~~~~
 userdel dummy
 deluser dummy
-~~~~~
+~~~~
 
 Deluser offers the possibility to remove the home directory of the user (`--remove-home`), all files of the user (`--remove-all-files`), and backup the users files as an archive (`--backup`)
 Userdel offers the possibility to remove the users home directory (`-r`).s

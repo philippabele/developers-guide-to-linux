@@ -5,14 +5,14 @@ While under Windows `zip` is the default compression format on Linux `gzip` and 
 #### The Tool Gzip
 Usage of `gzip`:
 
-~~~~~ bash
+~~~~
 ### Compressing files
 gzip foo
 ### Decompressing files
 gzip -d foo.gz
 #### or
 gunzip foo.gz
-~~~~~
+~~~~
 
 Bzip is used in the same way but uses an other compression algorithm internally.
 

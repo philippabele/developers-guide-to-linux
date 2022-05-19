@@ -2,9 +2,9 @@
 The topic permissions is discussed in chapter 9 of The Linux Command Line.
 If you list the contents of a directory with `ls -l` you can see the owner, group and permissions set for a file.
 
-~~~~~
+~~~~
 -rwxr--r-- 1 dummy dummy   43 Jan 26 09:34 output
-~~~~~
+~~~~
 
 #### Ownerships
 The first name that can be seen (dummy) is the *user* owning the file, the second one ist the *group* owning the file

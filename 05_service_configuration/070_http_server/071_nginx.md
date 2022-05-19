@@ -10,7 +10,7 @@ To get nginx under Ubuntu the package *nginx* has to be installed.
 #### Configuration
 The default nginx site configuration (*/etc/nginx/sites-available/default*) can be seen below
 
-~~~~~
+~~~~
 server {
     listen 80 default_server;
     listen [::]:80 default_server;
@@ -28,7 +28,7 @@ server {
     }
 }
 
-~~~~~
+~~~~
 
 In the default configuration nginx will try to serve a file from the defined root directory. If the file specified in the URI does not exist, nginx will try to serve the URI as a directory. If that doesn't exist too, nginx will display a 404 error page.
 
@@ -37,11 +37,11 @@ The root directory is defined as */var/www/html*.
 
 We can add a new location with an additional location directive:
 
-~~~~~
+~~~~
 location /test/ {
     root /var/www;
 }
-~~~~~
+~~~~
 This tells nginx to use */var/www* as the root directory when calling the location /test/ resulting in nginx serving files in *root_directory* + */test/*.
 
 #### Exercise

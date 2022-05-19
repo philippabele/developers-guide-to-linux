@@ -19,9 +19,9 @@ The modes can be combined with other options like:
 - z - use gzip with tar
 - a - auto compression, choose compression program
 
-~~~~~ bash
+~~~~
 tar -cf file.tar file 
-~~~~~
+~~~~
 
 The Tar mode always has to lead before the other options.
 
@@ -29,15 +29,15 @@ The Tar mode always has to lead before the other options.
 
 Creating an compressed archive:
 
-~~~~~ bash
+~~~~
 tar -czf archive.tar.gz file0 file1 file2 file3 
-~~~~~
+~~~~
 
 Unpack compressed archive:
 
-~~~~~ bash
+~~~~
 tar -xf archive.tar.gz
-~~~~~
+~~~~
 
 #### Exercise
 - Read tars man page to learn more about it.

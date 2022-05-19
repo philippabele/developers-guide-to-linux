@@ -6,12 +6,12 @@ In Vim, Less or Man interfaces type /, enter a regex pattern and hit enter to se
 ##### Find and Replace in Vim
 To use find and replace in vim enter the following pattern in command mode:
 
-~~~~~ bash
+~~~~
 ### Search and replace in current line 
 :s/pattern/newtext/g
 ### Search and replace in whole file
 :%s/pattern/newtext/g
-~~~~~
+~~~~
 
 The `g` behind the last slash is a switch, the following other switches can be used:
 - g - global, go on after first match

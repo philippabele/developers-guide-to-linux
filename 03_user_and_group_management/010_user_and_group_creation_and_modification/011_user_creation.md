@@ -8,18 +8,18 @@ Adduser is a frontend for useradd, which feeds useradd the information entered.
 
 Exemplary `useradd` call:
 
-~~~~~ bash
+~~~~
 useradd dummy 
-~~~~~
+~~~~
 
 This will add the user dummy to the system. As no parameters were specified it will have no home directory and password.
 
 #### Change or Create a Password
 The command `passwd` can be used to change the password of an user or create one if not existing.
 
-~~~~~ bash
+~~~~
 passwd dummy
-~~~~~
+~~~~
 You will be asked for a new password for the user dummy
 
 #### Exercise

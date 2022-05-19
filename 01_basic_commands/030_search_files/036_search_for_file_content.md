@@ -6,9 +6,9 @@ Grep is a tool to search files via regular expressions it. To see its full usage
 
 Grep can be used to search multiple files for a pattern by using the `-R` flag.
 
-~~~~~
+~~~~
 grep -R "some_pattern" *
-~~~~~
+~~~~
 
 The asterisk at the end is used to search through all files and folders in the current directory.
 

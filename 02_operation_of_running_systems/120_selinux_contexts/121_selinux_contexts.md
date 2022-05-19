@@ -33,25 +33,25 @@ For more examples see the [Fedora documentation](https://docs.fedoraproject.org/
 #### View File Contexts
 To view contexts assigned to files the command `ls` can be used with the flag `-Z` producing the following exemplary output:
 
-~~~~~
+~~~~
 unconfined_u:object_r:user_home_t:s0 01_basic_commands
-~~~~~
+~~~~
 
 
 #### Change File Contexts
 File contexts can be altered with the command `chcon` is used:
 
-~~~~~ bash
+~~~~
 chcon -t <new_context_type> <file>
-~~~~~
+~~~~
 When used with the `-t` switch, like above, the context type of a file is changed. The `-R` flag can be used to alter the contexts of a directory and its contents recursively.
 
 #### View Process Contexts
 To view the context of a process `ps` can be used with the flags `-eZ`:
 
-~~~~~
+~~~~
 system_u:system_r:crond_t:s0-s0:c0.c1023 1302 ?  00:00:00 crond
-~~~~~
+~~~~
 
 This reveals that the process crond has the context type crond_t giving it access to cron relevant files.
 

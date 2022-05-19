@@ -21,9 +21,9 @@ For more information see the [Ubuntu Documentation](https://wiki.ubuntuusers.de/
 #### Simple Reinstallation
 To reinstall grub for example in case of a damaged MBR do the following:
 
-~~~~~ bash
+~~~~
 sudo grub-install /dev/sda # where to place the boot loader
-~~~~~
+~~~~
 
 By doing this the configuration files */etc/default/grub* and */etc/grub.d/\** are untouched.
 
@@ -39,21 +39,21 @@ are needed. They can be installed with the `apt` utility.
 
 To ensure a clean new installation the existing configurations can be purged with:
 
-~~~~~ bash
+~~~~
 sudo apt-get purge grub-* os-prober grub-gfxpayload-lists
-~~~~~
+~~~~
 
 To install teh new boot loader, first install the packages listed above:
 
 *For Bios PCs:*
-~~~~~ bios
+~~~~
 sudo apt-get install grub-pc os-prober grub-gfxpayload-lists
-~~~~~
+~~~~
 
 *For EFI PCs:*
-~~~~~ bash
+~~~~
 sudo apt update
 sudo apt-get install grub-efi-amd64-signed os-prober #  grub-efi-amd64 or grub-efi-ia32 (for 32Bit systems) also possible
-~~~~~ 
+~~~~
 
 In the masks following the installation destination of grub has to be determined.

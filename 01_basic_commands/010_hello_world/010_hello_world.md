@@ -9,10 +9,10 @@ Open a console (PowerShell or CMD) an enter the following command `docker pull u
 
 Docker will start pulling the Ubuntu image. After pulling the image you can view it with the command `docker image ls`. The Ubuntu image should show up in the resulting list.
 
-~~~~~
+~~~~
 REPOSITORY   TAG       IMAGE ID       CREATED       SIZE
 ubuntu       latest    597ce1600cf4   13 days ago   72.8MB
-~~~~~
+~~~~
 
 #### Start the Docker Image and Open a Shell in It
 
@@ -21,9 +21,9 @@ The command `docker ps -a` will list the running containers.
 
 The container we just sterted should appear here.
 
-~~~~~
+~~~~
 Insert Container List here
-~~~~~
+~~~~
 
 Now we have a virtualized Ubuntu image running in Docker. The next step is to start a shell in this image to work with it. To start a shell in this image we use the command `docker exec -it <container name> /bin/bash`.
 
@@ -33,6 +33,6 @@ Now we are working with the shell we just started on our command line.
 
 To let the shell greet the world the command `echo` will be used. The string to be put out on the shell ('Hello World!'), is supplied as an argument to `echo`. 
 
-~~~~~
+~~~~
 echo 'Hello World!'
-~~~~~
+~~~~

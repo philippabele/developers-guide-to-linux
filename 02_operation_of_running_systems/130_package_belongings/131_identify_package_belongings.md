@@ -13,9 +13,9 @@ The tool knows the following commands:
 ##### Example
 The below example lists all files belonging to vim: 
 
-~~~~~ bash
+~~~~
 apt-file list vim
-~~~~~
+~~~~
 
 #### On RedHat
 On RedHat the package manager `rpm` has the capabilities to do the same operations with the following flags:
@@ -26,9 +26,9 @@ On RedHat the package manager `rpm` has the capabilities to do the same operatio
 ##### Example
 The below example does the same as the one above:
 
-~~~~~ bash
+~~~~
 rpm -ql vim
-~~~~~
+~~~~
 
 #### Exercise
 - Install the tool `apt-file`
