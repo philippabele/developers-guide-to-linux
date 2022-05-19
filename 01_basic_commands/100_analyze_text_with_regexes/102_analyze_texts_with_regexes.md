@@ -1,17 +1,17 @@
-# Use Regexes to Analyze texts
+### Use Regexes to Analyze texts
 
-## Vim, Less, Man and Co.
+#### Vim, Less, Man and Co.
 In Vim, Less or Man interfaces type /, enter a regex pattern and hit enter to search for it.
 
-### Find and Replace in Vim
+##### Find and Replace in Vim
 To use find and replace in vim enter the following pattern in command mode:
 
-``` bash
-# Search and replace in current line 
+~~~~~ bash
+### Search and replace in current line 
 :s/pattern/newtext/g
-# Search and replace in whole file
+### Search and replace in whole file
 :%s/pattern/newtext/g
-```
+~~~~~
 
 The `g` behind the last slash is a switch, the following other switches can be used:
 - g - global, go on after first match
@@ -19,7 +19,7 @@ The `g` behind the last slash is a switch, the following other switches can be u
 - I - case sensitive
 - c - confirm before replacing
 
-## Grep
+#### Grep
 As mentioned before in the Search Files section Grep can be used to search for file content. Use `grep` with the `-E` flag to search in extended regex mode.
 Grep uses a different notation for character classes:
 
@@ -38,7 +38,7 @@ Some useful flags when searching with grep:
 - -L - list files without matches
 - -n - print line number together with match
 
-## Exercise
+#### Exercise
 Find all occurrences of a date matching the date pattern defined earlier in the file 102_exercise using `grep`.
 
 

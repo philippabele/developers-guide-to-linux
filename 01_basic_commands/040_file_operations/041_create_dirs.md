@@ -1,40 +1,40 @@
-# Create Directories
+### Create Directories
 This Topic is dealt with in Chapter **4 - mkdir** of The Linux Command Line.
 
-## Create Single Directory
+#### Create Single Directory
 
 To create a new directory use the command `mkdir`.
 
-```bash
+~~~~~bash
 mkdir sampledir
-``` 
-## Create Directory in Directory
+~~~~~ 
+#### Create Directory in Directory
 
 The above example will create the directory sample dir in the current directory. To create a new folder in *sampledir* you can type:
 
-```bash
+~~~~~bash
 mkdir sampledir/otherdir
-```
+~~~~~
 
-## Create Whole Tree
+#### Create Whole Tree
 
 This command assumes sampledir is already existing. To create a whole directory tree if not existing use the Switch `-p`
 
-```bash
+~~~~~bash
 mkdir -p notexisting/sampledir
-```
+~~~~~
 
 The above example will create the folder *notexisting* and the directory *sampledir* within it.
 
-## Create Multiple Directories
+#### Create Multiple Directories
 
 To create multiple directories simply write them after each other like that:
 
-```bash
+~~~~~bash
 mkdir sampledir othersampledir
-```
+~~~~~
 
-## Exercice
+#### Exercice
 
 This exercise will combine the simple Operations listed above.
 Write a script, which creates the folders *sampledir/withinnerdir* and  *singlesampledir*
