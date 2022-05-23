@@ -1,4 +1,33 @@
-# students-guide-to-linux
+# Student's Guide To Linux
+
+[01 Introduction](#introduction)
+[02 How to Contrubute](#how-to-contribute)
+[03 Outline](#outline)
+
+## Introduction
+
+This project is a Linux guide aimed at students. Its purpose is for them to getting to know Linux based operating systems and their basic mechanics.
+Its structure can be seen [below](#outline).
+The guide is based on the [Linux Foundation System Administrator Certification](https://training.linuxfoundation.org/certification/linux-foundation-certified-sysadmin-lfcs/)
+
+## How to Contribute 
+
+To contibute follow these steps:
+- Clone the repo to your local PC: `git clone git@github.com:philippabele/developers-guide-to-linux.git`
+- Pick a topic you want to work on: i.e. *Service Configuration - Configure an IMAP and IMAPS service*
+- Create a feature branch for this topic: `git checkout -b feature-imap_configuration`
+- Write about your topic
+    + Follow the folder structure: **05 Service Configuration** -> **050_imap_configuration** -> **010_configure_imap.md**
+    + Think about a neat exercise to consolidate the knowledge you write about and supply a solution to it
+    + Take the Literature Section as inspiration for research
+    + Do some Research on your own, the OS manufacturers like RedHat, Cononical (Ubuntu) and Suse offer great documentations
+- Add your files, commit your changes and push them:
+    + `git add -A`
+    + `git commit -am 'added imap configuration'`
+    + `git push`
+- Create a pull request on [GitHub](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request)
+
+## Outline
 - [x] Essential Commands 25%
     - [x] Log into local & remote graphical and text mode consoles
     - [x] Search for files
@@ -48,16 +77,16 @@
     - [x] Statically route IP traffic
     - [x] Synchronize time using other network peers
 
-- [ ] Service Configuration20%
-    - [ ] Configure a caching DNS server
-    - [ ] Maintain a DNS zone
+- [x] Service Configuration 20%
+    - [x] Configure a caching DNS server
+    - [x] Maintain a DNS zone
     - [ ] Configure email aliases
-    - [ ] Configure SSH servers and clients
-    - [ ] Restrict access to the HTTP proxy server
+    - [x] Configure SSH servers and clients
+    - [x] Restrict access to the HTTP proxy server
     - [ ] Configure an IMAP and IMAPS service
     - [ ] Query and modify the behavior of system services at various operating modes
-    - [ ] Configure an HTTP server
-    - [ ] Configure HTTP server log files
+    - [x] Configure an HTTP server
+    - [x] Configure HTTP server log files
     - [ ] Configure a database server
     - [ ] Restrict access to a web page
     - [ ] Manage and configure containers
