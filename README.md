@@ -119,3 +119,7 @@ To contibute follow these steps:
 ## Actions
 
 This project contains a GitHub Action which includes the mardown files into a LaTeX template and compiles it to a PDF file.
+
+- This command unifies all *.md* files into one by searching for them, sorting them and appending them to the file *all.md*: `find .. -type f \( -iname '*.md' ! -iname "all.md" \) | sort -k1 | xargs cat >> "$working_directory/chapters/all.md"`
+- This action compiles the latex: `xu-cheng/latex-action@v2`
+- This command renames the file to a name defined earlier in the action: `mv "$working_directory/main.pdf" "$pdf_name.pdf"`
