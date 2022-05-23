@@ -81,7 +81,7 @@ To contibute follow these steps:
     - [x] Statically route IP traffic
     - [x] Synchronize time using other network peers
 
-- [x] Service Configuration 20%
+- [ ] Service Configuration 20%
     - [x] Configure a caching DNS server
     - [x] Maintain a DNS zone
     - [ ] Configure email aliases
