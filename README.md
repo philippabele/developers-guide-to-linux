@@ -1,7 +1,9 @@
 # Student's Guide To Linux
 
 [01 Introduction](#introduction)
-[02 How to Contrubute](#how-to-contribute)
+
+[02 How to Contribute](#how-to-contribute)
+
 [03 Outline](#outline)
 
 ## Introduction
@@ -13,8 +15,10 @@ The guide is based on the [Linux Foundation System Administrator Certification](
 ## How to Contribute 
 
 To contibute follow these steps:
+- [Fork this Repo](https://docs.github.com/en/get-started/quickstart/fork-a-repo)
 - Clone the repo to your local PC: `git clone git@github.com:philippabele/developers-guide-to-linux.git`
-- Pick a topic you want to work on: i.e. *Service Configuration - Configure an IMAP and IMAPS service*
+- Pick a topic you want to work on from the [Outline](#outline): i.e. *Service Configuration - Configure an IMAP and IMAPS service*
+- [Create an issue](https://docs.github.com/en/desktop/contributing-and-collaborating-using-github-desktop/working-with-your-remote-repository-on-github-or-github-enterprise/creating-an-issue-or-pull-request) in the original project which will be solved by your contribution
 - Create a feature branch for this topic: `git checkout -b feature-imap_configuration`
 - Write about your topic
     + Follow the folder structure: **05 Service Configuration** -> **050_imap_configuration** -> **010_configure_imap.md**
@@ -25,7 +29,7 @@ To contibute follow these steps:
     + `git add -A`
     + `git commit -am 'added imap configuration'`
     + `git push`
-- Create a pull request on [GitHub](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request)
+- Create a pull request on [GitHub](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request) to the development branch of this project and [link the issue you are solving](https://docs.github.com/en/issues/tracking-your-work-with-issues/linking-a-pull-request-to-an-issue)
 
 ## Outline
 - [x] Essential Commands 25%
