@@ -22,7 +22,7 @@ I am a student of the DHBW Mosbach in my currently 6th semester of the course *A
 
 To contibute follow these steps:
 - [Fork this Repo](https://docs.github.com/en/get-started/quickstart/fork-a-repo)
-- Clone the repo to your local PC: `git clone git@github.com:philippabele/developers-guide-to-linux.git`
+- Clone the repo to your local PC: `git clone git@github.com:<your-username>/developers-guide-to-linux.git`
 - Pick a topic you want to work on from the [Outline](#outline): i.e. *Service Configuration - Configure an IMAP and IMAPS service*
 - [Create an issue](https://docs.github.com/en/desktop/contributing-and-collaborating-using-github-desktop/working-with-your-remote-repository-on-github-or-github-enterprise/creating-an-issue-or-pull-request) in the original project which will be solved by your contribution
 - Create a feature branch for this topic: `git checkout -b feature-imap_configuration`
