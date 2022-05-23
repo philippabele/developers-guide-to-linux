@@ -8,6 +8,8 @@
 
 [04 Outline](#outline)
 
+[05 Actions](#actions)
+
 ## Introduction
 
 This project is a Linux guide aimed at students. Its purpose is for them to getting to know Linux based operating systems and their basic mechanics.
@@ -113,3 +115,7 @@ To contibute follow these steps:
     - [ ] Create, manage and diagnose advanced file system permissions
     - [ ] Setup user and group disk quotas for filesystems
     - [ ] Create and configure file systems
+
+## Actions
+
+This project contains a GitHub Action which includes the mardown files into a LaTeX template and compiles it to a PDF file.
