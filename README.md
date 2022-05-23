@@ -2,15 +2,21 @@
 
 [01 Introduction](#introduction)
 
-[02 How to Contribute](#how-to-contribute)
+[02 About Me](#about-me)
 
-[03 Outline](#outline)
+[03 How to Contribute](#how-to-contribute)
+
+[04 Outline](#outline)
 
 ## Introduction
 
 This project is a Linux guide aimed at students. Its purpose is for them to getting to know Linux based operating systems and their basic mechanics.
 Its structure can be seen [below](#outline).
 The guide is based on the [Linux Foundation System Administrator Certification](https://training.linuxfoundation.org/certification/linux-foundation-certified-sysadmin-lfcs/)
+
+## About Me
+
+I am a student of the DHBW Mosbach in my currently 6th semester of the course *Applied Computer Science*. This work is a thesis written during the 5th an d 6th theoretical semester. Together with my coordinator [Philipp Abele](https://github.com/philippabele) this work emerged.
 
 ## How to Contribute 
 
