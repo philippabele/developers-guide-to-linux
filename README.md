@@ -1,4 +1,40 @@
-# students-guide-to-linux
+# Student's Guide To Linux
+
+[01 About the Project](#about-the-project)
+
+[02 How to Contribute](#how-to-contribute)
+
+[03 Outline](#outline)
+
+[04 Actions](#actions)
+
+## About The Project
+
+This project is a guide for basic Linux Administration. It ranges from navigating the file system to the configuration of network traffic routing.
+Its full structure can be seen [below](#outline).
+It is meant to serve as a guide for those new to Linux and as a kind of cheat sheet for uncommon tasks. 
+The guide is based on the [Linux Foundation System Administrator Certification](https://training.linuxfoundation.org/certification/linux-foundation-certified-sysadmin-lfcs/) as well as some common Literature and official OS documentations.
+
+## How to Contribute 
+
+To contibute follow these steps:
+- [Fork this Repo](https://docs.github.com/en/get-started/quickstart/fork-a-repo)
+- Clone the repo to your local PC: `git clone git@github.com:<your-username>/developers-guide-to-linux.git`
+- Pick a topic you want to work on from the [Outline](#outline): i.e. *Service Configuration - Configure an IMAP and IMAPS service*
+- [Create an issue](https://docs.github.com/en/desktop/contributing-and-collaborating-using-github-desktop/working-with-your-remote-repository-on-github-or-github-enterprise/creating-an-issue-or-pull-request) in the original project which will be solved by your contribution
+- Create a feature branch for this topic: `git checkout -b feature-imap_configuration`
+- Write about your topic
+    + Follow the folder structure: **05 Service Configuration** -> **050_imap_configuration** -> **010_configure_imap.md**
+    + Think about a neat exercise to consolidate the knowledge you write about and supply a solution to it
+    + Take the Literature Section as inspiration for research
+    + Do some Research on your own, the OS manufacturers like RedHat, Cononical (Ubuntu) and Suse offer great documentations
+- Add your files, commit your changes and push them:
+    + `git add -A`
+    + `git commit -am 'added imap configuration'`
+    + `git push`
+- Create a pull request on [GitHub](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request) to the development branch of this project and [link the issue you are solving](https://docs.github.com/en/issues/tracking-your-work-with-issues/linking-a-pull-request-to-an-issue)
+
+## Outline
 - [x] Essential Commands 25%
     - [x] Log into local & remote graphical and text mode consoles
     - [x] Search for files
@@ -48,16 +84,16 @@
     - [x] Statically route IP traffic
     - [x] Synchronize time using other network peers
 
-- [ ] Service Configuration20%
-    - [ ] Configure a caching DNS server
-    - [ ] Maintain a DNS zone
+- [ ] Service Configuration 20%
+    - [x] Configure a caching DNS server
+    - [x] Maintain a DNS zone
     - [ ] Configure email aliases
-    - [ ] Configure SSH servers and clients
-    - [ ] Restrict access to the HTTP proxy server
+    - [x] Configure SSH servers and clients
+    - [x] Restrict access to the HTTP proxy server
     - [ ] Configure an IMAP and IMAPS service
     - [ ] Query and modify the behavior of system services at various operating modes
-    - [ ] Configure an HTTP server
-    - [ ] Configure HTTP server log files
+    - [x] Configure an HTTP server
+    - [x] Configure HTTP server log files
     - [ ] Configure a database server
     - [ ] Restrict access to a web page
     - [ ] Manage and configure containers
@@ -74,3 +110,11 @@
     - [ ] Create, manage and diagnose advanced file system permissions
     - [ ] Setup user and group disk quotas for filesystems
     - [ ] Create and configure file systems
+
+## Actions
+
+This project contains a GitHub Action which includes the mardown files into a LaTeX template and compiles it to a PDF file.
+
+- This command unifies all *.md* files into one by searching for them, sorting them and appending them to the file *all.md*: `find .. -type f \( -iname '*.md' ! -iname "all.md" \) | sort -k1 | xargs cat >> "$working_directory/chapters/all.md"`
+- This action compiles the latex: `xu-cheng/latex-action@v2`
+- This command renames the file to a name defined earlier in the action: `mv "$working_directory/main.pdf" "$pdf_name.pdf"`
