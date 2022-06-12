@@ -1,4 +1,4 @@
-## Variables
+### Variables
 Variables are created and set by defining its name and assigning it a value:
 Note that no spaces are allowed before and after the equal sign.
 
@@ -24,7 +24,7 @@ var=$(echo foo)
 echo $var
 ~~~~
 
-### Arrays
+#### Arrays
 Arrays can be created by putting values in braces:
 
 ~~~~
@@ -43,5 +43,5 @@ The values can be accessed by putting the variable and the whished index into cu
 echo ${int_array[1]} # will output 10
 ~~~~
 
-### Exercise
+#### Exercise
 Write a script, which saves the count of files in the current directory into the variable `fileCount` and print the variable to the terminal.
