@@ -18,7 +18,8 @@ rm -i samplefile
 ## Deletes the content of sampledir and it's content
 rm -r sampledir
 
-## Deletes the writeprotected file writeprotectedsample without asking for confirmation
+## Deletes the writeprotected file writeprotectedsample 
+## without asking for confirmation
 rm -f writeprotectedsample
 ~~~~
 

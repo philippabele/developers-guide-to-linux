@@ -53,7 +53,8 @@ sudo apt-get install grub-pc os-prober grub-gfxpayload-lists
 *For EFI PCs:*
 ~~~~
 sudo apt update
-sudo apt-get install grub-efi-amd64-signed os-prober #  grub-efi-amd64 or grub-efi-ia32 (for 32Bit systems) also possible
+sudo apt-get install grub-efi-amd64-signed os-prober 
+# grub-efi-amd64 or grub-efi-ia32 (for 32Bit systems) also possible
 ~~~~
 
 In the masks following the installation destination of grub has to be determined.

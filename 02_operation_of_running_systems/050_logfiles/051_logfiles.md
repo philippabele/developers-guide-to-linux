@@ -24,9 +24,13 @@ On newer systems *syslog* is replaced by *journal*. The syslogs can be viewed wi
 The journal will be displayed with `less`.
 
 ~~~~
-Mar 08 16:46:46 server sudo[843154]: pam_unix(sudo:session): session closed for user root
-Mar 08 16:46:46 server sudo[843154]:  user : TTY=pts/8 ; PWD=/var/log ; USER=root ; COMMAND=/usr/bin/journalctl -f
-Mar 08 16:46:46 server sudo[843154]: pam_unix(sudo:session): session opened for user root by (uid=0)
+Mar 08 16:46:46 server sudo[843154]: 
+    pam_unix(sudo:session): session closed for user root
+Mar 08 16:46:46 server sudo[843154]:  
+    user : TTY=pts/8 ; PWD=/var/log ; USER=root ; 
+    COMMAND=/usr/bin/journalctl -f
+Mar 08 16:46:46 server sudo[843154]: 
+    pam_unix(sudo:session): session opened for user root by (uid=0)
 ~~~~
 
 Above the journal log entry for opening the journal with sudo can be seen. Leading is the timestamp, followed by the hostname, then the process name with pid and the processes log message as a tail.

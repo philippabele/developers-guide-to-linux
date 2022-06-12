@@ -28,7 +28,8 @@ An exemplary AppArmor Profile can be seen below:
    ## Block of path access definitions:
    ## Unconfined execution mode:
    /bin/mount            ux,
-   ## Use {} to define multiple possible options - in this case either an empty string or 'u':
+   ## Use {} to define multiple possible options -
+   ##    in this case either an empty string or 'u':
    /dev/{,u}random     r,
    ## Use * as a wildcard for any combination of characters :
    /etc/foo/*            r,
@@ -72,7 +73,7 @@ The following access controls can be used:
 
 Rules can be preceded by `allow` (default -> has not to be written) or `deny` to apply the corresponding action.
 
-## Exercise
+### Exercise
 - Write an AppArmor Profile for the imaginary application *foobar* granting it write access to */tmp*. Include the `base` abstraction.
 - Read into the */etc/apparmor.d/abstractions* file to understand what is does. 
 

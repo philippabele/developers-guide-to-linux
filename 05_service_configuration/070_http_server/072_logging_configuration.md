@@ -34,5 +34,3 @@ In the example above as a first action the log format is defined. The tags prece
 
 ### Exercise
 If you want to learn more about nginx read the [online documentation](https://nginx.org/en/docs/).
-
-
