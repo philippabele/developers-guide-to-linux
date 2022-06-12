@@ -22,8 +22,10 @@ Checking the status of a service will bring up the following view:
 
 ~~~~
 crond.service - Command Scheduler
-     Loaded: loaded (/usr/lib/systemd/system/crond.service; enabled; vendor preset: enabled)
-     Active: active (running) since Thu 2022-04-07 12:31:44 CEST; 1h 20min ago
+     Loaded: loaded (/usr/lib/systemd/system/crond.service; 
+         enabled; vendor preset: enabled)
+     Active: active (running) since Thu 2022-04-07 12:31:44 CEST; 
+         1h 20min ago
    Main PID: 1399 (crond)
       Tasks: 1 (limit: 18355)
      Memory: 1.4M
@@ -44,6 +46,6 @@ To disable the cron daemon, which is responsible for executing the following com
 sudo systemctl disable cron
 ~~~~
 
-## Exercise
+### Exercise
 - Read the `systemctl` manpage to learn more.
 - Restart the cron service with `systemctl` and check its status to ensure it restarted properly. *Info:* Using this feature can be useful to restart a service after altering its configuration.

@@ -16,6 +16,6 @@ gunzip foo.gz
 
 Bzip is used in the same way but uses an other compression algorithm internally.
 
-## Exercise
+### Exercise
 - read the man page of `gzip` to learn more about it
 - look at the size of the file *111_exercise* using `ls -lh`, compress it using either `gzip` or `bzip2` and look at the new files size. Decompress the file again.
