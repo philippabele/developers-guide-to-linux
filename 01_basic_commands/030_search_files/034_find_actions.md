@@ -1,8 +1,8 @@
-## Actions
+### Actions
 
 Find can be used to execute actions on the files found. 
 
-### Predefined Actions
+#### Predefined Actions
 
 Find offers predefined actions, which can be seen in by calling `find --help`
 
@@ -33,6 +33,6 @@ As the print statement is connected with an `-or` in the example below, it will 
 find ~ -name "Screenshot*" -and -type f -or print
 ~~~~
 
-Exercise:
+#### Exercise:
 *Delete all .bak files in the example directory tree.*
 
