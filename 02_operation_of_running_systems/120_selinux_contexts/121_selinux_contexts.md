@@ -55,5 +55,5 @@ system_u:system_r:crond_t:s0-s0:c0.c1023 1302 ?  00:00:00 crond
 
 This reveals that the process crond has the context type crond_t giving it access to cron relevant files.
 
-## Exercise
+### Exercise
 Read the linked documentations if you want to learn more.
